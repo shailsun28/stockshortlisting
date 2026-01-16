@@ -1,0 +1,6 @@
+pandas
+streamlit
+sqlite3   # built-in, no need to list
+altair
+httpx
+numpy

@@ -1,0 +1,16 @@
+https://www.nseindia.com/market-data/live-equity-market?symbol=NIFTY%20BANK
+https://www.nseindia.com/market-data/live-equity-market?symbol=NIFTY%20AUTO
+https://www.nseindia.com/market-data/live-equity-market?symbol=NIFTY%20FINANCIAL%20SERVICES
+https://www.nseindia.com/market-data/live-equity-market?symbol=NIFTY%20FINANCIAL%20SERVICES%2025%2F50
+https://www.nseindia.com/market-data/live-equity-market?symbol=NIFTY%20FMCG
+https://www.nseindia.com/market-data/live-equity-market?symbol=NIFTY%20IT
+https://www.nseindia.com/market-data/live-equity-market?symbol=NIFTY%20MEDIA
+https://www.nseindia.com/market-data/live-equity-market?symbol=NIFTY%20METAL
+https://www.nseindia.com/market-data/live-equity-market?symbol=NIFTY%20PHARMA
+https://www.nseindia.com/market-data/live-equity-market?symbol=NIFTY%20PSU%20BANK
+https://www.nseindia.com/market-data/live-equity-market?symbol=NIFTY%20PRIVATE%20BANK
+https://www.nseindia.com/market-data/live-equity-market?symbol=NIFTY%20REALTY
+https://www.nseindia.com/market-data/live-equity-market?symbol=NIFTY%20HEALTHCARE%20INDEX
+https://www.nseindia.com/market-data/live-equity-market?symbol=NIFTY%20CONSUMER%20DURABLES
+https://www.nseindia.com/market-data/live-equity-market?symbol=NIFTY%20OIL%20%26%20GAS
+https://www.nseindia.com/market-data/live-equity-market?symbol=NIFTY%20MIDSMALL%20HEALTHCARE

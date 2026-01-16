@@ -1,0 +1,751 @@
+,StockName,scID,sector
+0,Newgen Software,NST01,Software & IT Services
+1,Elecon Eng,EEC,Capital Goods
+2,Devyani Int,DI23,FMCG
+3,Alok Industries,ATI,Textiles
+4,Anant Raj,ARI,Real Estate
+5,Thermax,T,Capital Goods
+6,UTI AMC,UA03,Finance
+7,ASK Auto,AAL02,Automobile & Ancillaries
+8,BSE Limited,B03,Finance
+9,Vodafone Idea,IC8,Telecom
+10,KFin Tech,KT06,Finance
+11,Kaynes Tech,KTI05,Electricals
+12,360 ONE WAM,IIFLW54277,Finance
+13,Gokaldas Export,GE05,Textiles
+14,Phoenix Mills,PM02,Real Estate
+15,Inox Wind,IW,Capital Goods
+16,Angel One,ABL03,Finance
+17,Engineers India,EI14,Capital Goods
+18,One 97 Paytm,OC10,Software & IT Services
+19,Aarti Ind,AI,Chemicals
+20,Wonderla,WH03,Hospitality
+21,Indo Count,ICI07,Textiles
+22,CSB Bank,CB08,Banks
+23,Minda Corp,MC22,Automobile & Ancillaries
+24,FSN E-Co Nykaa,FEV,Software & IT Services
+25,L&T Finance,LFH,Finance
+26,HDFC AMC,HAM02,Finance
+27,MCX India,MCE,Finance
+28,Raymond,R,Real Estate
+29,Glenmark Life,GLS01,Healthcare
+30,Choice Internat,CFS01,Finance
+31,Zomato,Z01,Software & IT Services
+32,Apeejay Park,ASPHL,Hospitality
+33,Va Tech Wabag,VTW,Infrastructure
+34,Welspun Corp,WGS,Metals & Mining
+35,Ganesh Housing,GHF,Real Estate
+36,Dixon Technolog,DT07,Consumer Durables
+37,Fineotex Chem,FC06,Chemicals
+38,Persistent,PS15,Software & IT Services
+39,Paradeep Phosp,PP36,Chemicals
+40,Nippon,RNL,Finance
+41,Indian Hotels,IHC,Hospitality
+42,Trent,L,Retailing
+43,Nazara,NT03,Software & IT Services
+44,Avanti Feeds,AF21,Agri
+45,Solar Ind,SE20,Chemicals
+46,NTPC,NTP,Power
+47,Zensar Tech,FIC,Software & IT Services
+48,ICICI Lombard ,ILG,Insurance
+49,Epigral,MF24,Chemicals
+50,INDUS TOWERS,BI26,Telecom
+51,Venkys,WH01,Agri
+52,AFL,ARVIN54248,Retailing
+53,Dhanuka Agritec,DP04,Chemicals
+54,APL Apollo,BT09,Metals & Mining
+55,ABSL AMC,ABS,Finance
+56,Torrent Power,TP13,Power
+57,L&T Technology,LTS,Capital Goods
+58,LT Foods,LTO,FMCG
+59,Paisalo Digital,SEI03,Finance
+60,Vardhman Text,MSM,Textiles
+61,Equitas Bank,ESF,Banks
+62,GMR Airports,GI27,Infrastructure
+63,Medplus Health,MHS01,Retailing
+64,Power Grid Corp,PGC,Power
+65,EID Parry,EID,Agri
+66,Adani Green Ene,ADANI54145,Miscellaneous
+67,Indegene,IL06,Healthcare
+68,Arvind,AM,Textiles
+69,Welspun Living,WI03,Textiles
+70,DCX Systems,DS11,Electricals
+71,Firstsource Sol,FS07,Software & IT Services
+72,Sterling Wilson,SWS,Power
+73,NAVA,NBF01,Power
+74,Avenue Supermar,AS28,Retailing
+75,MOTHERSON,MSS01,Automobile & Ancillaries
+76,Muthoot Finance,MF19,Finance
+77,Jindal Saw,SP09,Metals & Mining
+78,BHEL,BHE,Capital Goods
+79,Blue Star,BS,Consumer Durables
+80,NBCC (India),NBC,Real Estate
+81,Radico Khaitan,RK01,Alcohol
+82,Vedant Fashions,VF10,Retailing
+83,Adani Wilmar,AW01,FMCG
+84,Godrej Agrovet,GA08,FMCG
+85,JSW Energy,JE02,Power
+86,Steel Str Wheel,SSW01,Automobile & Ancillaries
+87,Redington,RI37,Trading
+88,Power Finance,PFC02,Finance
+89,Tata Power,TPC,Power
+90,Endurance Techn,ET04,Automobile & Ancillaries
+91,Landmark Cars,LC08,Trading
+92,Adani Power,AP26,Power
+93,Bikaji Foods,BFI01,FMCG
+94,Ajanta Pharma,AP22,Healthcare
+95,Graphite India,GI13,Capital Goods
+96,Sunteck Realty,IE06,Real Estate
+97,Electronics Mar,EMI01,Consumer Durables
+98,Navin Fluorine,PRC,Chemicals
+99,Kotak Mahindra,KMF,Banks
+100,Shree Renuka,SRS03,Agri
+101,Gujarat Fluoro,GUJAR54281,Chemicals
+102,Chambal Fert,CFC,Chemicals
+103,Bajaj Holdings,BA,Finance
+104,CG Consumer,CGC01,Consumer Durables
+105,Star Cement,SFC02,Construction Materials
+106,Triveni Turbine,TT12,Capital Goods
+107,Mahindra Life,GC16,Real Estate
+108,Quess Corp,QC,Miscellaneous
+109,Brigade Ent,BE08,Real Estate
+110,CarTrade Tech,CT09,Automobile & Ancillaries
+111,Praj Industries,PI17,Capital Goods
+112,Sanghi Ind,SI04,Construction Materials
+113,AU Small Financ,ASF03,Banks
+114,eMudhra,E11,Software & IT Services
+115,KRBL,KRB,Agri
+116,CAMS,CAM,Finance
+117,Juniper Hotels,JHL,Hospitality
+118,KPR Mill,M09,Textiles
+119,Amber Enterpris,AEI01,Consumer Durables
+120,Asahi India,AIS,Construction Materials
+121,CDSL,CDS,Finance
+122,Union Bank,UBI01,Banks
+123,Restaurant Bran,BKI01,FMCG
+124,RBL Bank,RB02,Banks
+125,PTC India,PTC01,Power
+126,South Ind Bk,SIB,Banks
+127,AIA Engineering,AIE01,Capital Goods
+128,PNB Housing Fin,PHF,Finance
+129,Bajaj Hindustha,BH,Agri
+130,Interglobe Avi,IA05,Aviation
+131,Sudarshan Chem,SCI05,Chemicals
+132,Maruti Suzuki,MU01,Automobile & Ancillaries
+133,DCB Bank,DCB01,Banks
+134,Eris Life,EL01,Healthcare
+135,NESCO,NSE,Capital Goods
+136,Tech Mahindra,TM4,Software & IT Services
+137,Mahanagar Gas,MG02,Industrial Gases & Fuels
+138,Sapphire Foods,SFI05,Hospitality
+139,Borosil,BL05,Construction Materials
+140,BALMLAWRIE,BLC,Diversified
+141,JK Lakshmi Cem,JKC,Construction Materials
+142,BASF,BAS,Chemicals
+143,Marksans Pharma,TP01,Healthcare
+144,Bank of India,BOI,Banks
+145,DLF,D04,Real Estate
+146,Happiest Minds ,HMT01,Software & IT Services
+147,Oberoi Realty,OR,Real Estate
+148,Zydus Wellness,CNA,FMCG
+149,India Shelter,ISFCL,Finance
+150,Canara Bank,CB06,Banks
+151,J. K. Cement,JKC03,Construction Materials
+152,Cera Sanitary,MOF,Construction Materials
+153,Samhi Hotels,SH17,Hospitality
+154,Aether Ind,AI74,Chemicals
+155,Kolte-Patil,KD07,Real Estate
+156,TVS Supply,TSC03,Logistics
+157,G R Infra,I13,Infrastructure
+158,Cigniti Tech,CI39,Software & IT Services
+159,Procter&Gamble,EMI,Healthcare
+160,LTIMindtree,LI09,Software & IT Services
+161,Sheela Foam,SF30,FMCG
+162,Trident,AI01,Textiles
+163,IRFC,IRF,Finance
+164,Coal India,CI29,Metals & Mining
+165,Latent View,LVA,Software & IT Services
+166,Vinati Organics,VO01,Chemicals
+167,Gopal Snacks,GSL10,FMCG
+168,HINDWAREAP,SHIL54290,Consumer Durables
+169,Guj State Petro,GSP02,Diversified
+170,Gabriel India,GI02,Automobile & Ancillaries
+171,Kirloskar Pneum,KGK,Capital Goods
+172,Symphony,SCS04,Consumer Durables
+173,Indian Metals,IMF01,Metals & Mining
+174,Hind Zinc,HZ,Metals & Mining
+175,Ion Exchange,IEI,Capital Goods
+176,KPIT Tech,KPITT54265,Software & IT Services
+177,Muthoot Micro,MML07,Finance
+178,MTAR Tech,MT14,Aviation
+179,Finolex Ind,FI,Plastic Products
+180,Swan Energy,SM09,Textiles
+181,Kajaria Ceramic,KC06,Construction Materials
+182,LIC India,LIC09,Insurance
+183,ZFCVINDIA,WAB,Automobile & Ancillaries
+184,Sundram,SF,Trading
+185,Stylam Ind,GL02,Construction Materials
+186,Emami,E05,FMCG
+187,Mishra Dhatu,MDN,Metals & Mining
+188,Safari Ind,SII01,FMCG
+189,RamkrishnaForge,RF16,Automobile & Ancillaries
+190,HOEC,HOE01,Oil & Gas
+191,ACC,ACC,Construction Materials
+192,CenturyPlyboard,CP9,Construction Materials
+193,KEI Industries,KEI,Electricals
+194,Escorts Kubota,E,Automobile & Ancillaries
+195,Texmaco Rail,TRE,Manufacturing
+196,Adani Energy,AT18,Power
+197,Affle India,AI72,Software & IT Services
+198,PB Fintech,PF15,Insurance
+199,GAIL,GAI,Industrial Gases & Fuels
+200,Edelweiss,EC06,Finance
+201,Larsen,LT,Infrastructure
+202,Reliance,RI,Oil & Gas
+203,LMW,LMW,Textiles
+204,Vedanta,SG,Metals & Mining
+205,Fine Organics,FOI,Chemicals
+206,Adani Ports,MPS,Infrastructure
+207,Ircon Internati,II21,Infrastructure
+208,Nuvoco Vistas,NVC,Construction Materials
+209,Eicher Motors,EM,Automobile & Ancillaries
+210,EIH,EIH,Hospitality
+211,Emcure Pharmace,EPL,Healthcare
+212,NHPC,N07,Power
+213,TBO Tek,TTL03,Hospitality
+214,KPIL,KPT,Infrastructure
+215,Lloyds Metals,LME,Metals & Mining
+216,Ashoka Buildcon,AB,Infrastructure
+217,Blue Jet,BJH,Healthcare
+218,J Kumar Infra,KI19,Infrastructure
+219,AMI Organics,AO05,Chemicals
+220,Inox India,IIL04,Miscellaneous
+221,HG Infra Engg,HIE,Infrastructure
+222,UPL,SI10,Chemicals
+223,Gulf Oil Lubric,GOL01,Automobile & Ancillaries
+224,Prestige Estate,PEP02,Real Estate
+225,Grindwell Norto,GN,Manufacturing
+226,Metro Brands,MB05,Footwear
+227,City Union Bank,CUB,Banks
+228,Deepak Nitrite,DN,Chemicals
+229,Go Fashion,GFI04,Retailing
+230,Neuland Lab,NL,Healthcare
+231,JM Financial,JMS,Finance
+232,Vesuvius India,VI06,Capital Goods
+233,eClerx Services,ES07,Software & IT Services
+234,Archean Chem,ACI14,Chemicals
+235,Federal Bank,FB,Banks
+236,RITES,R06,Infrastructure
+237,Cyient DLM,CD06,Capital Goods
+238,Patanjali Foods,RSI,Agri
+239,Valor Estate,DR,Real Estate
+240,Gujarat Gas,GGC,Industrial Gases & Fuels
+241,ABB India,ABB,Capital Goods
+242,Ambuja Cements,GAC,Construction Materials
+243,CIEINDIA,MAS,Automobile & Ancillaries
+244,APTUS VALUE,AVH,Finance
+245,Mah Seamless,MS02,Metals & Mining
+246,Prince Pipes,PPF,Plastic Products
+247,SBI,SBI,Banks
+248,Sobha,SD6,Real Estate
+249,Honeywell Autom,TH,Consumer Durables
+250,Manappuram Fin,MGF01,Finance
+251,SJVN,S14,Power
+252,Bombay Burmah,BBT,Agri
+253,Deepak Fert,DFP,Chemicals
+254,Lemon Tree,LTH,Hospitality
+255,Garware HiTech,GP,Plastic Products
+256,Sunflag Iron,SIS05,Metals & Mining
+257,TVS Motor,TVS,Automobile & Ancillaries
+258,V-Mart Retail,VR03,Retailing
+259,Kirloskar Oil,KOE03,Capital Goods
+260,HCL Tech,HCL02,Software & IT Services
+261,Aegis Logistics,AC02,Logistics
+262,Ingersoll Rand,IRI01,Capital Goods
+263,Shree Cements,SC12,Construction Materials
+264,VST,VST,FMCG
+265,TARC,ARG,Real Estate
+266,Motherson SWI,MSW,Automobile & Ancillaries
+267,Sarda Energy,RAS,Metals & Mining
+268,SUMITOMO,SUMIC54292,Chemicals
+269,BLS Internation,BLS,Hospitality
+270,Dabur India,DI,FMCG
+271,Nuvama Wealth,NWML,Finance
+272,IEX,IEE,Power
+273,MRPL,MRP,Oil & Gas
+274,Imagicaaworld,AE16,Hospitality
+275,Rain Industries,PC13,Chemicals
+276,Sterlite Techno,SO03,Electricals
+277,Anand Rathi,ARW,Finance
+278,ESAF SFB,ESF02,Banks
+279,REC,REC02,Finance
+280,UTKARSHBNK,USF01,Banks
+281,Tata Elxsi,TEI,Software & IT Services
+282,Dilip Buildcon,DB03,Real Estate
+283,Infosys,IT,Software & IT Services
+284,Bharti Airtel,BTV,Telecom
+285,Dalmia Bharat,OCL,Construction Materials
+286,Poonawalla Fin,ML07,Finance
+287,Sula Vineyards,SV05,Alcohol
+288,ITD Cementation,THC,Infrastructure
+289,Force Motors,BT,Automobile & Ancillaries
+290,Ratnamani Metal,RMT,Metals & Mining
+291,Apollo Tyres,AT,Automobile & Ancillaries
+292,Mahindra Logist,ML12,Logistics
+293,Berger Paints,BPI02,Chemicals
+294,Ceat,C07,Automobile & Ancillaries
+295,Intellect Desig,IDA,Software & IT Services
+296,UNO Minda,MI44,Automobile & Ancillaries
+297,M&M Financial,MMF04,Finance
+298,NMDC Steel,NS16,Metals & Mining
+299,TCS,TCS,Software & IT Services
+300,UltraTechCement,UTC,Construction Materials
+301,Can Fin Homes,CFH,Finance
+302,Gateway Distri,GD01,Logistics
+303,GE Vernova T&D,GEC,Capital Goods
+304,Orissa Minerals,OMD,Metals & Mining
+305,Star Health,SHA,Diversified
+306,Delta Corp,AW,Miscellaneous
+307,Gland,GP14,Healthcare
+308,Ujjivan Small,USF,Banks
+309,Adani Enterpris,AE01,Trading
+310,HUDCO,HUD,Finance
+311,CHEMPLAST SANMA,CS18,Chemicals
+312,Britannia,BI,FMCG
+313,Grasim,GI01,Diversified
+314,Metropolis,MH09,Healthcare
+315,Responsive Ind,SH10,Construction Materials
+316,Guj Alkali,GAC01,Chemicals
+317,Atul,A06,Chemicals
+318,Subros,S07,Automobile & Ancillaries
+319,AARTIPHARM,AP32,Healthcare
+320,CESC,CES,Power
+321,Delhivery,D05,Logistics
+322,JB Chemicals,JBC,Healthcare
+323,United Spirits,MC08,Alcohol
+324,IOC,IOC,Oil & Gas
+325,Petronet LNG,PLN,Oil & Gas
+326,Supreme Ind,SI48,Plastic Products
+327,Hindustan Foods,HFL,FMCG
+328,IRCTC,IRC,Software & IT Services
+329,Bandhan Bank,BB09,Banks
+330,GSFC,GSF,Chemicals
+331,Hero Motocorp,HHM,Automobile & Ancillaries
+332,TITAGARH,TW04,Manufacturing
+333,Venus Pipes,VPT01,Metals & Mining
+334,Godrej Ind,GS,Chemicals
+335,Rolex Rings,RR10,Metals & Mining
+336,HUL,HL,FMCG
+337,Cyient,IE07,Software & IT Services
+338,JK Tyre & Ind,JKI,Automobile & Ancillaries
+339,RHI Magnesita,OR01,Capital Goods
+340,Kesoram,KI08,Diversified
+341,Clean Science,CST,Chemicals
+342,Five-Star Busin,FBF,Finance
+343,TataTeleservice,HTC02,Telecom
+344,Sona BLW,SBP04,Automobile & Ancillaries
+345,Sonata,SS42,Software & IT Services
+346,Westlife Food,DIC,Hospitality
+347,ITC,ITC,Diversified
+348,Bectors Food,MBF01,FMCG
+349,Rattanindia Ent,IIP,Miscellaneous
+350,Suzlon Energy,SE17,Capital Goods
+351,Fert and Chem,FCT,Chemicals
+352,V-Guard Ind,VI16,Capital Goods
+353,Varroc Engineer,VE08,Automobile & Ancillaries
+354,Havells India,HI01,Capital Goods
+355,IDFC First Bank,IDF01,Banks
+356,Hindalco,H,Metals & Mining
+357,Senco Gold,SG16,Diamond  &  Jewellery
+358,LIC Housing Fin,LIC,Finance
+359,Dhani Services,IS08,Finance
+360,Tata Tech,TTL01,Diversified
+361,Balaji Amines,BA05,Chemicals
+362,Welspun Enter,MSK,Real Estate
+363,Orient Cement,OC12,Construction Materials
+364,SBI Card,SCP03,Finance
+365,Supriya Lifesci,SL19,Healthcare
+366,Suven Pharma,SP42,Healthcare
+367,Reliance Infra,BSE,Power
+368,NFL,NF06,Chemicals
+369,Rategain Travel,RTT,Software & IT Services
+370,IndusInd Bank,IIB,Banks
+371,Jindal Steel,JSP,Metals & Mining
+372,KSB Pumps,KSB,Capital Goods
+373,ISGEC Heavy Eng,SIS06,Capital Goods
+374,Titan Company,TI01,Diamond  &  Jewellery
+375,Whirlpool,WI,Consumer Durables
+376,Patel Eng,PEC,Infrastructure
+377,AAVAS Financier,AF32,Finance
+378,MRF,MRF,Automobile & Ancillaries
+379,India Cements,IC,Construction Materials
+380,TCI Express,TCI08,Logistics
+381,Sai Silks,SSK01,Retailing
+382,Johnson Control,AA02,Consumer Durables
+383,MphasiS,BFL,Software & IT Services
+384,Guj Mineral,GMD,Metals & Mining
+385,Godawari Power,GPI7,Metals & Mining
+386,Castrol,CI01,Automobile & Ancillaries
+387,Dr Reddys Labs,DRL,Healthcare
+388,Info Edge,IEI01,Miscellaneous
+389,Mahindra Holida,MHR,Hospitality
+390,Puravankara,PP27,Real Estate
+391,Cipla,C,Healthcare
+392,KEC Intl,KEC03,Capital Goods
+393,Bajaj Consumer ,BC14,FMCG
+394,Godrej Prop,GP11,Real Estate
+395,Redtape,R08,Footwear
+396,Exide Ind,EI,Automobile & Ancillaries
+397,Railtel,RCO01,Telecom
+398,Wipro,W,Software & IT Services
+399,Kalyani Steels,KS01,Metals & Mining
+400,Happy Forgings,HFL03,Metals & Mining
+401,Laxmi Organic,LOI01,Chemicals
+402,ConfidencePetro,DG01,Industrial Gases & Fuels
+403,MSTC,M14,Trading
+404,Chennai Petro,MR,Oil & Gas
+405,Sundaram Fin,SF20,Finance
+406,SKF India,SKF,Automobile & Ancillaries
+407,Tata Comm,VSN,Telecom
+408,Mazagon Dock,MDS01,Ship Building
+409,COFORGE LTD.,NII02,Software & IT Services
+410,PI Industries,PII,Chemicals
+411,Tega Industries,TI30,Capital Goods
+412,Timken,TT04,Automobile & Ancillaries
+413,Hindustan Aeron,HAL,Aviation
+414,Lux Industries,LHI,Textiles
+415,MMTC Ltd,MMT,Trading
+416,Yatharth HOSP,YHT,Healthcare
+417,Sammaan Capital,IHF01,Finance
+418,Jai Corp,JC01,Metals & Mining
+419,Jio Financial,JFS,Finance
+420,PNB,PNB05,Banks
+421,PVR INOX,PVR,Media & Entertainment
+422,ICICI Bank,ICI02,Banks
+423,Krishna Inst.,KIO01,Healthcare
+424,BEML,BEM,Capital Goods
+425,PG Electroplast,PE06,Consumer Durables
+426,Marico,MI25,FMCG
+427,Healthcare Glob,HGE,Healthcare
+428,Kirloskar Bros,KB02,Capital Goods
+429,Apollo Hospital,AHE,Healthcare
+430,HDFC Bank,HDF01,Banks
+431,ICICI Securitie,ISL03,Finance
+432,JSW Steel,JVS,Metals & Mining
+433,Pidilite Ind,PI11,Chemicals
+434,Kansai Nerolac,GNP,Chemicals
+435,NMDC,NMD01,Metals & Mining
+436,Oil India,OI13,Oil & Gas
+437,Polyplex Corp,PC08,Plastic Products
+438,Shipping Corp,SCI,Logistics
+439,IRB Infra,IID01,Infrastructure
+440,Chola Fin Hold,TII,Finance
+441,DCM Shriram,DCM02,Diversified
+442,Go Digit,GDGIL,Insurance
+443,HEG,HEG,Capital Goods
+444,Yes Bank,YB,Banks
+445,Dodla Dairy,DD02,FMCG
+446,India Pesticide,IP09,Chemicals
+447,R R Kabel,K04,Electricals
+448,Narayana Hruda,NH,Healthcare
+449,Heidelberg Cem,MC14,Construction Materials
+450,Tata Steel,TIS,Metals & Mining
+451,AB Capital,ABC07,Finance
+452,SBFC Finance,SF35,Finance
+453,Container Corp,CCI,Logistics
+454,Hemisphere,HPI01,Real Estate
+455,Greenply Ind,GI19,Construction Materials
+456,GNFC,GNV,Chemicals
+457,Greenpanel Ind,GREEN54285,Construction Materials
+458,Rallis India,RI03,Chemicals
+459,AGI Greenpac,HSI,Containers & Packaging
+460,Polycab,PI41,Electricals
+461,Shilpa,SA04,Healthcare
+462,Tata Chemicals,TC,Chemicals
+463,Voltamp Trans,VT9,Capital Goods
+464,Tata Inv Corp,TIC,Finance
+465,Bajaj Auto,BA06,Automobile & Ancillaries
+466,Infibeam Avenue,IIL03,Software & IT Services
+467,BOMDYEING,BDM,Textiles
+468,Finolex Cables,FC01,Electricals
+469,Maithan Alloys,MA04,Metals & Mining
+470,Triveni Engg,TE10,Agri
+471,Apar Ind,AI40,Capital Goods
+472,Jaiprakash Pow,JHP01,Power
+473,Supreme Petro,SP,Chemicals
+474,Data Patterns,DPI01,Aviation
+475,Sandur Manganes,SMI,Metals & Mining
+476,Asian Paints,API,Chemicals
+477,Prudent Advisor,PCA,Finance
+478,P and G,PGI,FMCG
+479,JTEKT India ,SSS,Automobile & Ancillaries
+480,TD Power System,TPS,Capital Goods
+481,Bosch,MIC,Automobile & Ancillaries
+482,PTC Industries,PTC02,Automobile & Ancillaries
+483,Veedol Corp,TWO,Oil & Gas
+484,Shivalik Bimeta,SBC,Capital Goods
+485,Banco Products,BPI,Automobile & Ancillaries
+486,GMM Pfaudler,GMM01,Capital Goods
+487,Rashtriya Chem,RCF01,Chemicals
+488,Amara Raja,ARB,Automobile & Ancillaries
+489,Coromandel Int,CF06,Chemicals
+490,MOIL,M11,Metals & Mining
+491,Ramco Cements,MC,Construction Materials
+492,Gillette India,ISP,FMCG
+493,Bharat Forge,BFC,Metals & Mining
+494,Indian Bank,IB04,Banks
+495,Jubilant Ing.,JI12,Chemicals
+496,Eveready Ind,EII02,Automobile & Ancillaries
+497,Gravita India,GI24,Metals & Mining
+498,PCBL,PCB01,Chemicals
+499,Shyam Metalics,SME05,Metals & Mining
+500,Azad Eng,AEL03,Aviation
+501,CMS Info System,CIS02,Software & IT Services
+502,Schaeffler Ind,FPB,Automobile & Ancillaries
+503,Carborundum,CU,Manufacturing
+504,Honasa Consumer,HCL07,FMCG
+505,Jyothy Labs,JL,FMCG
+506,Bayer CropScien,HSA01,Chemicals
+507,SAIL,SAI,Metals & Mining
+508,NLC India,NLC,Power
+509,JBM Auto,JBM03,Automobile & Ancillaries
+510,Sanofi India,HMR,Healthcare
+511,NIITMTS,NLS,Software & IT Services
+512,Share India,SIS08,Finance
+513,Chalet Hotels,CH03,Hospitality
+514,Sun TV Network,STV01,Media & Entertainment
+515,Tube Investment,TIIND54076,Automobile & Ancillaries
+516,3M India,B3M,Diversified
+517,Jamna Auto,JAI,Automobile & Ancillaries
+518,SRF,SRF,Diversified
+519,Suprajit Eng,SE15,Automobile & Ancillaries
+520,Alembic Pharma,AP29,Healthcare
+521,IIFL Capital ,IIFLS54277,Finance
+522,Global Health,GH03,Healthcare
+523,Power Mech,PMP,Infrastructure
+524,Bharat Elec,BE03,Aviation
+525,Bank of Baroda,BOB,Banks
+526,Syrma SGS,SST07,Capital Goods
+527,Thomas Cook,TCI,Hospitality
+528,Voltas,V,Consumer Durables
+529,Sharda Motor,SMI04,Automobile & Ancillaries
+530,Bhansali Eng,BEP,Chemicals
+531,Piramal Enter,NP07,Finance
+532,NRB Bearings,NRB,Automobile & Ancillaries
+533,Sun Pharma,SPI,Healthcare
+534,TATA Cons. Prod,TT,Agri
+535,Akums Drugs & P,ADP03,Healthcare
+536,Gujarat Pipavav,GPP03,Logistics
+537,KNR Construct,KC13,Infrastructure
+538,Vijaya Diagnost,VDC01,Healthcare
+539,Electrosteel,EC02,Metals & Mining
+540,Tilaknagar Ind,TI09,Alcohol
+541,ONGC,ONG,Oil & Gas
+542,Syngene Intl,SI62,Healthcare
+543,JTL Ind.,JTL01,Metals & Mining
+544,Nestle,NI,FMCG
+545,United Brewerie,UBB,Alcohol
+546,C. E. Info Syst,CIS01,Software & IT Services
+547,Pricol,PIC01,Automobile & Ancillaries
+548,CCL Products,CC10,Agri
+549,Den Networks,DN02,Telecom
+550,Guj Amb Exports,GAE,Agri
+551,HFCL,HFC,Telecom
+552,Tata Motors,TEL,Automobile & Ancillaries
+553,Balkrishna Ind,BI03,Automobile & Ancillaries
+554,Page Industries,PI35,Textiles
+555,Just Dial,JD02,Software & IT Services
+556,Siemens,S,Capital Goods
+557,JSW Infra,JIL05,Infrastructure
+558,TeamLease Ser.,TS15,Miscellaneous
+559,Tejas Networks,TN,Telecom
+560,Allcargo,AGL02,Logistics
+561,Borosil Renew,BGW,Construction Materials
+562,Balrampur Chini,BCM,Agri
+563,Varun Beverages,VB05,FMCG
+564,Godrej Consumer,GCP,FMCG
+565,HDFC Life,HSL01,Insurance
+566,Ideaforge Tech,IT07,Capital Goods
+567,Godfrey Phillip,GPI,FMCG
+568,Time Techno,TT08,Plastic Products
+569,Blue Dart,BDE,Logistics
+570,Alkyl Amines,AAC,Chemicals
+571,Advanced Enzyme,AET02,Healthcare
+572,Himadri Special,HCI01,Chemicals
+573,Birlasoft,KPI01,Software & IT Services
+574,Aarti Drugs,AD,Healthcare
+575,Jyoti CNC Auto,JCA,Miscellaneous
+576,Adani Total Gas,ADG01,Industrial Gases & Fuels
+577,Dr Lal PathLab,DLP01,Healthcare
+578,PNC Infratech,PI29,Infrastructure
+579,Jai Balaji Ind,JBS,Metals & Mining
+580,Astral Ltd,APT02,Plastic Products
+581,Paras Defence,PDS01,Miscellaneous
+582,Torrent Pharma,TP06,Healthcare
+583,BPCL,BPC,Oil & Gas
+584,Jain Irrigation,JIS02,Plastic Products
+585,Alkem Lab,AL16,Healthcare
+586,Dreamfolks Ser.,DS10,Miscellaneous
+587,Greaves Cotton,G,Capital Goods
+588,Lupin,LC03,Healthcare
+589,Ethos,E10,Consumer Durables
+590,Rossari,RB04,Chemicals
+591,Anupam Rasayan,ARI02,Chemicals
+592,FDC,FDC,Healthcare
+593,Optiemus Infra,AF02,Telecom
+594,Jubilant Food,JF04,FMCG
+595,Rail Vikas,RVN,Infrastructure
+596,Action Const,ACE3,Capital Goods
+597,Schneider Infra,SEI04,Capital Goods
+598,Indian Renew,IREDAL,Power
+599,Rainbow Child,RCM03,Healthcare
+600,Guj Heavy Chem,GHC,Chemicals
+601,Vaibhav Global,VG02,Diamond  &  Jewellery
+602,Chola Invest.,CIF01,Finance
+603,Strides Pharma,SA10,Healthcare
+604,Aditya Birla Re,CTI,Real Estate
+605,Home First,HFF,Finance
+606,Heritage Foods,HFI,FMCG
+607,Bajaj Electric,BE,Consumer Durables
+608,Hikal,HCI,Healthcare
+609,Astra Microwave,AMP01,Miscellaneous
+610,Ipca Labs,IL,Healthcare
+611,ICICI Prudentia,IPL01,Insurance
+612,Ramky Infra,RI29,Infrastructure
+613,GlaxoSmithKline,GI,Healthcare
+614,Biocon,BL03,Healthcare
+615,Rajesh Exports,RE07,Diamond  &  Jewellery
+616,NCC,NCC01,Infrastructure
+617,FIEM Ind,FIE,Automobile & Ancillaries
+618,Jindal Worldwid,JW01,Textiles
+619,Zydus Life,CHC,Healthcare
+620,West Coast Pap,WCP,Paper
+621,JK Paper,CPM01,Paper
+622,Technocraft Ind,TII01,Metals & Mining
+623,DOMS Industries,DIL03,Miscellaneous
+624,Bharat Dynamics,BDL01,Miscellaneous
+625,Max Financial,MI,Finance
+626,Ashok Leyland,AL,Automobile & Ancillaries
+627,Fusion Finance,FMF,Finance
+628,Thirumalai Chem,TC07,Chemicals
+629,Harsha Engineer,HEI,Capital Goods
+630,Zen Tech,ZT01,Miscellaneous
+631,Hathway Cable,HCD,Telecom
+632,Zee Entertain,ZT,Media & Entertainment
+633,Elgi Equipments,EE01,Capital Goods
+634,Jindal Stainles,JS07,Metals & Mining
+635,New India Assur,NIA,Insurance
+636,Aditya Birla F,PFR,Retailing
+637,Usha Martin,UB01,Metals & Mining
+638,Macrotech Dev,MD04,Real Estate
+639,Birla Corp,BC07,Diversified
+640,Abbott India,KP,Healthcare
+641,Lloyds Engineer,LSI01,Capital Goods
+642,Jana SFB,JSFBL,Banks
+643,Mastek,M,Software & IT Services
+644,SBI Life Insura,SLI03,Insurance
+645,Cummins,CI02,Automobile & Ancillaries
+646,Colgate,CPI,FMCG
+647,Saregama India,GCI,Media & Entertainment
+648,Tips Music,TI25,Media & Entertainment
+649,Granules India,GI22,Healthcare
+650,Piramal Pharma,PP37,Healthcare
+651,Jupiter Wagons,CEB,Automobile & Ancillaries
+652,Oracle Fin Serv,S11,Software & IT Services
+653,CRISIL,CRI,Miscellaneous
+654,Fortis Health,FH,Healthcare
+655,Dishman Carboge,DCA,Healthcare
+656,Sun Pharma Adv,SPA,Healthcare
+657,Equinox India,IRE01,Real Estate
+658,Jubilant Pharmo,VOC,Healthcare
+659,Divis Labs,DL03,Healthcare
+660,Aadhar Housing ,AHFL,Finance
+661,Cello World,CWL,FMCG
+662,Linde India,BOC,Diversified
+663,JK Bank,JKB,Banks
+664,General Insuran,GIC12,Insurance
+665,Karnataka Bank,KB04,Banks
+666,Shriram Pistons,SPR01,Automobile & Ancillaries
+667,Laurus Labs,LL06,Healthcare
+668,Tanla Platforms,TS11,Software & IT Services
+669,Indiamart Inter,II22,Retailing
+670,HBL Eng,SNP,Automobile & Ancillaries
+671,Shriram Finance,STF,Finance
+672,Orient Electric,ORIEN54130,FMCG
+673,India Glycols,IG,Chemicals
+674,Aster DM Health,ADH,Healthcare
+675,Religare Enterp,RE09,Finance
+676,Karur Vysya,KVB,Banks
+677,GE Shipping,GES,Logistics
+678,Datamatics Glob,DTL,Software & IT Services
+679,Bajaj Finance,BAF,Finance
+680,Easy Trip,ETP01,Hospitality
+681,Garden Reach Sh,GRS01,Ship Building
+682,NALCO,NAC,Metals & Mining
+683,Wockhardt,W05,Healthcare
+684,Sequent Scienti,VTF,Healthcare
+685,Cochin Shipyard,CS17,Ship Building
+686,IIFL Finance,II15,Finance
+687,Poly Medicure,PM06,Healthcare
+688,IGL,IG04,Industrial Gases & Fuels
+689,Indigo Paints,IP07,Chemicals
+690,Aurobindo Pharm,AP,Healthcare
+691,EPL,EP,Plastic Products
+692,Jupiter Life,JLLHL,Healthcare
+693,Hind Copper,HC07,Metals & Mining
+694,Axis Bank,UTI10,Banks
+695,Sanghvi Movers,SM10,Infrastructure
+696,Route,RML02,Software & IT Services
+697,Bajaj Finserv,BF04,Finance
+698,Sindhu Trade,BCF03,Finance
+699,SignatureGlobal,SIL22,Real Estate
+700,Pfizer,P,Healthcare
+701,LE Travenues Te,LTT,Hospitality
+702,Ahluwalia,ACI12,Real Estate
+703,Campus Active,CA08,Footwear
+704,Glenmark,GP08,Healthcare
+705,Orchid Pharma,OCP,Healthcare
+706,Kaveri Seed,KSC01,Agri
+707,Bata India,BI01,Footwear
+708,Mankind Pharma,MP21,Healthcare
+709,NOCIL,NOC,Chemicals
+710,HINDPETRO,HPC,Oil & Gas
+711,Spandana Sphoor,SSF07,Finance
+712,Dish TV,DTV,Telecom
+713,Bharat Bijlee,BB,Capital Goods
+714,Natco Pharma,NP01,Healthcare
+715,Bharti Hexacom,BHL03,Telecom
+716,M&M,MM,Automobile & Ancillaries
+717,Hind Constr,HCC,Infrastructure
+718,Dynamatic Tech,DT05,Capital Goods
+719,Craftsman,CA07,Capital Goods
+720,Concord Biotech,CB09,Healthcare
+721,Sansera Eng,SE30,Automobile & Ancillaries
+722,Bank of Mah,BM05,Banks
+723,Netweb,NTI03,Consumer Durables
+724,Inox Green,IGE02,Capital Goods
+725,Motilal Oswal,MOF01,Finance
+726,Entero Health,EHSL,Healthcare
+727,Avalon Tech,AT23,Electricals
+728,Capri Global,DSL01,Finance
+729,IFCI,IFC,Finance
+730,Neogen,NC12,Chemicals
+731,Techno Electric,TEE,Infrastructure
+732,Man Infra,MI37,Infrastructure
+733,IFB Industries,IFB02,Consumer Durables
+734,AstraZeneca,AID,Healthcare
+735,Max Healthcare,MHI,Healthcare
+736,Caplin Labs,CPL,Healthcare
+737,CG Power ,CG,Capital Goods
+738,ITI,ITI,Telecom
+739,IDBI Bank,IDB,Banks
+740,Olectra Greente,GT06,Electricals
+741,Hitachi Energy,APP03,Capital Goods
+742,CreditAccess Gr,CG02,Finance
+743,UCO Bank,UCO,Banks
+744,VIP Industries,VIP,FMCG
+745,Kalyan Jeweller,KJI01,Diamond  &  Jewellery
+746,Network 18,NF07,Media & Entertainment
+747,Surya Roshni,SR01,Diversified
+748,IOB,IOB,Banks
+749,Central Bank,CBO01,Banks

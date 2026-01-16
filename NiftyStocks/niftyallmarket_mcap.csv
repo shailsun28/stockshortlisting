@@ -1,0 +1,752 @@
+,Stock,Sector,Industry,Basic,IssuedSize,Mcap(cr),FFmcap(cr),Lastpr,ff_shares,ff_per
+0,GICRE,Financial Services,Insurance,General Insurance,1754400000,91176.17,16025.76152,519.7,308365624.8,17.58
+1,AEGISLOG,Oil Gas & Consumable Fuels,Gas,Trading - Gas,351000000,29308.5,10468.6445,835,125372988,35.72
+2,TECHNOE,Construction,Construction,Civil Construction,116299574,19014.98,8175.623906,1635,50003815.94,43.00
+3,ZENTEC,Capital Goods,Aerospace & Defense,Aerospace & Defense,90290356,23135.1,11131.70685,2562.3,43444197.98,48.12
+4,MTARTECH,Capital Goods,Aerospace & Defense,Aerospace & Defense,30759591,5290.65,3363.911443,1720,19557624.67,63.58
+5,NETWORK18,Media Entertainment & Publication,Entertainment,Media & Entertainment,1542000018,11426.22,4833.759591,74.1,652329229.6,42.30
+6,BASF,Chemicals,Chemicals & Petrochemicals,Specialty Chemicals,43285640,24731.9,6499.172262,5713.65,11374816.91,26.28
+7,IXIGO,Consumer Services,Leisure Services,Tour Travel Related Services,388265878,6410.27,1110.220241,165.1,67245320.47,17.32
+8,CARTRADE,Consumer Services,Retailing,E-Retail/ E-Commerce,47301335,7563.48,5722.395448,1599,35787338.64,75.66
+9,NIACL,Financial Services,Insurance,General Insurance,1648000000,35135.36,5116.797612,213.2,239999888,14.56
+10,RAYMOND,Realty,Realty,Residential Commercial Projects,66573731,11716.98,5862.261194,1760,33308302.24,50.03
+11,NEWGEN,Information Technology,IT - Software,Computers - Software & Consulting,140291802,22081.93,9800.004536,1574,62261782.31,44.38
+12,MAHABANK,Financial Services,Banks,Public Sector Bank,7691554950,42188.18,8605.544732,54.85,1568923379,20.40
+13,RELIGARE,Financial Services,Finance,Investment Company,330295163,10239.15,10139.74838,310,327088657.6,99.03
+14,BDL,Capital Goods,Aerospace & Defense,Aerospace & Defense,366562500,46390.32,11631.72257,1265.55,91910415,25.07
+15,MAHLIFE,Realty,Realty,Residential Commercial Projects,155086018,7458.86,3615.310429,480.95,75170192.92,48.47
+16,ARVINDFASN,Consumer Services,Retailing,Speciality Retail,133259113,7009.43,3905.703096,526,74252910.58,55.72
+17,PAISALO,Financial Services,Finance,Non Banking Financial Company (NBFC),898043980,5235.6,3339.818359,58.3,572867643.1,63.79
+18,DATAPATTNS,Capital Goods,Aerospace & Defense,Aerospace & Defense,55983969,14278.99,7524.871301,2550.55,29502935.84,52.70
+19,KANSAINER,Consumer Durables,Consumer Durables,Paints,808405992,21281.29,5293.954419,263.25,201099883,24.88
+20,SUMICHEM,Chemicals,Fertilizers & Agrochemicals,Pesticides & Agrochemicals,499145736,26454.72,6499.158502,530,122625632.1,24.57
+21,BIKAJI,Fast Moving Consumer Goods,Food Products,Packaged Foods,250382180,19404.62,4827.733362,775,62293333.71,24.88
+22,GODIGIT,Financial Services,Insurance,General Insurance,921639757,31151.42,6085.866757,338,180055229.5,19.54
+23,RAJESHEXPO,Consumer Durables,Consumer Durables,Gems Jewellery And Watches,295259959,6968.14,3166.9895,236,134194470.3,45.45
+24,CYIENTDLM,Capital Goods,Industrial Manufacturing,Industrial Products,79306124,5381.71,1793.92964,678.6,26435744.76,33.33
+25,GVT%26D,Capital Goods,Electrical Equipment,Heavy Electrical Equipment,256046535,54998.8,13377.57708,2148,62279222.89,24.32
+26,BIRLACORPN,Construction Materials,Cement & Cement Products,Cement & Cement Products,77005347,9706.52,3569.088871,1260.5,28314866.09,36.77
+27,SPLPETRO,Chemicals,Chemicals & Petrochemicals,Petrochemicals,188041342,13444.96,4517.518645,715,63182078.95,33.60
+28,AKUMS,Healthcare,Pharmaceuticals & Biotechnology,Pharmaceuticals,157393988,8971.46,864.2473976,570,15162235.05,9.63
+29,IFBIND,Consumer Durables,Consumer Durables,Household Appliances,40518796,7293.38,1818.269625,1800,10101497.92,24.93
+30,SANOFI,Healthcare,Pharmaceuticals & Biotechnology,Pharmaceuticals,23030622,14302.02,5637.56877,6210,9078210.58,39.42
+31,AMIORG,Healthcare,Pharmaceuticals & Biotechnology,Pharmaceuticals,40934461,8719.04,5046.850754,2130,23694135,57.88
+32,DRREDDY,Healthcare,Pharmaceuticals & Biotechnology,Pharmaceuticals,834410880,112253.3,81924.02674,1345.3,608964742,72.98
+33,KEC,Construction,Construction,Civil Construction,266200000,32476.4,15203.53437,1220,124619134.2,46.81
+34,HSCL,Chemicals,Chemicals & Petrochemicals,Specialty Chemicals,493681224,27103.1,13065.78075,549,237992363.4,48.21
+35,TIPSMUSIC,Media Entertainment & Publication,Entertainment,Media & Entertainment,127831590,10507.76,3747.591426,822,45591136.57,35.67
+36,TITAGARH,Capital Goods,Industrial Manufacturing,Railway Wagons,134673768,17386.38,10317.93187,1291,79922012.95,59.34
+37,SSWL,Automobile and Auto Components,Auto Components,Auto Components & Equipments,156929325,3169.97,794.4521342,202,39329313.57,25.06
+38,FIVESTAR,Financial Services,Finance,Non Banking Financial Company (NBFC),293427245,22212.44,9400.483343,757,124180757.5,42.32
+39,JTEKTINDIA,Automobile and Auto Components,Auto Components,Auto Components & Equipments,254280483,4170.2,970.8350523,164,59197259.28,23.28
+40,FORCEMOT,Automobile and Auto Components,Automobiles,Passenger Cars & Utility Vehicles,13032914,8719.02,3214.606568,6690,4805092.03,36.87
+41,DEVYANI,Consumer Services,Leisure Services,Restaurants,1206266378,20843.08,6921.693984,172.79,400584176.4,33.21
+42,HONASA,Fast Moving Consumer Goods,Personal Products,Personal Care,324824006,8461.67,2995.454921,260.5,114988672.6,35.40
+43,DCXINDIA,Capital Goods,Aerospace & Defense,Aerospace & Defense,111386427,3686.89,1469.830607,331,44405758.53,39.87
+44,BAYERCROP,Chemicals,Fertilizers & Agrochemicals,Pesticides & Agrochemicals,50107246,29363.1,8308.787382,5860.05,14178697.08,28.30
+45,UNOMINDA,Automobile and Auto Components,Auto Components,Auto Components & Equipments,574255515,60698.81,18846.31218,1057,178300020.6,31.05
+46,TIMKEN,Capital Goods,Industrial Products,Abrasives & Bearings,75218734,24258.04,11555.9974,3225,35832550.07,47.64
+47,JLHL,Healthcare,Healthcare Services,Hospital,65566022,10385.66,5822.210196,1584,36756377.5,56.06
+48,HONAUT,Capital Goods,Industrial Manufacturing,Industrial Products,8841523,36426.99,9048.827678,41199.9,2196322.728,24.84
+49,KAYNES,Capital Goods,Industrial Manufacturing,Industrial Products,64010770,46695.54,19691.74129,7294.95,26993661.76,42.17
+50,SUDARSCHEM,Chemicals,Chemicals & Petrochemicals,Dyes And Pigments,69227250,7875.98,5444.904179,1137.7,47858874.74,69.13
+51,SAPPHIRE,Consumer Services,Leisure Services,Restaurants,320489306,9938.37,6769.890747,310.1,218313148.9,68.12
+52,UBL,Fast Moving Consumer Goods,Beverages,Breweries & Distilleries,264405149,53746.96,15262.41579,2032.75,75082601.35,28.40
+53,POWERINDIA,Capital Goods,Electrical Equipment,Heavy Electrical Equipment,42381675,55943.81,13846.82049,13200,10490015.52,24.75
+54,JSWSTEEL,Metals & Mining,Ferrous Metals,Iron & Steel,2445453966,227781.81,89210.29019,931.45,957757154.9,39.16
+55,APLLTD,Healthcare,Pharmaceuticals & Biotechnology,Pharmaceuticals,196563124,20717.75,5885.851551,1054,55842993.84,28.41
+56,BHARTIHEXA,Telecommunication,Telecom - Services,Telecom - Cellular & Fixed line services,500000000,75750,8805.9375,1515,58125000,11.63
+57,KFINTECH,Financial Services,Capital Markets,Depositories Clearing Houses and Other Intermediaries,171802200,24687.98,16526.67436,1437,115008172.3,66.94
+58,IRCON,Construction,Construction,Civil Construction,940515740,20578.48,7114.002633,218.8,325137231.8,34.57
+59,TDPOWERSYS,Capital Goods,Electrical Equipment,Heavy Electrical Equipment,156183612,7093.86,4635.964975,454.2,102068801.7,65.35
+60,APOLLOTYRE,Automobile and Auto Components,Auto Components,Tyres & Rubber Products,635100946,33809.6,17669.91065,532.35,331922807.4,52.26
+61,GOPAL,Fast Moving Consumer Goods,Food Products,Packaged Foods,124604370,4959.25,792.3945516,398,19909410.84,15.98
+62,PETRONET,Oil Gas & Consumable Fuels,Gas,LPG/CNG/PNG/LNG Supplier,1500000088,50422.5,25128.96195,336.15,747552043.9,49.84
+63,ICICIBANK,Financial Services,Banks,Private Sector Bank,7058015398,911895.59,910562.3981,1292,7047696579,99.85
+64,DIVISLAB,Healthcare,Pharmaceuticals & Biotechnology,Pharmaceuticals,265468580,155069.49,74050.79828,5841.35,126770007.4,47.75
+65,GLENMARK,Healthcare,Pharmaceuticals & Biotechnology,Pharmaceuticals,282188156,43598.07,23218.8934,1545,150284099.7,53.26
+66,ICICIGI,Financial Services,Insurance,General Insurance,495154900,94198.27,45242.86302,1902.4,237819927.5,48.03
+67,APARINDS,Capital Goods,Electrical Equipment,Other Electrical Equipment,40168315,39928.51,16755.041,9940.3,16855669.35,41.96
+68,NESTLEIND,Fast Moving Consumer Goods,Food Products,Packaged Foods,964157160,208740.03,77449.85523,2165,357736051.9,37.10
+69,JAIBALAJI,Metals & Mining,Ferrous Metals,Iron & Steel,182451386,16858.51,5318.218672,924,57556479.13,31.55
+70,AMBER,Consumer Durables,Consumer Durables,Household Appliances,33823506,20632.34,11522.91355,6100,18890022.22,55.85
+71,NH,Healthcare,Healthcare Services,Hospital,204360804,26342.11,8729.800813,1289,67725374.81,33.14
+72,CAMPUS,Consumer Durables,Consumer Durables,Footwear,305398359,8792.42,2298.030528,287.9,79820442.1,26.14
+73,ANANTRAJ,Realty,Realty,Residential Commercial Projects,341890753,28650.45,11157.40014,838,133143199.7,38.94
+74,HDFCLIFE,Financial Services,Insurance,Life Insurance,2152802811,134281.08,66491.55723,623.75,1065996910,49.52
+75,CENTRALBK,Financial Services,Banks,Public Sector Bank,8680939432,47641,3295.613512,54.88,600512666.1,6.92
+76,LMW,Capital Goods,Industrial Manufacturing,Industrial Products,10683000,18827.72,11850.67481,17624,6724168.641,62.94
+77,CONCORDBIO,Healthcare,Pharmaceuticals & Biotechnology,Pharmaceuticals,104616204,22230.94,6999.345821,2125,32938097.98,31.48
+78,BERGEPAINT,Consumer Durables,Consumer Durables,Paints,1165831177,51879.49,12637.42809,445,283987148.1,24.36
+79,PNBHOUSING,Financial Services,Finance,Housing Finance Company,259855159,22659.37,8879.8445,872,101833079.1,39.19
+80,ZFCVINDIA,Automobile and Auto Components,Auto Components,Auto Components & Equipments,18967584,22059.11,7111.504285,11629.9,6114845.6,32.24
+81,FLUOROCHEM,Chemicals,Chemicals & Petrochemicals,Specialty Chemicals,109850000,47488.16,17608.8928,4323,40733039.1,37.08
+82,IMAGICAA,Consumer Services,Leisure Services,Amusement Parks/ Other Recreation,542329391,4001.85,1035.638393,73.79,140349423.1,25.88
+83,SAFARI,Consumer Durables,Consumer Durables,Plastic Products - Consumer,48885995,13194.33,5444.864599,2699,20173636.9,41.27
+84,SAREGAMA,Media Entertainment & Publication,Entertainment,Media & Entertainment,192809490,9592.27,3775.748524,497.5,75894442.69,39.36
+85,REDINGTON,Services,Commercial Services & Supplies,Trading & Distributors,781774431,16220.26,12302.09088,207.48,592928999.4,75.84
+86,LLOYDSME,Metals & Mining,Ferrous Metals,Sponge Iron,522811645,59582.23,14830.25516,1139.65,130129909.7,24.89
+87,CSBBANK,Financial Services,Banks,Private Sector Bank,173485827,5457.86,3112.663569,314.6,98940355.02,57.03
+88,360ONE,Financial Services,Capital Markets,Stockbroking & Allied,387920015,47448.44,23716.67402,1223.15,193898328.2,49.98
+89,ITC,Fast Moving Consumer Goods,Diversified FMCG,Diversified FMCG,12510811852,582565.95,432660.0826,465.65,9291529746,74.27
+90,PIDILITIND,Chemicals,Chemicals & Petrochemicals,Specialty Chemicals,508646055,151729.12,45566.83359,2983,152755057.3,30.03
+91,RRKABEL,Capital Goods,Industrial Products,Cables - Electricals,113068453,15914.38,4383.298994,1407.5,31142444.01,27.54
+92,AARTIPHARM,Healthcare,Pharmaceuticals & Biotechnology,Pharmaceuticals,90626008,5165.68,2746.686344,570,48187479.72,53.17
+93,RADICO,Fast Moving Consumer Goods,Beverages,Breweries & Distilleries,133787734,33647.62,19605.96061,2515,77956105.79,58.27
+94,JUNIPER,Consumer Services,Leisure Services,Hotels & Resorts,222502384,7787.58,1750.002388,350,50000068.23,22.47
+95,DISHTV,Media Entertainment & Publication,Entertainment,TV Broadcasting & Software Production,1841256054,1997.76,1433.85231,10.85,1321522866,71.77
+96,KIMS,Healthcare,Healthcare Services,Hospital,400138935,23750.25,14530.0683,593.55,244799398.5,61.18
+97,NUVAMA,Financial Services,Capital Markets,Stockbroking & Allied,35875577,24578.36,6188.437241,6851,9032896.279,25.18
+98,ABREL,Forest Materials,Paper Forest & Jute Products,Paper & Paper Products,111695680,29597.68,13817.6176,2649.85,52144904.82,46.68
+99,VENUSPIPES,Capital Goods,Industrial Products,Iron & Steel Products,20367110,3248.55,1667.242398,1595,10452930.4,51.32
+100,NUVOCO,Construction Materials,Cement & Cement Products,Cement & Cement Products,357156153,12643.33,3532.821141,354,99797207.38,27.94
+101,SBILIFE,Financial Services,Insurance,Life Insurance,1002045034,140386.51,62584.72699,1401,446714682.3,44.58
+102,ASTRAZEN,Healthcare,Pharmaceuticals & Biotechnology,Pharmaceuticals,25000000,16195,3981.18446,6478,6145700,24.58
+103,TITAN,Consumer Durables,Consumer Durables,Gems Jewellery And Watches,887786160,296955.59,138206.6963,3344.9,413186332.3,46.54
+104,KAJARIACER,Consumer Durables,Consumer Durables,Ceramics,159272290,18268.53,9524.883576,1147,83041705.1,52.14
+105,INDIACEM,Construction Materials,Cement & Cement Products,Cement & Cement Products,309897201,10511.71,4265.001433,339.2,125737070.5,40.57
+106,GAIL,Oil Gas & Consumable Fuels,Gas,Gas Transmission/Marketing,6575099643,126827.1,52022.31913,192.89,2696994097,41.02
+107,JWL,Capital Goods,Industrial Manufacturing,Railway Wagons,424498049,22672.44,7230.785509,534.1,135382615.8,31.89
+108,GRAPHITE,Capital Goods,Industrial Products,Electrodes & Refractories,195375594,11003.55,3747.854321,563.2,66545708.82,34.06
+109,COROMANDEL,Chemicals,Fertilizers & Agrochemicals,Fertilizers,294622019,54157.42,21484.84406,1838.2,116879795.8,39.67
+110,NAM-INDIA,Financial Services,Capital Markets,Asset Management Company,633384593,47313.83,12890.84199,747,172568165.9,27.25
+111,GLAND,Healthcare,Pharmaceuticals & Biotechnology,Pharmaceuticals,164751723,29161.05,14046.32612,1770,79357774.69,48.17
+112,FORTIS,Healthcare,Healthcare Services,Hospital,754958148,50955.9,35074.72956,674.95,519664116.8,68.83
+113,AADHARHFC,Financial Services,Finance,Housing Finance Company,430679522,18217.74,3459.82281,423,81792501.42,18.99
+114,SRF,Chemicals,Chemicals & Petrochemicals,Specialty Chemicals,296424825,67407.01,32925.42354,2274,144790780.7,48.85
+115,JUBLPHARMA,Healthcare,Pharmaceuticals & Biotechnology,Pharmaceuticals,159281139,17314.66,8223.838374,1087.05,75652806.9,47.50
+116,LICI,Financial Services,Insurance,Life Insurance,6324997701,569882.29,19945.88025,901,221374919.5,3.50
+117,AVALON,Capital Goods,Electrical Equipment,Other Electrical Equipment,66148272,6555.29,2422.46292,991,24444630.88,36.95
+118,THERMAX,Capital Goods,Electrical Equipment,Heavy Electrical Equipment,119156300,55150.9,17877.99074,4628.45,38626301.99,32.42
+119,PAGEIND,Textiles,Textiles & Apparels,Garments & Apparels,11153874,54582.6,29999.087,48936,6130269.535,54.96
+120,BALKRISIND,Automobile and Auto Components,Auto Components,Tyres & Rubber Products,193317190,54224.51,22482.78125,2804.95,80153946.59,41.46
+121,ASIANPAINT,Consumer Durables,Consumer Durables,Paints,959197790,218697.1,102997.147,2280,451741872.8,47.10
+122,KPRMILL,Textiles,Textiles & Apparels,Other Textile Products,341814000,38932.61,10211.20722,1139,89650634.11,26.23
+123,BAJAJCON,Fast Moving Consumer Goods,Personal Products,Personal Care,137052803,2772.58,1680.00772,202.3,83045364.29,60.59
+124,CARBORUNIV,Capital Goods,Industrial Products,Abrasives & Bearings,190348468,25028.92,14589.13224,1314.9,110952408.9,58.29
+125,GRINFRA,Construction,Construction,Civil Construction,96740307,14932.83,3772.063681,1543.6,24436795.03,25.26
+126,LUPIN,Healthcare,Pharmaceuticals & Biotechnology,Pharmaceuticals,456197563,98071.07,51726.01732,2149.75,240614105.4,52.74
+127,ORISSAMINE,Metals & Mining,Minerals & Mining,Industrial Minerals,6000000,4410,2204.3385,7350,2999100,49.99
+128,IPCALAB,Healthcare,Pharmaceuticals & Biotechnology,Pharmaceuticals,253704218,40212.12,21466.91779,1585,135437967.1,53.38
+129,GODREJIND,Diversified,Diversified,Diversified,336752089,37716.23,7327.736233,1120,65426216.36,19.43
+130,DCAL,Healthcare,Pharmaceuticals & Biotechnology,Pharmaceuticals,156783095,4307.62,1749.550972,274.75,63677924.38,40.62
+131,AETHER,Chemicals,Chemicals & Petrochemicals,Specialty Chemicals,132582972,11799.88,2148.074576,890,24135669.39,18.20
+132,VINATIORGA,Chemicals,Chemicals & Petrochemicals,Specialty Chemicals,103665632,17882.32,4405.470847,1725,25538961.43,24.64
+133,INDIASHLTR,Financial Services,Finance,Housing Finance Company,107572499,7525.77,2015.966183,699.6,28815983.17,26.79
+134,NMDC,Metals & Mining,Minerals & Mining,Industrial Minerals,2930605850,62345.71,24442.07404,212.74,1148917648,39.20
+135,EICHERMOT,Automobile and Auto Components,Automobiles,2/3 Wheelers,274132460,129938.79,65121.03158,4740,137386142.6,50.12
+136,ASAHIINDIA,Automobile and Auto Components,Auto Components,Auto Components & Equipments,243089931,18353.29,8287.519771,755,109768473.8,45.16
+137,DABUR,Fast Moving Consumer Goods,Personal Products,Personal Care,1772315023,88713.23,29485.08347,500.55,589053710.3,33.24
+138,SYNGENE,Healthcare,Healthcare Services,Healthcare Research Analytics & Technology,402536981,33974.12,15187.96101,844,179952144.7,44.70
+139,APOLLOHOSP,Healthcare,Healthcare Services,Hospital,143784657,104170.55,73250.54047,7244.9,101106351.3,70.32
+140,SUNPHARMA,Healthcare,Pharmaceuticals & Biotechnology,Pharmaceuticals,2399334970,434279.63,195119.6662,1810,1078009205,44.93
+141,WELCORP,Capital Goods,Industrial Products,Iron & Steel Products,262349395,20253.37,10054.13906,772,130234962,49.64
+142,IPL,Chemicals,Fertilizers & Agrochemicals,Pesticides & Agrochemicals,115163508,2117.74,527.427818,183.89,28681701.99,24.91
+143,JSFB,Financial Services,Banks,Other Bank,104713954,3982.27,793.8021412,380.3,20873051.31,19.93
+144,KOTAKBANK,Financial Services,Banks,Private Sector Bank,1988164150,347670.26,256420.3795,1748.7,1466348599,73.75
+145,HINDALCO,Metals & Mining,Non - Ferrous Metals,Aluminium,2247226523,140328.06,90736.82538,624.45,1453067906,64.66
+146,GODREJCP,Fast Moving Consumer Goods,Personal Products,Personal Care,1023007847,109461.84,40215.84203,1070,375848991,36.74
+147,ASHOKLEY,Capital Goods,Agricultural Commercial & Construction Vehicles,Commercial Vehicles,2936527276,63869.47,31081.62964,217.5,1429040443,48.66
+148,MARUTI,Automobile and Auto Components,Automobiles,Passenger Cars & Utility Vehicles,314402574,341721.01,142841.0923,10868.9,131421847.9,41.80
+149,ICICIPRULI,Financial Services,Insurance,Life Insurance,1445204771,94552.52,25358.32457,654.25,387593803.1,26.82
+150,USHAMART,Capital Goods,Industrial Products,Iron & Steel Products,304741780,11336.39,6257.009424,372,168199178.1,55.19
+151,IIFLCAPS,Financial Services,Capital Markets,Stockbroking & Allied,309661754,10568.76,3711.599027,341.3,108748872.7,35.12
+152,BHARTIARTL,Telecommunication,Telecom - Services,Telecom - Cellular & Fixed line services,5695833021,903928.7,424979.3667,1587,2677878807,47.01
+153,HINDUNILVR,Fast Moving Consumer Goods,Diversified FMCG,Diversified FMCG,2349591262,549827.85,208073.553,2340.1,889165219.6,37.84
+154,SUNTECK,Realty,Realty,Residential Commercial Projects,146489084,7274.65,2672.552875,496.6,53817013.19,36.74
+155,TORNTPHARM,Healthcare,Pharmaceuticals & Biotechnology,Pharmaceuticals,338445440,116423.54,31714.23775,3439.95,92193891.64,27.24
+156,RBA,Consumer Services,Leisure Services,Restaurants,498310306,3971.53,2891.331727,79.7,362776879.1,72.80
+157,AAVAS,Financial Services,Finance,Housing Finance Company,79143780,13177.44,9506.955876,1665,57098834.09,72.15
+158,HCLTECH,Information Technology,IT - Software,Computers - Software & Consulting,2713665096,520399.56,202259.532,1917.7,1054698504,38.87
+159,IOB,Financial Services,Banks,Public Sector Bank,18902412256,99710.22,3608.51303,52.75,684078299.5,3.62
+160,TBOTEK,Consumer Services,Leisure Services,Tour Travel Related Services,108587787,18297.04,2251.469329,1685,13361835.78,12.31
+161,SCHAEFFLER,Automobile and Auto Components,Auto Components,Auto Components & Equipments,156303670,51770.9,13304.96639,3312.2,40169574.28,25.70
+162,HDFCBANK,Financial Services,Banks,Private Sector Bank,7644870903,1358570.01,1349004.317,1777.1,7591043367,99.30
+163,DREAMFOLKS,Services,Transport Infrastructure,Airport & Airport services,53269862,2130.79,724.0503567,400,18101258.92,33.98
+164,APTUS,Financial Services,Finance,Housing Finance Company,499814138,15274.32,6044.338659,305.6,197785950.9,39.57
+165,EMAMILTD,Fast Moving Consumer Goods,Personal Products,Personal Care,436500000,25884.45,11661.25534,593,196648488,45.05
+166,INFY,Information Technology,IT - Software,Computers - Software & Consulting,4152269194,800474.46,692877.0804,1927.8,3594133626,86.56
+167,YATHARTH,Healthcare,Healthcare Services,Hospital,85850233,5374.22,1605.941913,626,25654024.18,29.88
+168,RELINFRA,Power,Power,Integrated Power Utilities,396131194,11477.9,8084.930407,289.75,279031247.9,70.44
+169,KOLTEPATIL,Realty,Realty,Residential Commercial Projects,76004409,2788.98,850.851408,366.95,23187121.08,30.51
+170,3MINDIA,Diversified,Diversified,Diversified,11265070,34707.68,8676.920168,30810,2816267.5,25.00
+171,PRAJIND,Capital Goods,Industrial Manufacturing,Industrial Products,183813088,14925.62,9982.211715,812,122933641.8,66.88
+172,INDIGO,Services,Transport Services,Airline,386390349,169654.34,75833.62489,4390.75,172712235.7,44.70
+173,GUJGASLTD,Oil Gas & Consumable Fuels,Gas,LPG/CNG/PNG/LNG Supplier,688390125,34481.46,8615.262084,500.9,171995649.5,24.99
+174,GLS,Healthcare,Pharmaceuticals & Biotechnology,Pharmaceuticals,122532862,12340.9,3084.27405,1007.15,30623780.47,24.99
+175,DCMSHRIRAM,Diversified,Diversified,Diversified,155942296,16717.01,5266.210509,1072,49125098.03,31.50
+176,ORIENTCEM,Construction Materials,Cement & Cement Products,Cement & Cement Products,205109897,6917.33,3726.497788,337.25,110496598.6,53.87
+177,JUBLFOOD,Consumer Services,Leisure Services,Restaurants,659845200,44374.59,25601.91953,672.5,380697688.1,57.70
+178,HAPPYFORGE,Capital Goods,Industrial Products,Castings & Forgings,94204882,9514.69,1229.355434,1010,12171835.98,12.92
+179,DEEPAKNTR,Chemicals,Chemicals & Petrochemicals,Specialty Chemicals,136393041,35600.63,17906.86748,2610.15,68604744.87,50.30
+180,INOXWIND,Capital Goods,Electrical Equipment,Heavy Electrical Equipment,1303793984,24219.28,12029.69069,185.76,647593168.1,49.67
+181,AUROPHARMA,Healthcare,Pharmaceuticals & Biotechnology,Pharmaceuticals,580801623,72077.48,34634.74345,1241,279087376.7,48.05
+182,RTNINDIA,Consumer Services,Retailing,E-Retail/ E-Commerce,1382269592,9257.06,2318.162086,66.97,346149333.5,25.04
+183,SOUTHBANK,Financial Services,Banks,Private Sector Bank,2616284167,6525.01,6494.234228,24.94,2603943155,99.53
+184,REDTAPE,Consumer Durables,Consumer Durables,Footwear,138201900,11815.57,3170.801488,854.95,37087566.39,26.84
+185,GSPL,Oil Gas & Consumable Fuels,Gas,Gas Transmission/Marketing,564211376,20726.3,10548.25908,367.35,287144659.8,50.89
+186,NTPC,Power,Power,Power Generation,9696666134,323432.3,157732.1104,333.55,4728889534,48.77
+187,BLS,Consumer Services,Leisure Services,Tour Travel Related Services,411740908,19952.96,5620.909696,484.6,115990707.7,28.17
+188,ISEC,Financial Services,Capital Markets,Stockbroking & Allied,325065469,27079.58,6864.02334,833.05,82396294.82,25.35
+189,PIIND,Chemicals,Fertilizers & Agrochemicals,Pesticides & Agrochemicals,151718118,58074.66,30998.86036,3827.8,80983490.15,53.38
+190,DHANI,Financial Services,Finance,Other Financial Services,603233339,5224,3339.656642,86.6,385641644.5,63.93
+191,IREDA,Financial Services,Finance,Financial Institution,2687764706,55502.34,13874.80826,206.5,671903547.8,25.00
+192,NYKAA,Consumer Services,Retailing,E-Retail/ E-Commerce,2858202658,47992.08,22799.98178,167.91,1357869202,47.51
+193,BAJAJFINSV,Financial Services,Finance,Holding Company,1596662097,250675.95,85620.62654,1570,545354309.2,34.16
+194,PGHH,Fast Moving Consumer Goods,Personal Products,Personal Care,32460736,49268.91,14331.78254,15178,9442471.034,29.09
+195,TI,Fast Moving Consumer Goods,Beverages,Breweries & Distilleries,192956374,7965.24,4206.299404,412.8,101896787.9,52.81
+196,IGL,Oil Gas & Consumable Fuels,Gas,LPG/CNG/PNG/LNG Supplier,700000800,26950.03,13465.96019,385,349765199.7,49.97
+197,GPIL,Capital Goods,Industrial Products,Iron & Steel Products,668974940,14643.86,5372.466665,218.9,245430181.1,36.69
+198,UNITDSPR,Fast Moving Consumer Goods,Beverages,Breweries & Distilleries,727350853,112935.77,45730.7413,1552.7,294523998.9,40.49
+199,ALKEM,Healthcare,Pharmaceuticals & Biotechnology,Pharmaceuticals,119565000,64864.01,28295.23899,5425,52157122.56,43.62
+200,SHILPAMED,Healthcare,Pharmaceuticals & Biotechnology,Pharmaceuticals,97790908,7998.81,4422.156624,817.95,54063899.07,55.29
+201,UJJIVANSFB,Financial Services,Banks,Other Bank,1934525812,6629.62,6265.812933,34.27,1828366774,94.51
+202,ASTERDM,Healthcare,Healthcare Services,Hospital,499513060,24256.35,10354.79504,485.6,213237130.2,42.69
+203,BAJFINANCE,Financial Services,Finance,Non Banking Financial Company (NBFC),618996470,422771.49,190803.1168,6829.95,279362391.9,45.13
+204,BALAMINES,Chemicals,Chemicals & Petrochemicals,Specialty Chemicals,32401000,6391.42,2123.383537,1972.6,10764389.82,33.22
+205,MOTHERSON,Automobile and Auto Components,Auto Components,Auto Components & Equipments,7036295067,109414.39,43336.52267,155.5,2786914641,39.61
+206,VMART,Consumer Services,Retailing,Diversified Retail,19797032,7509.71,4174.53355,3793.35,11004873.13,55.59
+207,KTKBANK,Financial Services,Banks,Private Sector Bank,377894469,7933.89,7831.205982,209.95,373003380.9,98.71
+208,RATNAMANI,Capital Goods,Industrial Products,Iron & Steel Products,70092000,22965.64,8477.491821,3276.5,25873620.7,36.91
+209,OLECTRA,Automobile and Auto Components,Automobiles,Passenger Cars & Utility Vehicles,82080737,12188.99,6058.061833,1485,40795029.18,49.70
+210,JKCEMENT,Construction Materials,Cement & Cement Products,Cement & Cement Products,77268251,34893.96,18840.74718,4515.95,41720451.25,53.99
+211,ROSSARI,Chemicals,Chemicals & Petrochemicals,Specialty Chemicals,55356266,4367.61,1383.545096,789,17535425.81,31.68
+212,ESAFSFB,Financial Services,Banks,Other Bank,514991232,1987.87,655.1032794,38.6,169715875.5,32.96
+213,TANLA,Information Technology,IT - Software,Software Products,134617359,9032.82,4814.206562,671,71746744.59,53.30
+214,IOC,Oil Gas & Consumable Fuels,Petroleum Products,Refineries & Marketing,14121238383,194449.45,51515.68791,137.7,3741153806,26.49
+215,TATACONSUM,Fast Moving Consumer Goods,Agricultural Food & other Products,Tea & Coffee,989458618,88502.13,58104.92035,894.45,649616192.7,65.65
+216,ZYDUSLIFE,Healthcare,Pharmaceuticals & Biotechnology,Pharmaceuticals,1006233990,97760.66,24249.04373,971.55,249591310,24.80
+217,INTELLECT,Information Technology,IT - Software,Computers - Software & Consulting,138417844,11419.47,7403.106748,825,89734627.25,64.83
+218,COLPAL,Fast Moving Consumer Goods,Personal Products,Personal Care,271985634,74549.9,36227.7487,2740.95,132172234.8,48.60
+219,BOROLTD,Consumer Durables,Consumer Durables,Glass - Consumer,119468551,5101.31,1544.150364,427,36162771.98,30.27
+220,BHARATFORG,Automobile and Auto Components,Auto Components,Auto Components & Equipments,478088632,61147.54,33390.9573,1279,261070815.5,54.61
+221,ITDCEM,Construction,Construction,Civil Construction,171787584,8812.7,4683.035155,513,91287234.99,53.14
+222,MANAPPURAM,Financial Services,Finance,Non Banking Financial Company (NBFC),846434729,15319.62,9825.055837,180.99,542850756.2,64.13
+223,CHEMPLASTS,Chemicals,Chemicals & Petrochemicals,Commodity Chemicals,158109574,7873.86,3543.818219,498,71161008.41,45.01
+224,WHIRLPOOL,Consumer Durables,Consumer Durables,Household Appliances,126871830,24403.8,11957.86029,1923.5,62167196.7,49.00
+225,BORORENEW,Capital Goods,Industrial Products,Glass - Industrial,130567955,7841.91,2842.888922,600.6,47334147.89,36.25
+226,SANSERA,Automobile and Auto Components,Auto Components,Auto Components & Equipments,61921831,9350.2,6465.314909,1510,42816655.03,69.15
+227,HUDCO,Financial Services,Finance,Financial Institution,2001900000,48289.83,12072.45795,241.22,500475000,25.00
+228,MAXHEALTH,Healthcare,Healthcare Services,Hospital,972132053,113063.82,86208.78721,1163.05,741230275.6,76.25
+229,GRANULES,Healthcare,Pharmaceuticals & Biotechnology,Pharmaceuticals,242493716,14331.38,8538.520728,591,144475816,59.58
+230,CUMMINSIND,Capital Goods,Industrial Products,Compressors Pumps & Diesel Engines,277200000,91670.04,44714.07875,3307,135210398.4,48.78
+231,ERIS,Healthcare,Pharmaceuticals & Biotechnology,Pharmaceuticals,136129282,18690.55,6555.149843,1373,47743261.78,35.07
+232,NRBBEARING,Automobile and Auto Components,Auto Components,Auto Components & Equipments,96922600,2733.22,1344.507865,282,47677583.86,49.19
+233,MUTHOOTMF,Financial Services,Finance,Microfinance Institutions,170492176,3114.89,612.4345015,182.7,33521319.18,19.66
+234,MRF,Automobile and Auto Components,Auto Components,Tyres & Rubber Products,4241143,54229.12,25851.67249,127864.4,2021803.762,47.67
+235,ABBOTINDIA,Healthcare,Pharmaceuticals & Biotechnology,Pharmaceuticals,13675240,39126.3,9594.746314,28611.05,3353510.729,24.52
+236,KSB,Capital Goods,Industrial Products,Compressors Pumps & Diesel Engines,174039220,13314,4000.843785,765,52298611.57,30.05
+237,SAMMAANCAP,Financial Services,Finance,Housing Finance Company,740645813,11242.26,10378.69962,151.79,683753845.5,92.32
+238,CONFIPET,Oil Gas & Consumable Fuels,Gas,LPG/CNG/PNG/LNG Supplier,323729043,2322.76,764.3957337,71.75,106535990.8,32.91
+239,FCL,Chemicals,Chemicals & Petrochemicals,Specialty Chemicals,114575090,3821.08,1292.040633,333.5,38741848.06,33.81
+240,AARTIDRUGS,Healthcare,Pharmaceuticals & Biotechnology,Pharmaceuticals,91270000,3880.34,1466.86706,425.15,34502341.75,37.80
+241,HEROMOTOCO,Automobile and Auto Components,Automobiles,2/3 Wheelers,199999531,86758.8,56155.4119,4337.95,129451496.4,64.73
+242,TCIEXP,Services,Transport Services,Logistics Solution Provider,38380020,3159.64,917.8866486,823.25,11149549.33,29.05
+243,MAHLOG,Services,Transport Services,Logistics Solution Provider,72050341,2698.65,1130.297992,374.55,30177492.77,41.88
+244,DYNAMATECH,Capital Goods,Industrial Manufacturing,Industrial Products,6791443,5616.52,3225.114428,8270,3899775.608,57.42
+245,WOCKPHARMA,Healthcare,Pharmaceuticals & Biotechnology,Pharmaceuticals,162472319,23577.17,11956.31328,1451.15,82391987.58,50.71
+246,JINDALSTEL,Metals & Mining,Ferrous Metals,Iron & Steel,1020088097,92588.3,34387.47836,907.65,378862759.4,37.14
+247,PGHL,Healthcare,Pharmaceuticals & Biotechnology,Pharmaceuticals,16599382,8988.57,4299.006094,5415,7939069.426,47.83
+248,LTFOODS,Fast Moving Consumer Goods,Agricultural Food & other Products,Other Agricultural Products,347252944,14306.82,5651.652229,412,137176025,39.50
+249,STARHEALTH,Financial Services,Insurance,General Insurance,587567681,28511.72,10409.82918,485.25,214525073.3,36.51
+250,HCC,Construction,Construction,Civil Construction,1679880784,7280.6,5912.738128,43.34,1364268142,81.21
+251,NSLNISP,Metals & Mining,Ferrous Metals,Iron & Steel,2930605850,12660.22,4963.387541,43.2,1148932301,39.20
+252,OBEROIRLTY,Realty,Realty,Residential Commercial Projects,363602237,81810.5,26409.90306,2250,117377346.9,32.28
+253,SUNFLAG,Metals & Mining,Ferrous Metals,Iron & Steel,180219448,5050.65,1875.589193,280.25,66925573.33,37.14
+254,SULA,Fast Moving Consumer Goods,Beverages,Breweries & Distilleries,84409629,3494.56,2540.372898,414,61361664.21,72.70
+255,TRIDENT,Textiles,Textiles & Apparels,Other Textile Products,5095955670,17479.13,4140.962723,34.3,1207277762,23.69
+256,SUNTV,Media Entertainment & Publication,Entertainment,TV Broadcasting & Software Production,394084620,27542.57,5922.314452,698.9,84737651.33,21.50
+257,ACE,Capital Goods,Agricultural Commercial & Construction Vehicles,Construction Vehicles,119083196,17779.12,6130.596559,1493,41062267.64,34.48
+258,ZENSARTECH,Information Technology,IT - Software,Computers - Software & Consulting,226859665,17359.3,8732.995917,765.2,114126972.3,50.31
+259,PURVA,Realty,Realty,Residential Commercial Projects,237149686,9603.38,2399.173146,404.95,59246157.45,24.98
+260,CUB,Financial Services,Banks,Private Sector Bank,740985734,13123.6,12737.2396,177.11,719171114,97.06
+261,AUBANK,Financial Services,Banks,Other Bank,744133756,40146.02,30178.76398,539.5,559383947.7,75.17
+262,LINDEINDIA,Chemicals,Chemicals & Petrochemicals,Industrial Gases,85284223,54240.77,13343.93352,6360,20981027.55,24.60
+263,PTCIL,Capital Goods,Industrial Products,Other Industrial Products,14984126,17242.23,5927.897219,11507,5151557.503,34.38
+264,SUPRAJIT,Automobile and Auto Components,Auto Components,Auto Components & Equipments,137069385,6481.33,3582.760277,472.85,75769488.78,55.28
+265,ENDURANCE,Automobile and Auto Components,Auto Components,Auto Components & Equipments,140662848,30876.2,7719.049613,2195.05,35165712,25.00
+266,CASTROLIND,Oil Gas & Consumable Fuels,Petroleum Products,Lubricants,989122384,19744.86,9633.715145,199.62,482602702.4,48.79
+267,JTLIND,Capital Goods,Industrial Products,Iron & Steel Products,383275458,3583.63,1710.944672,93.5,182988735,47.74
+268,KIRLOSENG,Capital Goods,Industrial Products,Compressors Pumps & Diesel Engines,145112459,14917.56,8523.685387,1028,82915227.5,57.14
+269,APLAPOLLO,Capital Goods,Industrial Products,Iron & Steel Products,277524564,43170.33,28067.88308,1555.55,180437035.7,65.02
+270,TATAINVEST,Financial Services,Finance,Investment Company,50595296,33006.35,8623.502346,6523.6,13218931.8,26.13
+271,BAJAJELEC,Consumer Durables,Consumer Durables,Household Appliances,115334628,9065.3,3263.653679,786,41522311.43,36.00
+272,POONAWALLA,Financial Services,Finance,Non Banking Financial Company (NBFC),777931415,24788.78,9214.66051,318.65,289178111.1,37.17
+273,AWL,Fast Moving Consumer Goods,Agricultural Food & other Products,Edible Oil,1299678605,37905.13,4597.285364,291.65,157630219.9,12.13
+274,TIIL,Capital Goods,Industrial Products,Iron & Steel Products,22672798,6688.48,1684.251747,2950,5709327.956,25.18
+275,ULTRACEMCO,Construction Materials,Cement & Cement Products,Cement & Cement Products,288698060,330875.4,130629.94,11460.95,113978282.8,39.48
+276,ONGC,Oil Gas & Consumable Fuels,Oil,Oil Exploration & Production,12580279206,298781.63,92008.3094,237.5,3874034080,30.79
+277,AIAENG,Capital Goods,Industrial Products,Castings & Forgings,93320370,31448.96,13057.92463,3370,38747550.83,41.52
+278,AHLUCONT,Construction,Construction,Civil Construction,66987560,7033.69,3139.981586,1050,29904586.54,44.64
+279,BAJAJ-AUTO,Automobile and Auto Components,Automobiles,2/3 Wheelers,279257608,246305.21,97706.07494,8820,110777862.7,39.67
+280,ARE%26M,Automobile and Auto Components,Auto Components,Auto Components & Equipments,183025364,21926.44,14636.38015,1198,122173457,66.75
+281,HINDPETRO,Oil Gas & Consumable Fuels,Petroleum Products,Refineries & Marketing,2127822518,85112.9,38321.31753,400,958032938.3,45.02
+282,GATEWAY,Services,Transport Services,Logistics Solution Provider,499643836,4059.61,2746.770129,81.25,338064015.9,67.66
+283,ELGIEQUIP,Capital Goods,Industrial Products,Compressors Pumps & Diesel Engines,316909016,18921.05,12847.22456,597.05,215178369.7,67.90
+284,MARICO,Fast Moving Consumer Goods,Agricultural Food & other Products,Edible Oil,1295246044,81503.36,33032.41418,629.25,524948973.9,40.53
+285,CROMPTON,Consumer Durables,Consumer Durables,Household Appliances,643729209,24989.57,24926.89406,388.2,642114736.1,99.75
+286,BRITANNIA,Fast Moving Consumer Goods,Food Products,Packaged Foods,240868296,113159.93,55294.35282,4698,117697643.3,48.86
+287,MMTC,Services,Commercial Services & Supplies,Trading & Distributors,1500000000,11158.5,1123.236927,74.39,150993000,10.07
+288,POWERGRID,Power,Power,Power - Transmission,9300603819,293666.57,142842.6478,315.75,4523916004,48.64
+289,MANYAVAR,Consumer Services,Retailing,Speciality Retail,242912632,31587.14,7906.13582,1300.35,60800060.14,25.03
+290,KPIL,Construction,Construction,Civil Construction,170772546,21782.04,14080.7808,1275.5,110394204.6,64.64
+291,BALMLAWRIE,Diversified,Diversified,Diversified,171003846,3694.54,1396.369145,216.05,64631758.61,37.80
+292,LXCHEM,Chemicals,Chemicals & Petrochemicals,Specialty Chemicals,277023813,6785.7,2047.794819,244.95,83600523.31,30.18
+293,MINDACORP,Automobile and Auto Components,Auto Components,Auto Components & Equipments,239079428,12169.14,4072.598373,509,80011755.85,33.47
+294,METROBRAND,Consumer Durables,Consumer Durables,Footwear,272062951,34795.49,3969.921968,1278.95,31040478.27,11.41
+295,FIEMIND,Automobile and Auto Components,Auto Components,Auto Components & Equipments,26319660,4137.45,1697.69526,1572,10799588.17,41.03
+296,RKFORGE,Automobile and Auto Components,Auto Components,Auto Components & Equipments,180828639,16075.67,9103.955097,889,102406694,56.63
+297,VESUVIUS,Capital Goods,Industrial Products,Electrodes & Refractories,20296080,9711.67,4271.126367,4785,8926073.911,43.98
+298,NIITMTS,Consumer Services,Other Consumer Services,Education,135983849,6187.27,3798.968415,455,83493811.32,61.40
+299,INFIBEAM,Financial Services,Financial Technology (Fintech),Financial Technology (Fintech),2789142846,7195.99,4007.057436,25.8,1553123037,55.68
+300,SFL,Consumer Durables,Consumer Durables,Furniture Home Furnishing,108697341,10362.12,3577.085864,953.3,37523191.69,34.52
+301,GRINDWELL,Capital Goods,Industrial Products,Abrasives & Bearings,110720000,22694.83,9482.400096,2049.75,46261251.84,41.78
+302,DEN,Media Entertainment & Publication,Entertainment,TV Broadcasting & Software Production,477223845,2032.97,505.6899801,42.6,118706568.1,24.87
+303,HCG,Healthcare,Healthcare Services,Hospital,139402732,7416.23,2122.620104,532,39898874.13,28.62
+304,BATAINDIA,Consumer Durables,Consumer Durables,Footwear,128527540,17248.4,8550.081577,1342,63711487.16,49.57
+305,BPCL,Oil Gas & Consumable Fuels,Petroleum Products,Refineries & Marketing,4338505488,125317.73,55833.43529,288.85,1932956043,44.55
+306,AJANTPHARM,Healthcare,Pharmaceuticals & Biotechnology,Pharmaceuticals,124912099,35223.96,11840.88733,2819.9,41990451.2,33.62
+307,TATATECH,Information Technology,IT - Services,IT Enabled Services,405668530,36266.77,10988.10494,894,122909451.2,30.30
+308,TATASTEEL,Metals & Mining,Ferrous Metals,Iron & Steel,12483527171,175331.14,116229.9927,140.45,8275542382,66.29
+309,WONDERLA,Consumer Services,Leisure Services,Amusement Parks/ Other Recreation,63408763,5110.75,1543.169402,806,19146022.35,30.19
+310,EQUITASBNK,Financial Services,Banks,Other Bank,1139321450,7274.57,7246.938651,63.85,1134994307,99.62
+311,ADANIPORTS,Services,Transport Infrastructure,Port & Port services,2160138945,255177.21,86956.22871,1181.3,736106228,34.08
+312,SENCO,Consumer Durables,Consumer Durables,Gems Jewellery And Watches,81802448,9026.49,2846.792824,1103.45,25799019.66,31.54
+313,GOCOLORS,Consumer Services,Retailing,Speciality Retail,54008984,5288.83,2497.110393,979.25,25500233.78,47.21
+314,RELIANCE,Oil Gas & Consumable Fuels,Petroleum Products,Refineries & Marketing,13532286496,1631993.75,816803.0806,1206,6772828198,50.05
+315,GAEL,Fast Moving Consumer Goods,Agricultural Food & other Products,Other Agricultural Products,458670660,5719.62,1734.481434,124.7,139092336.3,30.33
+316,CIPLA,Healthcare,Pharmaceuticals & Biotechnology,Pharmaceuticals,807614040,119236.14,81022.74354,1476.4,548785854.4,67.95
+317,BANDHANBNK,Financial Services,Banks,Private Sector Bank,1610971325,25759.43,13239.31741,159.9,827974822.2,51.40
+318,GRASIM,Construction Materials,Cement & Cement Products,Cement & Cement Products,658509666,163824.03,92437.54776,2487.8,371563420.5,56.42
+319,CAPLIPOINT,Healthcare,Pharmaceuticals & Biotechnology,Pharmaceuticals,76011696,17823.98,4721.715581,2344.9,20136106.36,26.49
+320,M%26MFIN,Financial Services,Finance,Non Banking Financial Company (NBFC),1235529920,32926.87,15721.6596,266.5,589930942,47.75
+321,HINDZINC,Metals & Mining,Non - Ferrous Metals,Zinc,4225319000,198378.73,13961.69643,469.5,297373725.9,7.04
+322,UCOBANK,Financial Services,Banks,Public Sector Bank,11955958176,52976.85,2441.703048,44.31,551050112.3,4.61
+323,HAVELLS,Consumer Durables,Consumer Durables,Consumer Electronics,626941732,103962.61,41875.10077,1658.25,252525860.2,40.28
+324,SAIL,Metals & Mining,Ferrous Metals,Iron & Steel,4130525289,48099.97,16787.70618,116.45,1441623545,34.90
+325,ECLERX,Services,Commercial Services & Supplies,Business Process Outsourcing (BPO)/ Knowledge Process Outsourcing (KPO),47650360,17444.32,7798.378721,3660.9,21301807.54,44.70
+326,CONCOR,Services,Transport Services,Logistics Solution Provider,609294348,47058.85,21215.44676,772.35,274686952.3,45.08
+327,SHREECEM,Construction Materials,Cement & Cement Products,Cement & Cement Products,36080748,97566.49,36307.71132,27041.15,13426837,37.21
+328,VBL,Fast Moving Consumer Goods,Beverages,Other Beverages,3381468767,207926.51,77114.53813,614.9,1254098847,37.09
+329,SBFC,Financial Services,Finance,Non Banking Financial Company (NBFC),1082748631,9196.87,2782.971915,84.94,327639735.7,30.26
+330,JSWINFRA,Services,Transport Infrastructure,Port & Port services,2100001567,64480.55,8131.126078,307.05,264814397.6,12.61
+331,HINDOILEXP,Oil Gas & Consumable Fuels,Oil,Oil Exploration & Production,132294300,2547.99,1903.88992,192.6,98852020.79,74.72
+332,ISGEC,Construction,Construction,Civil Construction,73529510,11122.81,4096.81974,1512.7,27082830.3,36.83
+333,ACI,Chemicals,Chemicals & Petrochemicals,Specialty Chemicals,123181982,8053.64,3739.932299,653.8,57203002.44,46.44
+334,SBICARD,Financial Services,Finance,Non Banking Financial Company (NBFC),951345954,65509.68,20554.38346,688.6,298495257.9,31.38
+335,CHOLAFIN,Financial Services,Finance,Non Banking Financial Company (NBFC),840742100,99880.16,49466.44901,1188,416384251,49.53
+336,JYOTHYLAB,Fast Moving Consumer Goods,Household Products,Household Products,367208644,13748.29,5084.186987,374.4,135795592.6,36.98
+337,ALLCARGO,Services,Transport Services,Logistics Solution Provider,982782096,5051.5,1829.395664,51.4,355913553.3,36.21
+338,FINEORG,Chemicals,Chemicals & Petrochemicals,Specialty Chemicals,30659976,14563.49,3638.745881,4750,7660517.644,24.99
+339,DATAMATICS,Information Technology,IT - Services,IT Enabled Services,59102076,3764.8,1257.349829,637,19738615.83,33.40
+340,CCL,Fast Moving Consumer Goods,Agricultural Food & other Products,Tea & Coffee,133527920,9986.55,5345.801894,747.9,71477495.58,53.53
+341,DCBBANK,Financial Services,Banks,Private Sector Bank,313816112,3838.6,3257.507775,122.32,266310315.1,84.86
+342,MEDANTA,Healthcare,Healthcare Services,Hospital,268587382,29571.47,9123.183158,1101,82862698.98,30.85
+343,LICHSGFIN,Financial Services,Finance,Housing Finance Company,550063000,31848.65,17365.41146,579,299920750.6,54.52
+344,JBCHEPHARM,Healthcare,Pharmaceuticals & Biotechnology,Pharmaceuticals,155512608,29104.18,13340.77613,1871.5,71283869.26,45.84
+345,GULFOILLUB,Oil Gas & Consumable Fuels,Petroleum Products,Lubricants,49240801,5753.3,1580.809906,1168.4,13529697.93,27.48
+346,MAPMYINDIA,Information Technology,IT - Software,Software Products,54403463,9156.1,2330.429603,1683,13846878.21,25.45
+347,GLAXO,Healthcare,Pharmaceuticals & Biotechnology,Pharmaceuticals,169406034,38541.57,9411.118322,2275.1,41365734.79,24.42
+348,JMFINANCIL,Financial Services,Finance,Holding Company,955765816,12424.96,5219.065328,130,401466563.7,42.00
+349,WIPRO,Information Technology,IT - Software,Computers - Software & Consulting,10466387155,320114.45,86396.64956,305.85,2824804628,26.99
+350,AMBUJACEM,Construction Materials,Cement & Cement Products,Cement & Cement Products,2463123478,135681.16,33171.46489,550.85,602186891,24.45
+351,EPIGRAL,Chemicals,Chemicals & Petrochemicals,Specialty Chemicals,43141338,8459.58,2399.561855,1960.9,12237043.48,28.37
+352,JYOTICNC,Capital Goods,Industrial Manufacturing,Industrial Products,227423096,30500.85,4052.739245,1341.15,30218389.03,13.29
+353,CHENNPETRO,Oil Gas & Consumable Fuels,Petroleum Products,Refineries & Marketing,148911400,8826.72,2848.683697,592.75,48058771.77,32.27
+354,LALPATHLAB,Healthcare,Healthcare Services,Healthcare Service Provider,83582252,24701.9,10853.59438,2955.4,36724620.63,43.94
+355,TCS,Information Technology,IT - Software,Computers - Software & Consulting,3618087518,1511293.25,426335.8249,4177.05,1020662489,28.21
+356,EMCURE,Healthcare,Pharmaceuticals & Biotechnology,Pharmaceuticals,189431847,25724.84,1849.487719,1358,13619202.64,7.19
+357,MEDPLUS,Consumer Services,Retailing,Pharmacy Retail,119547156,10113.69,4041.774149,846,47775108.14,39.96
+358,PNCINFRA,Construction,Construction,Civil Construction,256539165,8016.85,3518.739288,312.5,112599657.2,43.89
+359,JKIL,Construction,Construction,Civil Construction,75665506,5720.31,3051.214556,756,40359980.9,53.34
+360,JAMNAAUTO,Automobile and Auto Components,Auto Components,Auto Components & Equipments,398957385,3869.89,1883.926602,97,194219237.3,48.68
+361,SBIN,Financial Services,Banks,Public Sector Bank,8924620034,726464.07,312738.4237,814,3841995377,43.05
+362,BLUESTARCO,Consumer Durables,Consumer Durables,Household Appliances,205614788,41075.67,25843.12507,1997.7,129364394.4,62.92
+363,NAVINFLUOR,Chemicals,Chemicals & Petrochemicals,Specialty Chemicals,49572920,16418.3,11482.48515,3311.95,34669862.63,69.94
+364,VENKEYS,Fast Moving Consumer Goods,Food Products,Meat Products including Poultry,14087336,2493.46,871.2468051,1770,4922298.334,34.94
+365,SHRIRAMFIN,Financial Services,Finance,Non Banking Financial Company (NBFC),376058777,108252.28,80354.25983,2878.6,279143541.4,74.23
+366,KIRLPNU,Capital Goods,Industrial Products,Compressors Pumps & Diesel Engines,64841290,10484.84,6117.902152,1617,37834892.72,58.35
+367,ADANIPOWER,Power,Power,Integrated Power Utilities,3856938941,191574.16,43308.40342,496.7,871922758.6,22.61
+368,GNFC,Chemicals,Chemicals & Petrochemicals,Commodity Chemicals,146940683,8615.13,4884.866134,586.3,83316836.67,56.70
+369,COALINDIA,Oil Gas & Consumable Fuels,Consumable Fuels,Coal,6162728327,236032.49,86753.74351,383,2265110797,36.76
+370,SANDUMA,Oil Gas & Consumable Fuels,Consumable Fuels,Coal,162034938,6626.42,1702.843848,408.95,41639414.3,25.70
+371,RAINBOW,Healthcare,Healthcare Services,Hospital,101551673,15618.65,7646.780391,1538,49718988.24,48.96
+372,LT,Construction,Construction,Civil Construction,1375130635,499034.91,426654.3854,3629,1175680313,85.50
+373,ANANDRATHI,Financial Services,Capital Markets,Financial Products Distributor,41510317,16807.53,7117.012998,4049,17577211.65,42.34
+374,SPANDANA,Financial Services,Finance,Microfinance Institutions,71305144,2363.77,836.3877016,331.5,25230398.24,35.38
+375,DBL,Construction,Construction,Civil Construction,146214971,6850.17,2044.700808,468.5,43643560.48,29.85
+376,ABSLAMC,Financial Services,Capital Markets,Asset Management Company,288366470,23060.67,5763.73689,799.7,72073738.78,24.99
+377,BHEL,Capital Goods,Electrical Equipment,Heavy Electrical Equipment,3482063355,82333.39,30308.89613,236.45,1281831090,36.81
+378,MANINFRA,Construction,Construction,Civil Construction,372188165,8616.16,2807.307338,231.5,121265975.7,32.58
+379,CESC,Power,Power,Integrated Power Utilities,1325570430,24190.33,11478.45899,182.49,628991122.5,47.45
+380,INDGN,Healthcare,Healthcare Services,Healthcare Research Analytics & Technology,239268909,14164.72,2407.860653,592,40673321.84,17.00
+381,JUSTDIAL,Consumer Services,Retailing,Internet & Catalogue Retail,85040282,8384.97,2158.719376,986,21893705.64,25.75
+382,DIXON,Consumer Durables,Consumer Durables,Consumer Electronics,60071225,107887.92,67988.48582,17960,37855504.36,63.02
+383,EASEMYTRIP,Consumer Services,Leisure Services,Tour Travel Related Services,3544081236,5734.32,1938.178385,16.18,1197885281,33.80
+384,RALLIS,Chemicals,Fertilizers & Agrochemicals,Pesticides & Agrochemicals,194468890,5701.83,2534.211601,293.2,86432864.97,44.45
+385,HNDFDS,Fast Moving Consumer Goods,Diversified FMCG,Diversified FMCG,114573353,6221.91,1902.733498,543.05,35037906.23,30.58
+386,FSL,Services,Commercial Services & Supplies,Business Process Outsourcing (BPO)/ Knowledge Process Outsourcing (KPO),696990826,24865.15,11185.73589,356.75,313545505,44.99
+387,NAVA,Power,Power,Power Generation,145105649,14365.46,7254.212151,990,73274870.21,50.50
+388,UTKARSHBNK,Financial Services,Banks,Other Bank,1101526555,3900.51,986.0673008,35.41,278471420.7,25.28
+389,JIOFIN,Financial Services,Finance,Non Banking Financial Company (NBFC),6353141623,194024.95,100040.0378,305.4,3275705233,51.56
+390,LAURUSLABS,Healthcare,Pharmaceuticals & Biotechnology,Pharmaceuticals,539159314,30112.05,21928.97828,558.5,392640613.8,72.82
+391,CIEINDIA,Automobile and Auto Components,Auto Components,Auto Components & Equipments,379362377,17640.35,5898.456928,465,126848536.1,33.44
+392,TATAPOWER,Power,Power,Integrated Power Utilities,3195339547,128580.46,67836.99519,402.4,1685810020,52.76
+393,ORIENTELEC,Consumer Durables,Consumer Durables,Household Appliances,213365899,5206.13,2806.092545,244,115003792.8,53.90
+394,IDBI,Financial Services,Banks,Private Sector Bank,10752402175,81642.99,4251.477046,75.93,559920590.9,5.21
+395,NAUKRI,Consumer Services,Retailing,Internet & Catalogue Retail,129584120,109900.29,66023.47972,8481,77848696.76,60.08
+396,ELECON,Capital Goods,Industrial Manufacturing,Industrial Products,224399930,13520.1,5300.986195,602.5,87983173.35,39.21
+397,SJVN,Power,Power,Power Generation,3929795175,43789.71,7948.444992,111.43,713312841.4,18.15
+398,IRCTC,Consumer Services,Leisure Services,Tour Travel Related Services,800000000,62840,23629.7252,785.5,300824000,37.60
+399,BLUEJET,Healthcare,Pharmaceuticals & Biotechnology,Pharmaceuticals,173465425,9818.14,1374.540028,566,24285159.5,14.00
+400,GODREJAGRO,Fast Moving Consumer Goods,Food Products,Animal Feed,192261405,14015.86,2343.437178,729,32145914.65,16.72
+401,CHOLAHLDNG,Financial Services,Finance,Investment Company,187777462,26927.29,14055.10191,1434,98013262.95,52.20
+402,ABCAPITAL,Financial Services,Finance,Investment Company,2605454311,48432.79,13196.09488,185.89,709887292.5,27.25
+403,GUJALKALI,Chemicals,Chemicals & Petrochemicals,Commodity Chemicals,73445242,5471.67,1284.704467,745,17244355.26,23.48
+404,KESORAMIND,Construction Materials,Cement & Cement Products,Cement & Cement Products,310663663,6843.92,3870.072786,220.3,175672845.5,56.55
+405,BECTORFOOD,Fast Moving Consumer Goods,Food Products,Packaged Foods,61398119,10179.81,4969.497295,1658,29972842.55,48.82
+406,SCHNEIDER,Capital Goods,Electrical Equipment,Heavy Electrical Equipment,239104035,19026.7,4640.955485,795.75,58321778.01,24.39
+407,FUSION,Financial Services,Finance,Microfinance Institutions,101023885,1757.82,736.8921194,174,42350121.81,41.92
+408,NATIONALUM,Metals & Mining,Non - Ferrous Metals,Aluminium,1836631787,39542.68,19254.1229,215.3,894292749.7,48.69
+409,EPL,Capital Goods,Industrial Products,Packaging,318741235,8494.45,3450.251807,266.5,129465358.6,40.62
+410,AARTIIND,Chemicals,Chemicals & Petrochemicals,Specialty Chemicals,362519250,14682.03,8141.346929,405,201020911.8,55.45
+411,THOMASCOOK,Consumer Services,Leisure Services,Tour Travel Related Services,470380562,9629.16,3325.738707,204.71,162460979.3,34.54
+412,NESCO,Services,Commercial Services & Supplies,Diversified Commercial Services,70459960,6750.06,2009.311851,958,20974027.67,29.77
+413,ASKAUTOLTD,Automobile and Auto Components,Auto Components,Auto Components & Equipments,197142600,9245.99,1386.898191,469,29571390,15.00
+414,HAPPSTMNDS,Information Technology,IT - Software,Computers - Software & Consulting,152274811,10765.07,5704.560119,706.95,80692554.2,52.99
+415,POLICYBZR,Financial Services,Financial Technology (Fintech),Financial Technology (Fintech),459220832,95942.71,66519.38508,2089.25,318388824.1,69.33
+416,SIGNATURE,Realty,Realty,Residential Commercial Projects,140510691,17611.61,4899.039168,1253.4,39085999.43,27.82
+417,SYMPHONY,Consumer Durables,Consumer Durables,Household Appliances,68671400,9044.37,2044.008794,1317.05,15519599.06,22.60
+418,VSTIND,Fast Moving Consumer Goods,Cigarettes & Tobacco Products,Cigarettes & Tobacco Products,169861120,5681.85,1725.408745,334.5,51581726.31,30.37
+419,INOXINDIA,Capital Goods,Industrial Products,Other Industrial Products,90763500,9938.15,2449.386124,1094.95,22369844.5,24.65
+420,SWANENERGY,Diversified,Diversified,Diversified,313456886,23231.86,10201.41047,741.15,137642993.6,43.91
+421,KEI,Capital Goods,Industrial Products,Cables - Electricals,95552595,39730.77,24736.33705,4158,59490950.09,62.26
+422,YESBANK,Financial Services,Banks,Private Sector Bank,31349886065,62166.82,37276.34671,19.83,18797955983,59.96
+423,AFFLE,Information Technology,IT - Services,IT Enabled Services,140405510,24191.87,10837.95748,1723,62901668.48,44.80
+424,INOXGREEN,Utilities,Other Utilities,Other Utilities,367016789,6121.84,2165.680498,166.8,129836960.3,35.38
+425,INDIGOPNTS,Consumer Durables,Consumer Durables,Paints,47634707,6726.02,1398.736524,1412,9906066.033,20.80
+426,INDIANB,Financial Services,Banks,Public Sector Bank,1346963981,72749.52,19033.23988,540.1,352402145.5,26.16
+427,ACC,Construction Materials,Cement & Cement Products,Cement & Cement Products,187787263,38684.18,13984.48443,2060,67885846.72,36.15
+428,DMART,Consumer Services,Retailing,Diversified Retail,650733068,221672.22,50301.41673,3406.5,147663046.3,22.69
+429,JSWENERGY,Power,Power,Power Generation,1747768451,116584.89,35508.96083,667.05,532328323.7,30.46
+430,IRB,Construction,Construction,Civil Construction,6039000000,33154.11,10863.77299,54.9,1978829325,32.77
+431,DELHIVERY,Services,Transport Services,Logistics Solution Provider,742808414,25935.16,16198.94269,349.15,463953678.5,62.46
+432,PNB,Financial Services,Banks,Public Sector Bank,11492943268,115825.88,31100.17599,100.78,3085947211,26.85
+433,TATAMOTORS,Automobile and Auto Components,Automobiles,Passenger Cars & Utility Vehicles,3681124896,266623.88,153528.6935,724.3,2119683743,57.58
+434,LATENTVIEW,Information Technology,IT - Software,Computers - Software & Consulting,206471420,9784.68,3362.544625,473.9,70954729.37,34.37
+435,SBCL,Capital Goods,Industrial Products,Iron & Steel Products,57604200,3456.54,1650.594643,600.05,27507618.42,47.75
+436,CHOICEIN,Financial Services,Finance,Holding Company,199379000,10626.9,4227.497994,533,79315159.37,39.78
+437,CGCL,Financial Services,Finance,Non Banking Financial Company (NBFC),618881359,11653.54,3507.224884,188.3,186257296,30.10
+438,COFORGE,Information Technology,IT - Software,Computers - Software & Consulting,66859385,62841.14,62423.36809,9399,66414903.81,99.34
+439,DALBHARAT,Construction Materials,Cement & Cement Products,Cement & Cement Products,187565161,33804.87,14367.27214,1802.3,79716318.82,42.50
+440,WELENT,Construction,Construction,Civil Construction,138413810,7917.27,3342.188412,572,58429867.34,42.21
+441,PARAS,Capital Goods,Aerospace & Defense,Aerospace & Defense,40293665,4069.26,1524.697783,1009.9,15097512.46,37.47
+442,SANGHVIMOV,Capital Goods,Agricultural Commercial & Construction Vehicles,Construction Vehicles,86576000,2686.89,1412.81042,310.35,45523132.59,52.58
+443,GABRIEL,Automobile and Auto Components,Auto Components,Auto Components & Equipments,143643940,7038.55,3102.601227,490,63318392.4,44.08
+444,PRICOLLTD,Automobile and Auto Components,Auto Components,Auto Components & Equipments,121881498,6799.77,4111.262596,557.9,73691747.56,60.46
+445,LEMONTREE,Consumer Services,Leisure Services,Hotels & Resorts,792246464,12141.18,7531.196413,153.25,491432066.1,62.03
+446,GILLETTE,Fast Moving Consumer Goods,Personal Products,Personal Care,32585217,30708.31,7647.812107,9424,8115250.538,24.90
+447,CHAMBLFERT,Chemicals,Fertilizers & Agrochemicals,Fertilizers,400652297,20553.46,7751.204119,513,151095596.9,37.71
+448,MFSL,Financial Services,Insurance,Life Insurance,345114771,38066.16,27164.88676,1103,246281838.2,71.36
+449,BEL,Capital Goods,Aerospace & Defense,Aerospace & Defense,7309778829,212239.43,103706.3396,290.35,3571769919,48.86
+450,JCHAC,Consumer Durables,Consumer Durables,Household Appliances,27190884,4815.51,1209.293833,1771,6828310.745,25.11
+451,STAR,Healthcare,Pharmaceuticals & Biotechnology,Pharmaceuticals,92162714,6267.06,4635.352824,680,68166953.29,73.96
+452,MIDHANI,Capital Goods,Aerospace & Defense,Aerospace & Defense,187340000,6517.56,1694.565236,347.9,48708400,26.00
+453,DODLA,Fast Moving Consumer Goods,Food Products,Dairy Products,60327809,7547.01,2902.413591,1251,23200748.13,38.46
+454,CREDITACC,Financial Services,Finance,Microfinance Institutions,159567284,13052.6,4340.499825,818,53062345.05,33.25
+455,JBMA,Automobile and Auto Components,Auto Components,Auto Components & Equipments,118247133,19497.77,3312.944051,1648.9,20091843.36,16.99
+456,INDHOTEL,Consumer Services,Leisure Services,Hotels & Resorts,1423432227,121810.21,74883.07195,855.75,875057808.4,61.48
+457,TEJASNET,Telecommunication,Telecom - Equipment & Accessories,Telecom - Equipment & Accessories,175131663,21366.06,9503.282915,1220,77895761.6,44.48
+458,BBL,Capital Goods,Electrical Equipment,Other Electrical Equipment,11303120,4181.53,2755.157555,3699.45,7447478.827,65.89
+459,KALAMANDIR,Consumer Services,Retailing,Speciality Retail,153366112,2578.08,909.4037834,168.1,54098975.81,35.27
+460,JAICORPLTD,Capital Goods,Industrial Products,Plastic Products - Industrial,175504995,5546.84,1430.650872,316.05,45266599.32,25.79
+461,PCBL,Chemicals,Chemicals & Petrochemicals,Carbon Black,377462604,17548.24,8150.489003,464.9,175317036,46.45
+462,NETWEB,Information Technology,IT - Services,IT Enabled Services,56366804,15720.7,3924.484515,2789,14071296.22,24.96
+463,ADVENZYMES,Healthcare,Pharmaceuticals & Biotechnology,Biotechnology,111880650,4071.34,1732.675467,363.9,47614055.15,42.56
+464,INGERRAND,Capital Goods,Industrial Products,Compressors Pumps & Diesel Engines,31568000,13085.09,3249.421353,4145.05,7839281.44,24.83
+465,GREAVESCOT,Capital Goods,Industrial Products,Compressors Pumps & Diesel Engines,232481586,5416.82,2335.8957,233,100253034.3,43.12
+466,METROPOLIS,Healthcare,Healthcare Services,Healthcare Service Provider,51267336,10595.42,5336.415236,2066.7,25820947.58,50.37
+467,CELLO,Consumer Durables,Consumer Durables,Houseware,220885034,17004.83,3321.078157,769.85,43139288.91,19.53
+468,HEIDELBERG,Construction Materials,Cement & Cement Products,Cement & Cement Products,226613116,4742.11,1451.601346,209.26,69368314.33,30.61
+469,BSOFT,Information Technology,IT - Software,Computers - Software & Consulting,276600742,15849.22,9349.868442,573,163173969.3,58.99
+470,AVANTIFEED,Fast Moving Consumer Goods,Food Products,Animal Feed,136245630,8433.6,2474.32679,619,39972969.14,29.34
+471,CHALET,Consumer Services,Leisure Services,Hotels & Resorts,218427773,21384.08,6939.112244,979,70879593.91,32.45
+472,TVSMOTOR,Automobile and Auto Components,Automobiles,2/3 Wheelers,475087114,113541.07,56060.3353,2389.9,234571887.1,49.37
+473,LLOYDSENGG,Capital Goods,Industrial Manufacturing,Industrial Products,1161860321,8946.32,3821.073591,77,496243323.6,42.71
+474,ELECTCAST,Capital Goods,Industrial Products,Iron & Steel Products,618184591,8840.04,4720.201052,143,330083989.7,53.40
+475,BOSCHLTD,Automobile and Auto Components,Auto Components,Auto Components & Equipments,29493640,101826.5,29867.03536,34524.9,8650868.029,29.33
+476,IIFL,Financial Services,Finance,Non Banking Financial Company (NBFC),424479416,17306.03,9412.418613,407.7,230866289.3,54.39
+477,RHIM,Capital Goods,Industrial Products,Electrodes & Refractories,206501426,10696.77,3133.86593,518,60499342.28,29.30
+478,ABFRL,Consumer Services,Retailing,Speciality Retail,1071195689,30207.72,11259.62497,282,399277481.1,37.27
+479,TRIVENI,Fast Moving Consumer Goods,Agricultural Food & other Products,Sugar,218897968,9959.86,3881.137368,455,85299722.37,38.97
+480,PEL,Financial Services,Finance,Non Banking Financial Company (NBFC),225477700,24582.71,13031.88256,1090.25,119531140.2,53.01
+481,GOKEX,Textiles,Textiles & Apparels,Garments & Apparels,71466461,8504.15,7223.018108,1189.95,60700181.58,84.94
+482,UPL,Chemicals,Fertilizers & Agrochemicals,Pesticides & Agrochemicals,844433596,42508.79,28589.87997,503.4,567935637.1,67.26
+483,KSCL,Fast Moving Consumer Goods,Agricultural Food & other Products,Other Agricultural Products,51439071,4560.59,1773.188552,886.6,19999870.88,38.88
+484,SAMHI,Consumer Services,Leisure Services,Hotels & Resorts,220052636,4330.64,3051.595562,196.8,155060750.1,70.47
+485,ZYDUSWELL,Fast Moving Consumer Goods,Food Products,Packaged Foods,63632144,12177.28,2445.064556,1913.7,12776634.56,20.08
+486,TVSSCS,Services,Transport Services,Logistics Solution Provider,441101737,7646.5,2416.484724,173.35,139399176.4,31.60
+487,JKTYRE,Automobile and Auto Components,Auto Components,Tyres & Rubber Products,274020027,10518.26,5158.332895,383.85,134384079.6,49.04
+488,ADANIENT,Metals & Mining,Metals & Minerals Trading,Trading - Minerals,1154180729,271140.14,55894.72579,2349.2,237930894.7,20.61
+489,TEGA,Capital Goods,Industrial Manufacturing,Industrial Products,66535492,10729.51,2700.629262,1612.6,16747049.87,25.17
+490,HGINFRA,Construction,Construction,Civil Construction,65171111,9449.81,2406.526693,1450,16596735.81,25.47
+491,CRAFTSMAN,Automobile and Auto Components,Auto Components,Auto Components & Equipments,23855583,12426.37,6374.108125,5209,12236721.3,51.30
+492,ALOKINDS,Textiles,Textiles & Apparels,Other Textile Products,4965240401,10521.34,2623.4341,21.19,1238052903,24.93
+493,ASTRAL,Capital Goods,Industrial Products,Plastic Products - Industrial,268634727,46473.81,21328.92171,1730,123288564.8,45.89
+494,HEMIPROP,Services,Commercial Services & Supplies,Diversified Commercial Services,285000000,4845,1492.991595,170,87823035,30.82
+495,JSL,Metals & Mining,Ferrous Metals,Iron & Steel,823769588,59097.23,23342.2831,717.4,325373335.6,39.50
+496,TEXRAIL,Capital Goods,Industrial Manufacturing,Industrial Products,399467302,8584.15,4386.476355,214.89,204126592.9,51.10
+497,TTML,Telecommunication,Telecom - Services,Telecom - Cellular & Fixed line services,1954927727,15314.9,3926.802597,78.34,501251288.9,25.64
+498,HDFCAMC,Financial Services,Capital Markets,Asset Management Company,213684913,91114.18,43047.98699,4263.95,100958001.4,47.25
+499,CANFINHOME,Financial Services,Finance,Housing Finance Company,133154125,9955.27,6305.507565,747.65,84337692.31,63.34
+500,PVRINOX,Media Entertainment & Publication,Entertainment,Film Production Distribution & Exhibition,98199962,13541.77,9765.935245,1379,70818964.8,72.12
+501,HATHWAY,Media Entertainment & Publication,Entertainment,TV Broadcasting & Software Production,1770104500,2943.68,735.9209459,16.63,442526125,25.00
+502,HOMEFIRST,Financial Services,Finance,Housing Finance Company,89679747,8976.94,4722.563071,1001,47178452.26,52.61
+503,TRENT,Consumer Services,Retailing,Speciality Retail,355487461,244575.37,152633.8652,6880,221851548.2,62.41
+504,ORCHPHARMA,Healthcare,Pharmaceuticals & Biotechnology,Pharmaceuticals,50719105,9002.64,2715.493654,1775,15298555.8,30.16
+505,GHCL,Chemicals,Chemicals & Petrochemicals,Commodity Chemicals,95754786,6310.24,4985.676766,659,75655186.14,79.01
+506,IRFC,Financial Services,Finance,Financial Institution,13068506000,193740.6,26418.85589,148.25,1782047615,13.64
+507,HARSHA,Capital Goods,Industrial Products,Other Industrial Products,91044105,4561.31,1158.134768,501,23116462.44,25.39
+508,GMRAIRPORT,Services,Transport Infrastructure,Airport & Airport services,10558975952,82571.19,27970.49584,78.2,3576789750,33.87
+509,SEQUENT,Healthcare,Pharmaceuticals & Biotechnology,Pharmaceuticals,250301995,4430.1,2084.093896,176.99,117752070.5,47.04
+510,KNRCON,Construction,Construction,Civil Construction,281234600,9162.62,4689.962021,325.8,143952179.9,51.19
+511,TEAMLEASE,Services,Commercial Services & Supplies,Diversified Commercial Services,16768900,4822.4,3267.417298,2875.8,11361768.19,67.75
+512,GMMPFAUDLR,Capital Goods,Industrial Manufacturing,Industrial Products,44957224,5435.33,4045.205101,1209,33459099.26,74.42
+513,KALYANKJIL,Consumer Durables,Consumer Durables,Gems Jewellery And Watches,1031435375,74253.03,22442.90486,719.9,311750310.7,30.22
+514,HERITGFOOD,Fast Moving Consumer Goods,Food Products,Dairy Products,92796000,4412.45,2030.64911,475.5,42705554.36,46.02
+515,CLEAN,Chemicals,Chemicals & Petrochemicals,Specialty Chemicals,106264253,15268.05,3221.80239,1436.8,22423457.61,21.10
+516,RATEGAIN,Information Technology,IT - Software,Computers - Software & Consulting,117935611,8267.29,4266.209102,701,60858903.02,51.60
+517,TATACHEM,Chemicals,Chemicals & Petrochemicals,Commodity Chemicals,254756278,26162.2,16040.147,1026.95,156192093.1,61.31
+518,VEDL,Metals & Mining,Diversified Metals,Diversified Metals,3910388057,186584.17,80767.99409,477.15,1692717051,43.29
+519,WESTLIFE,Consumer Services,Leisure Services,Restaurants,155643850,12762.8,5540.278562,820,67564372.71,43.41
+520,EIDPARRY,Chemicals,Fertilizers & Agrochemicals,Fertilizers,177586563,16897.36,9618.282301,951.5,101085468.2,56.92
+521,IDEAFORGE,Capital Goods,Aerospace & Defense,Aerospace & Defense,43037020,2521.97,1207.955236,586,20613570.58,47.90
+522,WSTCSTPAPR,Forest Materials,Paper Forest & Jute Products,Paper & Paper Products,66048908,3704.35,1562.499802,560.85,27859495.44,42.18
+523,LANDMARK,Automobile and Auto Components,Automobiles,Auto Dealer,41330910,2588.97,1244.387566,626.4,19865701.89,48.07
+524,SUVENPHAR,Healthcare,Pharmaceuticals & Biotechnology,Pharmaceuticals,254564956,30010.66,14933.90595,1178.9,126676613.4,49.76
+525,MUTHOOTFIN,Financial Services,Finance,Non Banking Financial Company (NBFC),401463891,83133.14,22142.0949,2070.75,106927900,26.63
+526,RVNL,Construction,Construction,Civil Construction,2085020100,90604.55,24606.92689,434.55,566262268.9,27.16
+527,RAIN,Chemicals,Chemicals & Petrochemicals,Petrochemicals,336345679,5791.2,3339.669159,172.18,193963826.2,57.67
+528,TIRUMALCHM,Chemicals,Chemicals & Petrochemicals,Commodity Chemicals,102388120,3420.28,1959.130185,334.05,58647812.75,57.28
+529,VOLTAS,Consumer Durables,Consumer Durables,Household Appliances,330884740,55725.95,38363.58534,1684.15,227791974.2,68.84
+530,JINDALSAW,Capital Goods,Industrial Products,Iron & Steel Products,639508234,19409.07,7009.781492,303.5,230964793.8,36.12
+531,VTL,Textiles,Textiles & Apparels,Other Textile Products,289174800,15212.04,5386.005432,526.05,102385808,35.41
+532,SURYAROSNI,Capital Goods,Industrial Products,Iron & Steel Products,108817948,5969.21,2163.784372,548.55,39445526.79,36.25
+533,CANBK,Financial Services,Banks,Public Sector Bank,9070651260,90407.18,33509.87371,99.67,3362082243,37.07
+534,SONATSOFTW,Information Technology,IT - Software,Computers - Software & Consulting,280424816,17896.71,12389.89355,638.2,194138100.1,69.23
+535,MANKIND,Healthcare,Pharmaceuticals & Biotechnology,Pharmaceuticals,400662138,112185.4,26371.19729,2800,94182847.46,23.51
+536,KRBL,Fast Moving Consumer Goods,Agricultural Food & other Products,Other Agricultural Products,228889892,6843.81,2695.214689,299,90140959.49,39.38
+537,MOTILALOFS,Financial Services,Capital Markets,Stockbroking & Allied,598517772,55243.19,13450.5015,923,145725910.1,24.35
+538,INDIAGLYCO,Chemicals,Chemicals & Petrochemicals,Commodity Chemicals,30961500,4126.86,1559.902928,1332.9,11703075.46,37.80
+539,ANURAS,Chemicals,Chemicals & Petrochemicals,Specialty Chemicals,109872492,7828.96,1636.136129,712.55,22961702.74,20.90
+540,ETHOSLTD,Consumer Durables,Consumer Durables,Gems Jewellery And Watches,24480443,7669.72,3473.68648,3133,11087412.96,45.29
+541,CAMS,Financial Services,Capital Markets,Depositories Clearing Houses and Other Intermediaries,49365759,24436.05,23641.61026,4950,47760828.81,96.75
+542,TATACOMM,Telecommunication,Telecom - Services,Telecom - Cellular & Fixed line services,285000000,48776.33,20046.72814,1711.45,117133005,41.10
+543,KIRLOSBROS,Capital Goods,Industrial Products,Compressors Pumps & Diesel Engines,79408926,17387.78,5530.216767,2189.65,25256167.73,31.81
+544,EIHOTEL,Consumer Services,Leisure Services,Hotels & Resorts,625364182,25858.81,8814.750787,413.5,213174142.4,34.09
+545,NBCC,Construction,Construction,Civil Construction,2700000000,25374.6,9703.957529,93.98,1032555600,38.24
+546,MGL,Oil Gas & Consumable Fuels,Gas,LPG/CNG/PNG/LNG Supplier,98777778,12041.01,6923.460994,1219,56796234.57,57.50
+547,INDUSTOWER,Telecommunication,Telecom - Services,Telecom - Infrastructure,2638162757,88431.22,41546.75372,335.2,1239461626,46.98
+548,AGI,Capital Goods,Industrial Products,Packaging,64697381,8040.91,3152.054369,1242.85,25361502.75,39.20
+549,M%26M,Automobile and Auto Components,Automobiles,Passenger Cars & Utility Vehicles,1243528831,362731.14,259543.2006,2916.95,889775966.8,71.55
+550,OPTIEMUS,Telecommunication,Telecom - Equipment & Accessories,Telecom - Equipment & Accessories,85857191,6173.13,1549.814182,719,21555134.66,25.11
+551,STLTECH,Telecommunication,Telecom - Equipment & Accessories,Telecom - Equipment & Accessories,487813555,5744,3149.71344,117.75,267491587.3,54.83
+552,GRAVITA,Metals & Mining,Minerals & Mining,Industrial Minerals,69037914,16057.87,5643.555737,2325.95,24263443.91,35.15
+553,NAZARA,Media Entertainment & Publication,Entertainment,Digital Entertainment,76541640,7654.16,4093.462216,1000,40934622.16,53.48
+554,KARURVYSYA,Financial Services,Banks,Private Sector Bank,804783774,17785.72,17320.74929,221,783744311.8,97.39
+555,TRITURBINE,Capital Goods,Electrical Equipment,Heavy Electrical Equipment,317876913,23967.92,8401.570603,754,111426665.8,35.05
+556,PRINCEPIPE,Capital Goods,Industrial Products,Plastic Products - Industrial,110561079,4466.67,1692.344417,404,41889713.29,37.89
+557,SONACOMS,Automobile and Auto Components,Auto Components,Auto Components & Equipments,621435525,36633.62,26342.14015,589.5,446855643,71.91
+558,FDC,Healthcare,Pharmaceuticals & Biotechnology,Pharmaceuticals,162810084,8014.33,2414.195609,492.25,49044095.65,30.12
+559,POLYMED,Healthcare,Healthcare Equipment & Supplies,Medical Equipment & Supplies,101325715,26004.74,9735.939912,2566.45,37935435.76,37.44
+560,VIJAYA,Healthcare,Healthcare Services,Healthcare Service Provider,102629462,10519.52,4845.427599,1025,47272464.38,46.06
+561,ADANIENSOL,Power,Power,Power Distribution,1201282642,92456.72,28107.85946,769.65,365203137.3,30.40
+562,FINCABLES,Capital Goods,Industrial Products,Cables - Electricals,152939345,17588.02,8683.04949,1150,75504778.17,49.37
+563,HFCL,Telecommunication,Telecom - Services,Telecom - Infrastructure,1442672812,16336.83,10130.27033,113.24,894584098.6,62.01
+564,ATGL,Oil Gas & Consumable Fuels,Gas,LPG/CNG/PNG/LNG Supplier,1099810083,74127.2,18637.72767,674,276524149.4,25.14
+565,RENUKA,Fast Moving Consumer Goods,Agricultural Food & other Products,Sugar,2128489773,8450.1,3154.669025,39.7,794626958.5,37.33
+566,PGEL,Consumer Durables,Consumer Durables,Consumer Electronics,283093658,26016.31,11979.44278,919,130353022.7,46.05
+567,BANKINDIA,Financial Services,Banks,Public Sector Bank,4552667866,46883.37,12479.08822,102.98,1211797264,26.62
+568,VOLTAMP,Capital Goods,Electrical Equipment,Heavy Electrical Equipment,14461594,14345.83,8892.649406,9919.95,8964409.504,61.99
+569,JUBLINGREA,Chemicals,Chemicals & Petrochemicals,Specialty Chemicals,159281139,12230.4,5682.073663,767.85,73999787.24,46.46
+570,WABAG,Utilities,Other Utilities,Water Supply & Management,62190428,10056.81,8132.804777,1617.1,50292528.46,80.87
+571,SYRMA,Capital Goods,Industrial Manufacturing,Industrial Products,178158012,10582.59,3541.547036,594,59622003.98,33.47
+572,GMDCLTD,Metals & Mining,Minerals & Mining,Industrial Minerals,318000000,10444.71,2709.702449,328.45,82499694,25.94
+573,RECLTD,Financial Services,Finance,Financial Institution,2633224000,134623.58,63683.14461,511.25,1245636080,47.30
+574,BOMDYEING,Textiles,Textiles & Apparels,Other Textile Products,206534900,4141.02,1889.131348,200.5,94221014.85,45.62
+575,MRPL,Oil Gas & Consumable Fuels,Petroleum Products,Refineries & Marketing,1752598777,24711.64,2576.68299,141,182743474.5,10.43
+576,PARADEEP,Chemicals,Fertilizers & Agrochemicals,Fertilizers,815210093,8845.03,3884.568905,108.5,358024783.9,43.92
+577,AZAD,Capital Goods,Electrical Equipment,Heavy Electrical Equipment,59112993,9901.43,3376.000222,1675,20155225.21,34.10
+578,MAITHANALL,Metals & Mining,Ferrous Metals,Ferro & Silica Manganese,29111550,3406.05,851.2471655,1170,7275616.799,24.99
+579,MHRIL,Consumer Services,Leisure Services,Hotels & Resorts,202007732,7276.32,2403.426213,360.2,66724769.94,33.03
+580,EVEREADY,Fast Moving Consumer Goods,Household Products,Household Products,72687260,2919.85,1597.077601,401.7,39757968.66,54.70
+581,UNIONBANK,Financial Services,Banks,Public Sector Bank,7633605607,89198.68,22515.97718,116.85,1926912895,25.24
+582,FEDERALBNK,Financial Services,Banks,Private Sector Bank,2454612022,47619.47,47415.75712,194,2444111192,99.57
+583,FINPIPE,Capital Goods,Industrial Products,Plastic Products - Industrial,620476905,14885.24,6793.638855,239.9,283186279.9,45.64
+584,MSUMI,Automobile and Auto Components,Auto Components,Auto Components & Equipments,4421107932,26460.33,10121.15598,59.85,1691087047,38.25
+585,ESCORTS,Capital Goods,Agricultural Commercial & Construction Vehicles,Tractors,111877754,35465.25,10623.9697,3170,33514099.99,29.96
+586,INDUSINDBK,Financial Services,Banks,Private Sector Bank,779051673,72521.92,61406.70309,930.9,659648760.2,84.67
+587,SUNDRMFAST,Automobile and Auto Components,Auto Components,Auto Components & Equipments,210128370,22769.51,11594.43951,1083.6,106999257.2,50.92
+588,POWERMECH,Construction,Construction,Civil Construction,31616292,8087.61,3373.453512,2558.05,13187598.02,41.71
+589,DELTACORP,Consumer Services,Leisure Services,Amusement Parks/ Other Recreation,267771097,3025.81,1997.687391,113,176786494.8,66.02
+590,BEPL,Chemicals,Chemicals & Petrochemicals,Specialty Chemicals,248858460,3515.87,1331.773761,141.28,94264847.2,37.88
+591,HBLPOWER,Automobile and Auto Components,Auto Components,Auto Components & Equipments,277194946,18098.06,7336.663154,652.9,112370396,40.54
+592,TIMETECHNO,Capital Goods,Industrial Products,Plastic Products - Industrial,226929066,10608.93,5137.949092,467.5,109902654.4,48.43
+593,SUBROS,Automobile and Auto Components,Auto Components,Auto Components & Equipments,65235750,4031.57,1180.624926,618,19103963.21,29.28
+594,VGUARD,Consumer Durables,Consumer Durables,Household Appliances,435375928,18046.33,7549.953777,414.5,182146050.1,41.84
+595,QUESS,Services,Commercial Services & Supplies,Diversified Commercial Services,148687335,10338.97,4450.680102,695.35,64006329.22,43.05
+596,NATCOPHARM,Healthcare,Pharmaceuticals & Biotechnology,Pharmaceuticals,179109870,25525.84,12697.3712,1425.15,89094980.85,49.74
+597,PATANJALI,Fast Moving Consumer Goods,Agricultural Food & other Products,Edible Oil,361994853,62625.11,17028.08042,1730,98428210.5,27.19
+598,SCI,Services,Transport Services,Shipping,465799010,9893.57,3581.898116,212.4,168639271,36.20
+599,AXISBANK,Financial Services,Banks,Private Sector Bank,3094964632,331161.22,304727.5962,1070,2847921460,92.02
+600,GREENPLY,Consumer Durables,Consumer Durables,Plywood Boards/ Laminates,124873295,3948.49,1882.183717,316.2,59525101.75,47.67
+601,DEEPAKFERT,Chemicals,Chemicals & Petrochemicals,Commodity Chemicals,126237825,14466.85,7702.818942,1146,67214824.97,53.24
+602,BANKBARODA,Financial Services,Banks,Public Sector Bank,5171362179,123854.12,44553.92024,239.5,1860288945,35.97
+603,SUPREMEIND,Capital Goods,Industrial Products,Plastic Products - Industrial,127026870,61608.03,31256.52697,4850,64446447.36,50.73
+604,GSFC,Chemicals,Fertilizers & Agrochemicals,Fertilizers,398477530,8164.8,4560.37812,204.9,222566038.1,55.85
+605,NEULANDLAB,Healthcare,Pharmaceuticals & Biotechnology,Pharmaceuticals,12829889,17849.33,11943.28778,13912.3,8584696.838,66.91
+606,LTF,Financial Services,Finance,Investment Company,2494269202,34011.85,10920.56036,136.36,800862449.6,32.11
+607,NHPC,Power,Power,Power Generation,10045034805,81766.58,25567.75647,81.4,3141002023,31.27
+608,ALKYLAMINE,Chemicals,Chemicals & Petrochemicals,Specialty Chemicals,51136038,9516.42,2575.789468,1861,13840889.13,27.07
+609,TARC,Realty,Realty,Residential Commercial Projects,295096335,5245.04,1783.718236,177.74,100355476.3,34.01
+610,CENTURYPLY,Consumer Durables,Consumer Durables,Plywood Boards/ Laminates,222172990,17046.22,4656.073442,767.25,60685219.18,27.31
+611,SINDHUTRAD,Diversified,Diversified,Diversified,1541928780,3423.08,856.8384745,22.2,385963276.8,25.03
+612,SHYAMMETL,Capital Goods,Industrial Products,Iron & Steel Products,279131853,21488.97,5376.560708,769.85,69839068.75,25.02
+613,MSTCLTD,Services,Commercial Services & Supplies,Trading & Distributors,70400000,4748.48,1652.860415,674.5,24504972.8,34.81
+614,RAMKY,Construction,Construction,Civil Construction,69197791,4176.43,1260.881731,603.55,20891089.89,30.19
+615,VIPIND,Consumer Durables,Consumer Durables,Plastic Products - Consumer,142019428,6615.26,3094.918633,465.8,66443079.29,46.78
+616,SKFINDIA,Capital Goods,Industrial Products,Abrasives & Bearings,49437963,22345.96,10496.61214,4520,23222593.24,46.97
+617,DLF,Realty,Realty,Residential Commercial Projects,2475315036,206069.98,53273.8286,832.5,639925869.1,25.85
+618,NOCIL,Chemicals,Chemicals & Petrochemicals,Specialty Chemicals,166960180,4190.7,2722.245531,251,108455997.2,64.96
+619,CIGNITITEC,Information Technology,IT - Services,IT Enabled Services,27300084,5105.39,2519.478695,1870.1,13472427.65,49.35
+620,MOIL,Metals & Mining,Minerals & Mining,Industrial Minerals,203485211,6837.1,2412.300898,336,71794669.57,35.28
+621,COCHINSHIP,Capital Goods,Industrial Manufacturing,Ship Building & Allied Services,263080780,39199.04,10637.16807,1490,71390389.7,27.14
+622,JISLJALEQS,Capital Goods,Industrial Products,Plastic Products - Industrial,670056961,4633.44,2507.568863,69.15,362627456.7,54.12
+623,ZEEL,Media Entertainment & Publication,Entertainment,TV Broadcasting & Software Production,960519420,12058.36,11570.39511,125.54,921650080.6,95.95
+624,PARKHOTELS,Consumer Services,Leisure Services,Hotels & Resorts,213374246,3825.8,1064.284063,179.3,59357728,27.82
+625,GPPL,Services,Transport Infrastructure,Port & Port services,483439910,8897.71,4979.648754,184.05,270559562.8,55.97
+626,PATELENG,Construction,Construction,Civil Construction,844376117,4492.08,2667.00236,53.2,501316233.2,59.37
+627,PTC,Power,Power,Power Trading,296008321,4389.8,3527.439692,148.3,237858374.4,80.36
+628,POLYCAB,Capital Goods,Industrial Products,Cables - Electricals,150419665,108422.49,33935.15656,7208,47079850.95,31.30
+629,STYLAMIND,Consumer Durables,Consumer Durables,Plywood Boards/ Laminates,16948060,4155.92,1712.014016,2452.15,6981685.525,41.19
+630,NLCINDIA,Power,Power,Power Generation,1386636609,32627.56,7655.567402,235.3,325353480.8,23.46
+631,HAL,Capital Goods,Aerospace & Defense,Aerospace & Defense,668775000,281892.01,79947.39193,4215.05,189671277.8,28.36
+632,IDEA,Telecommunication,Telecom - Services,Telecom - Cellular & Fixed line services,69699816640,51508.16,17392.60738,7.39,23535327985,33.77
+633,TECHM,Information Technology,IT - Software,Computers - Software & Consulting,978514552,164962.88,106861.1363,1685.85,633870963.1,64.78
+634,SARDAEN,Metals & Mining,Ferrous Metals,Iron & Steel,352381270,16248.3,4310.869065,461.1,93490979.51,26.53
+635,VARROC,Automobile and Auto Components,Auto Components,Auto Components & Equipments,152786400,9136.63,2283.645029,598,38188043.96,24.99
+636,HINDWAREAP,Consumer Durables,Consumer Durables,Sanitary Ware,83646357,2375.56,1148.496066,284,40440002.34,48.35
+637,PPLPHARMA,Healthcare,Pharmaceuticals & Biotechnology,Pharmaceuticals,1325748130,33316.05,15433.36055,251.3,614140889.5,46.32
+638,EMUDHRA,Information Technology,IT - Services,IT Enabled Services,82811707,7879.12,2542.276815,951.45,26720025.38,32.27
+639,INDIAMART,Consumer Services,Retailing,Internet & Catalogue Retail,59979148,13615.27,6899.141505,2270,30392693.85,50.67
+640,RESPONIND,Consumer Durables,Consumer Durables,Furniture Home Furnishing,266608544,6734.53,773.5081214,252.6,30621857.54,11.49
+641,WELSPUNLIV,Textiles,Textiles & Apparels,Other Textile Products,959152514,15730.1,4429.832458,164,270111735.2,28.16
+642,ENTERO,Consumer Services,Retailing,Pharmacy Retail,43493767,6139.15,1795.380739,1411.5,12719665.17,29.24
+643,RAILTEL,Telecommunication,Telecom - Services,Other Telecom Services,320938407,12909.75,3505.435356,402.25,87145689.41,27.15
+644,ASHOKA,Construction,Construction,Civil Construction,280723217,8082.02,3677.295499,287.9,127728221.6,45.50
+645,OIL,Oil Gas & Consumable Fuels,Oil,Oil Exploration & Production,1626607791,68545.25,22918.79056,421.4,543872581,33.44
+646,BAJAJHIND,Fast Moving Consumer Goods,Agricultural Food & other Products,Sugar,1277359942,3980.25,2782.101726,31.16,892843942.8,69.90
+647,RAMCOCEM,Construction Materials,Cement & Cement Products,Cement & Cement Products,236292380,23310.24,12490.46752,986.5,126613963.7,53.58
+648,BSE,Financial Services,Capital Markets,Exchange and Data Platform,135376359,75248.27,75243.23063,5558.45,135367288.8,99.99
+649,SPARC,Healthcare,Pharmaceuticals & Biotechnology,Pharmaceuticals,324499558,6679.82,2043.812206,205.85,99286480.76,30.60
+650,VEEDOL,Oil Gas & Consumable Fuels,Petroleum Products,Lubricants,17424000,2955.11,975.4110204,1696,5751244.224,33.01
+651,ROUTE,Telecommunication,Telecom - Services,Other Telecom Services,62997582,8550.98,1444.319837,1357.35,10640732.58,16.89
+652,ADANIGREEN,Power,Power,Power Generation,1584032478,163155.35,37064.97871,1030,359854162.2,22.72
+653,NCC,Construction,Construction,Civil Construction,627846588,18050.59,14063.66547,287.5,489170972.9,77.91
+654,CERA,Consumer Durables,Consumer Durables,Sanitary Ware,12897541,9386.83,4180.856686,7278,5744513.171,44.54
+655,BIOCON,Healthcare,Pharmaceuticals & Biotechnology,Pharmaceuticals,1200600000,40340.16,15077.25582,336,448727851.8,37.38
+656,BBTC,Fast Moving Consumer Goods,Food Products,Packaged Foods,69771900,15266.09,3780.372825,2188,17277755.14,24.76
+657,CRISIL,Financial Services,Finance,Other Financial Services,73129790,40704.04,13530.83735,5566,24309804.79,33.24
+658,ROLEXRINGS,Automobile and Auto Components,Auto Components,Auto Components & Equipments,27233312,5245.14,2347.140615,1926,12186607.55,44.75
+659,SUZLON,Capital Goods,Electrical Equipment,Heavy Electrical Equipment,13646896448,87722.25,76057.73501,64.28,11832254980,86.70
+660,CMSINFO,Services,Commercial Services & Supplies,Diversified Commercial Services,164365041,8138.54,7633.08315,495.15,154156985.8,93.79
+661,SUPRIYA,Healthcare,Pharmaceuticals & Biotechnology,Pharmaceuticals,80482800,5899.39,1870.247974,733,25514979.19,31.70
+662,OFSS,Information Technology,IT - Software,Software Products,86811560,106769.54,28922.47974,12299,23516123.05,27.09
+663,KPITTECH,Information Technology,IT - Software,Computers - Software & Consulting,274143808,39750.85,23560.25057,1450,162484486.7,59.27
+664,PHOENIXLTD,Realty,Realty,Residential Commercial Projects,357499140,57307.11,29807.95054,1603,185951032.7,52.01
+665,PERSISTENT,Information Technology,IT - Software,Computers - Software & Consulting,155850000,99667.63,67800.70171,6395.1,106019767.8,68.03
+666,LUXIND,Textiles,Textiles & Apparels,Garments & Apparels,30071681,5927.13,1526.413358,1971,7744360.008,25.75
+667,SOLARINDS,Chemicals,Chemicals & Petrochemicals,Explosives,90490055,88725.5,23819.69107,9805,24293412.62,26.85
+668,HINDCOPPER,Metals & Mining,Non - Ferrous Metals,Copper,967024020,25901.74,8766.313845,267.85,327284444.4,33.84
+669,BLUEDART,Services,Transport Services,Logistics Solution Provider,23727934,17076.16,4246.090542,7196.65,5900093.157,24.87
+670,EDELWEISS,Financial Services,Finance,Holding Company,945014577,11859.93,7231.83131,125.5,576241538.6,60.98
+671,JKLAKSHMI,Construction Materials,Cement & Cement Products,Cement & Cement Products,117670066,9766.62,5140.833856,830,61937757.3,52.64
+672,PAYTM,Financial Services,Financial Technology (Fintech),Financial Technology (Fintech),637382630,60803.12,32163.26748,953.95,337158839.3,52.90
+673,NFL,Chemicals,Fertilizers & Agrochemicals,Fertilizers,490578400,5649.01,1427.889029,115.15,124002521,25.28
+674,SHARDAMOTR,Automobile and Auto Components,Auto Components,Auto Components & Equipments,28703853,5461.34,1942.663673,1902.65,10210304.96,35.57
+675,GREENPANEL,Consumer Durables,Consumer Durables,Plywood Boards/ Laminates,122627395,4463.64,2089.062545,364,57391828.15,46.80
+676,TATAELXSI,Information Technology,IT - Software,Computers - Software & Consulting,62283341,43131.84,23941.53353,6925.1,34572112.36,55.51
+677,ENGINERSIN,Construction,Construction,Civil Construction,562042373,10364.06,5039.317554,184.4,273281863,48.62
+678,DHANUKA,Chemicals,Fertilizers & Agrochemicals,Pesticides & Agrochemicals,45578324,6926.08,2041.296477,1519.6,13433117.12,29.47
+679,JKPAPER,Forest Materials,Paper Forest & Jute Products,Paper & Paper Products,169402344,7381.71,3349.575104,435.75,76869193.43,45.38
+680,GESHIP,Services,Transport Services,Shipping,142767161,13991.18,9692.1953,980,98899952.04,69.27
+681,KSL,Capital Goods,Industrial Products,Iron & Steel Products,43653060,5148.44,1794.757142,1179.4,15217544.02,34.86
+682,SHRIPISTON,Automobile and Auto Components,Auto Components,Auto Components & Equipments,44049824,9017.44,2873.443157,2047.1,14036652.62,31.87
+683,HEG,Capital Goods,Industrial Products,Electrodes & Refractories,192977530,10478.68,4566.399118,543,84095748.02,43.58
+684,GODREJPROP,Realty,Realty,Residential Commercial Projects,301183499,85927.65,35655.24967,2853,124974587,41.49
+685,GRSE,Capital Goods,Aerospace & Defense,Aerospace & Defense,114552000,18122.13,4621.142232,1582,29210760,25.50
+686,CGPOWER,Capital Goods,Electrical Equipment,Heavy Electrical Equipment,1528553094,111737.23,46616.88458,731,637713879.4,41.72
+687,VAIBHAVGBL,Consumer Durables,Consumer Durables,Gems Jewellery And Watches,166212482,4812.68,1608.576533,289.55,55554361.35,33.42
+688,EXIDEIND,Automobile and Auto Components,Auto Components,Auto Components & Equipments,850000000,35725.5,19082.77583,420.3,454027500,53.42
+689,BRIGADE,Realty,Realty,Residential Commercial Projects,244252174,30409.4,17150.83834,1245,137757737.6,56.40
+690,ARVIND,Textiles,Textiles & Apparels,Garments & Apparels,261730474,10860.51,6477.998606,414.95,156115161,59.65
+691,SOBHA,Realty,Realty,Residential Commercial Projects,106953834,16449.5,6203.517563,1538,40334964.65,37.71
+692,MCX,Financial Services,Capital Markets,Exchange and Data Platform,50998369,32562.46,32490.00714,6385,50884897.63,99.78
+693,IFCI,Financial Services,Finance,Financial Institution,2613591051,15942.91,3880.02489,61,636069654.1,24.34
+694,IEX,Financial Services,Capital Markets,Exchange and Data Platform,891692735,15738.38,13337.75495,176.5,755680167.1,84.75
+695,CYIENT,Information Technology,IT - Services,IT Enabled Services,111010979,21356.85,16215.95508,1923.85,84289082.2,75.93
+696,ITI,Telecommunication,Telecom - Equipment & Accessories,Telecom - Equipment & Accessories,960886938,32751.83,3275.183128,340.85,96088693.8,10.00
+697,J%26KBANK,Financial Services,Banks,Private Sector Bank,1101182463,10598.88,4279.616254,96.25,444635454.9,40.38
+698,PRUDENT,Financial Services,Capital Markets,Financial Products Distributor,41406680,11763.64,4574.878736,2841,16103057.85,38.89
+699,BEML,Capital Goods,Agricultural Commercial & Construction Vehicles,Construction Vehicles,41644500,16998.45,7784.288112,4081.8,19070723.97,45.79
+700,HIKAL,Healthcare,Pharmaceuticals & Biotechnology,Pharmaceuticals,123300750,4633.64,1378.888509,375.8,36692083.79,29.76
+701,DBREALTY,Realty,Realty,Residential Commercial Projects,538465491,9759.69,3555.990766,181.25,196192594,36.44
+702,IDFCFIRSTB,Financial Services,Banks,Private Sector Bank,7319833997,45375.65,40748.69582,61.99,6573430524,89.80
+703,CDSL,Financial Services,Capital Markets,Depositories Clearing Houses and Other Intermediaries,209000000,38947.15,33104.06487,1863.5,177644566,85.00
+704,UTIAMC,Financial Services,Capital Markets,Asset Management Company,127763060,15763.41,5044.952093,1233.8,40889545.25,32.00
+705,JINDWORLD,Textiles,Textiles & Apparels,Other Textile Products,200520400,7869.42,1132.284073,392.45,28851677.23,14.39
+706,JPPOWER,Power,Power,Power Generation,6853458827,12966.74,8998.323936,18.92,4755985167,69.40
+707,POLYPLEX,Capital Goods,Industrial Products,Packaging,31392462,4081.02,1962.640086,1300,15097231.43,48.09
+708,ZOMATO,Consumer Services,Retailing,E-Retail/ E-Commerce,9650350647,265095.13,186651.627,274.7,6794744338,70.41
+709,STARCEMENT,Construction Materials,Cement & Cement Products,Cement & Cement Products,412428997,8743.49,1742.097609,212,82174415.51,19.92
+710,GANESHHOUC,Realty,Realty,Residential Commercial Projects,83387090,9935.57,2652.847341,1191.5,22264769.97,26.70
+711,IMFA,Metals & Mining,Ferrous Metals,Ferro & Silica Manganese,53954106,4801.92,1327.859269,890,14919767.07,27.65
+712,MAHSEAMLES,Capital Goods,Industrial Products,Iron & Steel Products,133999252,9500.55,2962.802575,709,41788470.73,31.19
+713,PRESTIGE,Realty,Realty,Residential Commercial Projects,430730232,76325.4,29810.10505,1772,168228583.8,39.06
+714,TIINDIA,Automobile and Auto Components,Auto Components,Auto Components & Equipments,193472178,69727.37,38282.00121,3604,106220869.1,54.90
+715,SWSOLAR,Construction,Construction,Civil Construction,233494316,10367.15,4881.464766,444,109942900.1,47.09
+716,ODIGMA,Media Entertainment & Publication,Media,Web based media and service,31258450,323.02,167.9729076,103.34,16254394,52.00
+717,RITES,Construction,Construction,Civil Construction,480603774,13365.59,3715.260049,278.1,133594392.3,27.80
+718,MPHASIS,Information Technology,IT - Software,Computers - Software & Consulting,189657845,56100.79,33391.91985,2958,112886814.9,59.52
+719,LODHA,Realty,Realty,Residential Commercial Projects,996834754,139561.85,38896.30621,1400.05,277820836.4,27.87
+720,LTTS,Information Technology,IT - Services,IT Enabled Services,105841443,51121.42,13213.86386,4830,27357896.19,25.85
+721,GODFRYPHLP,Fast Moving Consumer Goods,Cigarettes & Tobacco Products,Cigarettes & Tobacco Products,51993920,27486.07,7177.43638,5286.4,13577172.33,26.11
+722,NEOGEN,Chemicals,Chemicals & Petrochemicals,Specialty Chemicals,26381674,5484.75,2291.446289,2079,11021867.67,41.78
+723,CEATLTD,Automobile and Auto Components,Auto Components,Tyres & Rubber Products,40450092,11953.2,6211.697843,2955.05,21020618.41,51.97
+724,ANGELONE,Financial Services,Capital Markets,Stockbroking & Allied,90248143,25991.47,16640.56774,2880,57779749.09,64.02
+725,ATUL,Chemicals,Chemicals & Petrochemicals,Specialty Chemicals,29441755,20609.23,11118.08111,7000,15882973.01,53.95
+726,FACT,Chemicals,Fertilizers & Agrochemicals,Fertilizers,647071974,61342.42,5889.179333,948,62122144.86,9.60
+727,GRWRHITECH,Capital Goods,Industrial Products,Plastic Products - Industrial,23232394,11616.2,4392.200248,5000,8784400.495,37.81
+728,RCF,Chemicals,Fertilizers & Agrochemicals,Fertilizers,551688100,9389.18,2344.083844,170.19,137733347.7,24.97
+729,ABB,Capital Goods,Electrical Equipment,Heavy Electrical Equipment,211908375,147064.41,36291.5262,6940,52293265.42,24.68
+730,DOMS,Fast Moving Consumer Goods,Household Products,Stationary,60687236,16786.09,4203.203233,2766,15195962.52,25.04
+731,MASTEK,Information Technology,IT - Software,Computers - Software & Consulting,30877519,9426.91,4629.987445,3053,15165369.95,49.11
+732,SUNDARMFIN,Financial Services,Finance,Non Banking Financial Company (NBFC),111103860,47566.9,29092.62684,4281.3,67952787.33,61.16
+733,ASTRAMICRO,Capital Goods,Aerospace & Defense,Aerospace & Defense,94945008,7548.6,6714.504891,795.05,84453869.45,88.95
+734,BANCOINDIA,Automobile and Auto Components,Auto Components,Auto Components & Equipments,71518650,7101.8,2215.236673,993,22308526.42,31.19
+735,BAJAJHLDNG,Financial Services,Finance,Holding Company,111293510,118806.93,46094.00175,10675.1,43178988.25,38.80
+736,SHAREINDIA,Financial Services,Capital Markets,Stockbroking & Allied,216886135,6430.67,2170.024478,296.5,73188009.37,33.74
+737,EMIL,Consumer Services,Retailing,Diversified Retail,384748762,6438.77,1740.380359,167.35,103996436.1,27.03
+738,PFC,Financial Services,Finance,Financial Institution,3300101760,149164.6,65632.72213,452,1452051375,44.00
+739,ICIL,Textiles,Textiles & Apparels,Other Textile Products,198054340,7333.95,2931.894075,370.3,79176183.5,39.98
+740,MARKSANS,Healthcare,Pharmaceuticals & Biotechnology,Pharmaceuticals,453163746,13458.96,6068.188927,297,204316125.5,45.09
+741,SANGHIIND,Construction Materials,Cement & Cement Products,Cement & Cement Products,258326000,1637.79,409.4483478,63.4,64581758.33,25.00
+742,IONEXCHANG,Utilities,Other Utilities,Water Supply & Management,146666590,9782.66,5530.911406,667,82922209.99,56.54
+743,MAZDOCK,Capital Goods,Industrial Manufacturing,Ship Building & Allied Services,201690000,95283.4,14455.7302,4724.25,30598994.97,15.17
+744,LTIM,Information Technology,IT - Software,Computers - Software & Consulting,296279363,172479.03,53748.77809,5821.5,92328056.49,31.16
+745,EMBDL,Realty,Realty,Residential Commercial Projects,636470937,7558.73,5655.576981,118.76,476219011.5,74.82
+746,PFIZER,Healthcare,Pharmaceuticals & Biotechnology,Pharmaceuticals,45747732,21318.44,7054.955016,4660,15139388.45,33.09
+747,RBLBANK,Financial Services,Banks,Private Sector Bank,607730644,9267.89,9053.590847,152.5,593678088.3,97.69
+748,BALRAMCHIN,Fast Moving Consumer Goods,Agricultural Food & other Products,Sugar,201749245,10715.91,6075.192939,531.15,114378103,56.69
+749,TORNTPOWER,Power,Power,Integrated Power Utilities,503903543,74527.33,25853.38311,1479,174803131.3,34.69
+750,SIEMENS,Capital Goods,Electrical Equipment,Heavy Electrical Equipment,356120505,245188.97,60712.46624,6885,88180778.85,24.76

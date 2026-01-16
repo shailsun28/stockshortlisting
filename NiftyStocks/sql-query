@@ -1,0 +1,10 @@
+
+
+SELECT * FROM "sma_vol" ORDER BY "DATE" DESC;
+
+SELECT * FROM "sma_vol" WHERE "SYMBOL" = 'TIINDIA' ORDER BY "DATE" DESC;
+
+
+SELECT * from fno where Stock = "M&M" order by Date,Time desc
+
+SELECT * from fno where Stock = "M&M" order by Date desc
