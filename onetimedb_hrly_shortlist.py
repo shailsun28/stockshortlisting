@@ -9,8 +9,11 @@ import os
 
 starttime = datetime.now()
 print (f"Script started at {starttime.strftime('%H:%M:%S')}")
-BASE_DIR = "/Users/shail/Documents/Trading"
-BASE_DIR_db = "/Users/shail/Documents/Trading/market-turnover/db"
+#BASE_DIR = "/Users/shail/Documents/Trading"
+#BASE_DIR_db = "/Users/shail/Documents/Trading/market-turnover/db"
+BASE_DIR = "/home/shail/stockshortlisting"
+BASE_DIR_db = "/home/shail/db"
+
 db_path = os.path.join(BASE_DIR_db, "eq_fu_buysell_qty.db")
 # List of c_values
 c_values = [0.66, 0.79, 0.99, 1.33, 1.66, 1.99]
