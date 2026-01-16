@@ -11,8 +11,11 @@ import importlib.util
 import os 
 
 
-BASE_DIR = "/Users/shail/Documents/Trading"
-BASE_DIR_db = "/Users/shail/Documents/Trading/market-turnover/db"
+#BASE_DIR = "/Users/shail/Documents/Trading"
+#BASE_DIR_db = "/Users/shail/Documents/Trading/market-turnover/db"
+BASE_DIR = "/home/shail/stockshortlisting"
+BASE_DIR_db = "/home/shail/db"
+
 # -----------------------------
 # Functions
 # -----------------------------
@@ -183,7 +186,8 @@ def calsmavalavg_func(stocks):
 # Import shortlist script
 # -----------------------------
 #shortlist_script_path = "/Users/shail/Documents/Trading/My-Code/onetimedb_hrly_shortlist.py"
-shortlist_script_path = "/Users/shail/StockShortlist//onetimedb_hrly_shortlist.py"
+#shortlist_script_path = "/Users/shail/StockShortlist//onetimedb_hrly_shortlist.py"
+shortlist_script_path = os.path.join(BASE_DIR, "onetimedb_hrly_shortlist.py"
 spec = importlib.util.spec_from_file_location("onetimedb_hrly_shortlist", shortlist_script_path)
 shortlist_module = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(shortlist_module)
