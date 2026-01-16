@@ -8,13 +8,18 @@ import httpx
 import json
 import numpy as np
 import importlib.util
+import os
+
+
+BASE_DIR = "/Users/shail/Documents/Trading/My-Code"
+BASE_DIR_db = "/home/shail/db"
 
 # -----------------------------
 # Functions
 # -----------------------------
 
 def buysell_fno_func(stocklist):
-    db_path = "/Users/shail/Documents/Trading/market-turnover/db/eq_fu_buysell_qty.db"
+    db_path = os.path.join(BASE_DIR_db, "eq_fu_buysell_qty.db")
     todays_date = date.today()
     with sqlite3.connect(db_path) as tg_conn:
         tg_query = f'select * from fno where Date = "{todays_date}" order by Time desc'
@@ -85,11 +90,14 @@ def shortlist_func(stocks):
         pd.DataFrame: Final processed DataFrame.
     """
     # Define the database path and establish the connection
-    db_path = "/Users/shail/Documents/Trading/market-turnover/db/fullbhavcopy.db"
+    #db_path = "/Users/shail/Documents/Trading/market-turnover/db/fullbhavcopy.db"
+    db_path = os.path.join(BASE_DIR_db, "fullbhavcopy.db")
     conn = sqlite3.connect(db_path)  # DB connection to bhav copy
 
     # Load 52-week high/low data
-    df1 = pd.read_csv('/Users/shail/Documents/Trading/NiftyStocks/52_wk_High_low.csv')
+    52wk_hl_path = os.path.join(BASE_DIR, '52_wk_High_low.csv')
+    df1 = pd.read_csv(52wk_hl_path)
+
     rename_hl = {'Adjusted_52_Week_High': '52WH', 'Adjusted_52_Week_Low': '52WL'}
     df1.rename(columns=rename_hl, inplace=True)
 
@@ -170,7 +178,9 @@ def shortlist_func(stocks):
 # -----------------------------
 # Import shortlist script
 # -----------------------------
-shortlist_script_path = "/Users/shail/Documents/Trading/My-Code/onetimedb_hrly_shortlist.py"
+
+#shortlist_script_path = "/Users/shail/Documents/Trading/My-Code/onetimedb_hrly_shortlist.py"
+shortlist_script_path = os.path.join(BASE_DIR, "onetimedb_hrly_shortlist.py")
 spec = importlib.util.spec_from_file_location("onetimedb_hrly_shortlist", shortlist_script_path)
 shortlist_module = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(shortlist_module)
