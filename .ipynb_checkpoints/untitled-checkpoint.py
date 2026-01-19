@@ -1,16 +1,14 @@
+import streamlit as st
 import pandas as pd
 import streamlit as st
 import sqlite3
-from datetime import date, timedelta, datetime
+from datetime import datetime, date
 import time
 import altair as alt
 import httpx
 import json
 import numpy as np
 import importlib.util
-import os 
-
-
 #BASE_DIR = "/Users/shail/Documents/Trading"
 #BASE_DIR_db = "/Users/shail/Documents/Trading/market-turnover/db"
 BASE_DIR = "/home/shail/stockshortlisting"
@@ -24,7 +22,7 @@ def buysell_fno_func(stocklist):
     #db_path = "/Users/shail/Documents/Trading/market-turnover/db/eq_fu_buysell_qty.db"
     db_path = os.path.join(BASE_DIR_db,"eq_fu_buysell_qty.db")
     todays_date = date.today()
-    todays_date = todays_date - timedelta(days=2)
+    todays_date = todays_date - timedelta(days=1)
     with sqlite3.connect(db_path) as tg_conn:
         #tg_query = f'select * from fno where Date = "{todays_date}" order by Time desc'
         #tg_query = "SELECT * FROM fno WHERE Date IN (SELECT MAX(Date) FROM fno GROUP BY Stock) ORDER BY Date DESC, Time DESC"
@@ -187,28 +185,28 @@ def calsmavalavg_func(stocks):
 # -----------------------------
 #shortlist_script_path = "/Users/shail/Documents/Trading/My-Code/onetimedb_hrly_shortlist.py"
 #shortlist_script_path = "/Users/shail/StockShortlist//onetimedb_hrly_shortlist.py"
-shortlist_script_path = os.path.join(BASE_DIR, "onetimedb_hrly_shortlist.py")
-spec = importlib.util.spec_from_file_location("onetimedb_hrly_shortlist", shortlist_script_path)
-shortlist_module = importlib.util.module_from_spec(spec)
-spec.loader.exec_module(shortlist_module)
-
-if hasattr(shortlist_module, "dlydf_out"):
-    dlydf_out = shortlist_module.dlydf_out
-    stock_list = dlydf_out["Stock"].tolist() if "Stock" in dlydf_out.columns else []
-else:
-    dlydf_out = pd.DataFrame()
-    stock_list = []
-
-#shortlist_script_path = os.path.join(BASE_DIR, "daily_shortlist.py")
-#spec = importlib.util.spec_from_file_location("daily_shortlist.py", shortlist_script_path)
+#shortlist_script_path = os.path.join(BASE_DIR, "onetimedb_hrly_shortlist.py")
+#spec = importlib.util.spec_from_file_location("onetimedb_hrly_shortlist", shortlist_script_path)
 #shortlist_module = importlib.util.module_from_spec(spec)
 #spec.loader.exec_module(shortlist_module)
-#if hasattr(shortlist_module, "short_df"):
-#    dlydf_out = shortlist_module.short_df
+
+#if hasattr(shortlist_module, "dlydf_out"):
+#    dlydf_out = shortlist_module.dlydf_out
 #    stock_list = dlydf_out["Stock"].tolist() if "Stock" in dlydf_out.columns else []
 #else:
 #    dlydf_out = pd.DataFrame()
 #    stock_list = []
+
+shortlist_script_path = os.path.join(BASE_DIR, "daily_shortlist.py")
+spec = importlib.util.spec_from_file_location("daily_shortlist.py", shortlist_script_path)
+shortlist_module = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(shortlist_module)
+if hasattr(shortlist_module, "short_df"):
+    dlydf_out = shortlist_module.short_df
+    stock_list = dlydf_out["Stock"].tolist() if "Stock" in dlydf_out.columns else []
+else:
+    dlydf_out = pd.DataFrame()
+    stock_list = []
 
 # -----------------------------
 # Prepare DataFrames
@@ -216,46 +214,7 @@ else:
 shortlisted_df = calsmavalavg_func(stock_list)
 buysell_df = buysell_fno_func(stock_list)
 
-#### Getting all the require columns for shortlisted columns.
-periods = [5, 10, 21, 66, 125, 252]
-updatelist = []
-for stock in stock_list:
-    shtupdate_df = dlydf_out[dlydf_out['Stock']==stock].copy()   # ✅ use .copy()
-    sma_vals = shortlisted_df[shortlisted_df['Stock']==stock]
 
-    shtupdate_df['valChgd%'] = round((shtupdate_df['Tval'] - sma_vals['Val_CR'])*100/ sma_vals['Val_CR'],2)
-    shtupdate_df['volChgd%'] = round((shtupdate_df['Tvol'] - sma_vals['Vol_lac'])*100/ sma_vals['Vol_lac'],2)
-    shtupdate_df['valChg10d%'] = round((shtupdate_df['Tval'] - sma_vals['ValAvg_10'])*100/ sma_vals['ValAvg_10'],2)
-    shtupdate_df['volChg10d%'] = round((shtupdate_df['Tvol'] - sma_vals['VolAvg_10'])*100/ sma_vals['VolAvg_10'],2)
-    shtupdate_df['valChg21d%'] = round((shtupdate_df['Tval'] - sma_vals['ValAvg_21'])*100/ sma_vals['ValAvg_21'],2)
-    shtupdate_df['volChg21d%'] = round((shtupdate_df['Tvol'] - sma_vals['VolAvg_21'])*100/ sma_vals['VolAvg_21'],2)
-    shtupdate_df['LO52WNr%'] = round((shtupdate_df['LTP'] - sma_vals['52WL']) * 100 / shtupdate_df['LTP'], 2)
-    shtupdate_df['HI52WNr%']= round((sma_vals['52WH'] - shtupdate_df['LTP']) * 100 / shtupdate_df['LTP'], 2)
-
-    for period in periods:
-        shtupdate_df[f'Diff_SMA_{period}'] = np.abs(shtupdate_df['LTP'] - sma_vals[f'SMA_{period}'])  
-
-    shtupdate_df['SMA_Diff'] = shtupdate_df[[f'Diff_SMA_{period}' for period in periods]].min(axis=1)
-    shtupdate_df['Nr_SMA'] = shtupdate_df.apply(
-        lambda row: min([(row[f'Diff_SMA_{period}'], period) for period in periods], key=lambda x: x[0])[1],
-        axis=1
-    )
-
-    shtupdate_df['Nr_SMA_%'] = ((shtupdate_df['SMA_Diff'] / shtupdate_df['LTP']) * 100).round(2)
-    shtupdate_df['SMA_Val'] = shtupdate_df.apply(
-        lambda row: sma_vals[f"SMA_{row['Nr_SMA']}"].values[0],
-        axis=1
-    )
-
-    shtupdate_df.drop(columns=[f'Diff_SMA_{period}' for period in periods], inplace=True)  # ✅ safe now
-    updatelist.append(shtupdate_df)
-newshortlist = pd.concat(updatelist, ignore_index=True) if updatelist else pd.DataFrame()
-newcol = ['Stock', 'dly_RTO', 'prchg%', 'qty_rto', 'valChgd%', 'volChgd%',
-       'valChg10d%', 'volChg10d%', 'valChg21d%', 'volChg21d%',
-       'Tval', 'Tvol', 'capTime', 'High', 'LTP', 'VWAP',
-       'Low', 'Nr_SMA', 'Nr_SMA_%', 'HI52WNr%', 'LO52WNr%', 'SMA_Val', 'RsDt',
-       'RsDays']
-newshortlist = newshortlist[newcol]
 ####
 # -----------------------------
 # Streamlit UI
@@ -266,13 +225,62 @@ newshortlist = newshortlist[newcol]
 # Sidebar: single stock selector
 # -----------------------------
 st.sidebar.header("Filter Options")
-unique_stocks = newshortlist['Stock'].unique() if not newshortlist.empty else []
+unique_stocks = shortlisted_df['Stock'].unique() if not shortlisted_df.empty else []
 selected_stock = st.sidebar.selectbox("Select a Stock:", unique_stocks, key="stock_selector")
 
 # -----------------------------
 # NSE API fetch for selected stock
+# -----------------------------
+headers = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+    "Accept": "application/json, text/plain, */*",
+    "Referer": f"https://www.nseindia.com/get-quotes/equity?symbol={selected_stock}"
+}
+encoded_stock = selected_stock.replace("&", "%26")
+main_url = "https://www.nseindia.com"
+qty_url = (
+    f"https://www.nseindia.com/api/NextApi/apiClient/GetQuoteApi?"
+    f"functionName=getSymbolData&marketType=N&series=EQ&symbol={encoded_stock}"
+)
+chg_url = (
+    f"https://www.nseindia.com/api/NextApi/apiClient/GetQuoteApi?"
+    f"functionName=getYearwiseData&symbol={encoded_stock}EQN"
+)
 
+qtyjson, chgjson = None, None
+with httpx.Client(timeout=10) as client:
+    try:
+        # Fetch session cookies
+        response = client.get(main_url, headers=headers)
+        response.raise_for_status()
+        cookies = dict(client.cookies)
+        time.sleep(1)  # Prevent NSE blocking
 
+        # Fetch quote and change data
+        qty_resp = client.get(qty_url, headers=headers, cookies=cookies)
+        chg_resp = client.get(chg_url, headers=headers, cookies=cookies)
+        qty_resp.raise_for_status()
+        chg_resp.raise_for_status()
+
+        qtyjson = qty_resp.json()
+        chgjson = chg_resp.json()
+
+    except (httpx.HTTPStatusError, httpx.ReadTimeout) as e:
+        st.error(f"Error fetching data for {selected_stock}: {e}")
+    except KeyError as e:
+        st.error(f"Missing data key in JSON for {selected_stock}: {e}")
+
+# -----------------------------
+# Derived metrics from NSE JSON
+# -----------------------------
+DayLoNrP, DayHiNrP = None, None
+if qtyjson:
+    meta = qtyjson['equityResponse'][0]['metaData']
+    ltp = qtyjson['equityResponse'][0]['tradeInfo']['lastPrice']
+    day_low = meta['dayLow']
+    day_high = meta['dayHigh']
+    DayLoNrP = np.round((ltp - day_low) * 100 / ltp, 2)
+    DayHiNrP = np.round((day_high - ltp) * 100 / ltp, 2)
 
 st.title(f"Stock Analysis Dashboard for {selected_stock}")
 # Tabs
@@ -281,6 +289,23 @@ tab1, tab2, tab3 = st.tabs(["DlyRatio", "Hourly_Shortlisted", "BuySellData"])
 # Tab 1
 with tab1:
     st.subheader(f"Price Info for {selected_stock}")
+    # Metrics in 2 rows
+    metrics = [
+        ("Change%", qtyjson['equityResponse'][0]['metaData']['pChange']),
+        ("DayHiNr%", DayHiNrP),
+        ("DayHigh", qtyjson['equityResponse'][0]['metaData']['dayHigh']),
+        ("WeekChg%", chgjson[0]['one_week_chng_per']),
+        ("MonthChg%", chgjson[0]['one_month_chng_per']),
+        ("Ltp", qtyjson['equityResponse'][0]['tradeInfo']['lastPrice']),
+        ("DayLoNrP%", DayLoNrP),
+        ("DayLow", qtyjson['equityResponse'][0]['metaData']['dayLow']),
+        ("PrChg", qtyjson['equityResponse'][0]['metaData']['change']),
+        ("3MonChg%", chgjson[0]['three_month_chng_per']),
+    ]
+    for i in range(0, len(metrics), 5):
+        cols = st.columns([0.9, 0.9, 0.9, 0.9, 0.9])
+        for j, (label, value) in enumerate(metrics[i:i+5]):
+            cols[j].metric(label, value, border=True)
 
     st.subheader(f"Delivery Ratio History for {selected_stock}")
     #stock_data = newshortlist[newshortlist['Stock'] == selected_stock]
@@ -322,8 +347,8 @@ with tab1:
 # Tab 2
 with tab2:
     st.subheader("Hourly Shortlisted")
-    if not newshortlist.empty:
-        st.dataframe(newshortlist)
+    if not dlydf_out.empty:
+        st.dataframe(dlydf_out)
     else:
         st.warning("No shortlisted data available")
 

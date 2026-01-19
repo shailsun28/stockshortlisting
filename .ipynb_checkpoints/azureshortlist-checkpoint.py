@@ -271,8 +271,57 @@ selected_stock = st.sidebar.selectbox("Select a Stock:", unique_stocks, key="sto
 
 # -----------------------------
 # NSE API fetch for selected stock
+# -----------------------------
+headers = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+    "Accept": "application/json, text/plain, */*",
+    "Referer": f"https://www.nseindia.com/get-quotes/equity?symbol={selected_stock}"
+}
+encoded_stock = selected_stock.replace("&", "%26")
+main_url = "https://www.nseindia.com"
+qty_url = (
+    f"https://www.nseindia.com/api/NextApi/apiClient/GetQuoteApi?"
+    f"functionName=getSymbolData&marketType=N&series=EQ&symbol={encoded_stock}"
+)
+chg_url = (
+    f"https://www.nseindia.com/api/NextApi/apiClient/GetQuoteApi?"
+    f"functionName=getYearwiseData&symbol={encoded_stock}EQN"
+)
 
+qtyjson, chgjson = None, None
+with httpx.Client(timeout=10) as client:
+    try:
+        # Fetch session cookies
+        response = client.get(main_url, headers=headers)
+        response.raise_for_status()
+        cookies = dict(client.cookies)
+        time.sleep(1)  # Prevent NSE blocking
 
+        # Fetch quote and change data
+        qty_resp = client.get(qty_url, headers=headers, cookies=cookies)
+        chg_resp = client.get(chg_url, headers=headers, cookies=cookies)
+        qty_resp.raise_for_status()
+        chg_resp.raise_for_status()
+
+        qtyjson = qty_resp.json()
+        chgjson = chg_resp.json()
+
+    except (httpx.HTTPStatusError, httpx.ReadTimeout) as e:
+        st.error(f"Error fetching data for {selected_stock}: {e}")
+    except KeyError as e:
+        st.error(f"Missing data key in JSON for {selected_stock}: {e}")
+
+# -----------------------------
+# Derived metrics from NSE JSON
+# -----------------------------
+DayLoNrP, DayHiNrP = None, None
+if qtyjson:
+    meta = qtyjson['equityResponse'][0]['metaData']
+    ltp = qtyjson['equityResponse'][0]['tradeInfo']['lastPrice']
+    day_low = meta['dayLow']
+    day_high = meta['dayHigh']
+    DayLoNrP = np.round((ltp - day_low) * 100 / ltp, 2)
+    DayHiNrP = np.round((day_high - ltp) * 100 / ltp, 2)
 
 st.title(f"Stock Analysis Dashboard for {selected_stock}")
 # Tabs
@@ -281,6 +330,23 @@ tab1, tab2, tab3 = st.tabs(["DlyRatio", "Hourly_Shortlisted", "BuySellData"])
 # Tab 1
 with tab1:
     st.subheader(f"Price Info for {selected_stock}")
+    # Metrics in 2 rows
+    metrics = [
+        ("Change%", qtyjson['equityResponse'][0]['metaData']['pChange']),
+        ("DayHiNr%", DayHiNrP),
+        ("DayHigh", qtyjson['equityResponse'][0]['metaData']['dayHigh']),
+        ("WeekChg%", chgjson[0]['one_week_chng_per']),
+        ("MonthChg%", chgjson[0]['one_month_chng_per']),
+        ("Ltp", qtyjson['equityResponse'][0]['tradeInfo']['lastPrice']),
+        ("DayLoNrP%", DayLoNrP),
+        ("DayLow", qtyjson['equityResponse'][0]['metaData']['dayLow']),
+        ("PrChg", qtyjson['equityResponse'][0]['metaData']['change']),
+        ("3MonChg%", chgjson[0]['three_month_chng_per']),
+    ]
+    for i in range(0, len(metrics), 5):
+        cols = st.columns([0.9, 0.9, 0.9, 0.9, 0.9])
+        for j, (label, value) in enumerate(metrics[i:i+5]):
+            cols[j].metric(label, value, border=True)
 
     st.subheader(f"Delivery Ratio History for {selected_stock}")
     #stock_data = newshortlist[newshortlist['Stock'] == selected_stock]

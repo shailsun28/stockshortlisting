@@ -1,0 +1,16 @@
+*/2 9-15 * * 1-5 [ "$(date +\%H:\%M)" \< "15:33" ] && /usr/local/bin/python3.12 /Users/shail/Documents/Trading/My-Code/allindices.py >> /tmp/allindices.log 2>&1
+*/2 9-15 * * 1-5 [ "$(date +\%H:\%M)" \< "15:33" ] && /usr/local/bin/python3.12 /Users/shail/Documents/Trading/My-Code/idxfuturestradeinfo.py >> /tmp/idxfuturestradeinfo.log 2>&1
+1-59/2 9-15 * * 1-5 [ "$(date +\%H:\%M)" \< "15:33" ] && /usr/local/bin/python3.12 /Users/shail/Documents/Trading/My-Code/sectorwise_cal.py >> /tmp/sectorwise_cal.log 2>&1
+*/2 9-15 * * 1-5 [ "$(date +\%H:\%M)" \< "15:33" ] && /usr/local/bin/python3.12 /Users/shail/Documents/Trading/My-Code/allturnover.py >> /tmp/allturnover.log 2>&1
+*/3 9-15 * * 1-5 [ "$(date +\%H:\%M)" \< "15:33" ] && /usr/local/bin/python3.12 /Users/shail/Documents/Trading/My-Code/eq_fno_buysell.py >> /tmp/eq_fno_buysell.log 2>&1
+*/3 9-15 * * 1-5 [ "$(date +\%H:\%M)" \< "15:33" ] && /usr/local/bin/python3.12 /Users/shail/Documents/Trading/My-Code/fuop_spur.py >> /tmp/fuop_spur.log 2>&1
+11 10-15 * * 1-5 /usr/local/bin/python3.12 /Users/shail/Documents/Trading/My-Code/fetchnshortlist_hrly.py >> /tmp/fetchnshortlist_hrly.log 2>&1
+0 20 * * 1-5 /usr/local/bin/python3.12 /Users/shail/Documents/Trading/My-Code/dailymcap.py >> /tmp/dailymcap_cron.log 2>&1
+5 20 * * 1-5 /usr/local/bin/python3.12 /Users/shail/Documents/Trading/My-Code/get_earning_date.py >> /tmp/get_earning_date_cron.log 2>&1
+7 20 * * 1-5 /usr/local/bin/python3.12 /Users/shail/Documents/Trading/My-Code/52W_hl.py >> /tmp/52W_hl_cron.log 2>&1
+9 20 * * 1-5 /usr/local/bin/python3.12 /Users/shail/Documents/Trading/My-Code/getfullbhavfile.py >> /tmp/fullbhavcopy_cron.log 2>&1
+10 20 * * 1-5 /usr/local/bin/python3.12 /Users/shail/Documents/Trading/My-Code/ta_calculate.py >> /tmp/ta_calculate_cron.log 2>&1
+13 20 * * 1-5 /usr/local/bin/python3.12 /Users/shail/Documents/Trading/My-Code/idx_daily_snap.py >> /tmp/idx_daily_snap.log 2>&1
+15 20 * * 1-5 /usr/local/bin/python3.12 /Users/shail/Documents/Trading/My-Code/cm_fno_growth_daily.py >> /tmp/cm_fno_growth_daily.log 2>&1
+16 20 * * 1-5 /usr/local/bin/python3.12 /Users/shail/Documents/Trading/My-Code/fiistats.py >> /tmp/fiistats.log 2>&1
+17 20 * * 1-5 /usr/local/bin/python3.12 /Users/shail/Documents/Trading/My-Code/daily_shortlist_w_db.py >> /tmp/daily_shortlist_cron.log 2>&1
