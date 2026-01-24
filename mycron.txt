@@ -3,14 +3,14 @@
 */2 9-15 * * 1-5 [ "$(date +\%H:\%M)" \< "15:33" ] && /usr/bin/python3 /home/shail/stockshortlisting/idxfuturestradeinfo.py >> /tmp/idxfuturestradeinfo.log 2>&1
 1-59/2 9-15 * * 1-5 [ "$(date +\%H:\%M)" \< "15:33" ] && /usr/bin/python3 /home/shail/stockshortlisting/sectorwise_cal.py >> /tmp/sectorwise_cal.log 2>&1
 */2 9-15 * * 1-5 [ "$(date +\%H:\%M)" \< "15:33" ] && /usr/bin/python3 /home/shail/stockshortlisting/allturnover.py >> /tmp/allturnover.log 2>&1
-*/3 9-15 * * 1-5 [ "$(date +\%H:\%M)" \< "15:33" ] && /usr/bin/python3 /home/shail/stockshortlisting/eqfnofetchorder.py >> /tmp/eqfnofetchorder.log 2>&1
-*/3 9-15 * * 1-5 [ "$(date +\%H:\%M)" \< "15:33" ] && /usr/bin/python3 /home/shail/stockshortlisting/fuop_spur.py >> /tmp/fuop_spur.log 2>&1
+*/2 9-15 * * 1-5 [ "$(date +\%H:\%M)" \< "15:33" ] && /usr/bin/python3 /home/shail/stockshortlisting/eqfnofetchorder.py >> /tmp/eqfnofetchorder.log 2>&1
+*/5 9-15 * * 1-5 [ "$(date +\%H:\%M)" \< "15:33" ] && /usr/bin/python3 /home/shail/stockshortlisting/fuop_spur.py >> /tmp/fuop_spur.log 2>&1
 11 10-15 * * 1-5 /usr/bin/python3 /home/shail/stockshortlisting/fetchnshortlist_hrly.py >> /tmp/fetchnshortlist_hrly.log 2>&1
 0 20 * * 1-5 /usr/bin/python3 /home/shail/stockshortlisting/dailymcap.py >> /tmp/dailymcap_cron.log 2>&1
 5 20 * * 1-5 /usr/bin/python3 /home/shail/stockshortlisting/get_earning_date.py >> /tmp/get_earning_date_cron.log 2>&1
 7 20 * * 1-5 /usr/bin/python3 /home/shail/stockshortlisting/52W_hl.py >> /tmp/52W_hl_cron.log 2>&1
 9 20 * * 1-5 /usr/bin/python3 /home/shail/stockshortlisting/getfullbhavfile.py >> /tmp/fullbhavcopy_cron.log 2>&1
-10 20 * * 1-5 /usr/bin/python3 /home/shail/stockshortlisting/ta_calculate.py >> /tmp/ta_calculate_cron.log 2>&1
+10 20 * * 1-5 /usr/bin/python3 /home/shail/stockshortlisting/deliveryratio_cal.py >> /tmp/deliveryratio_cal.log 2>&1
 13 20 * * 1-5 /usr/bin/python3 /home/shail/stockshortlisting/idx_daily_snap.py >> /tmp/idx_daily_snap.log 2>&1
 15 20 * * 1-5 /usr/bin/python3 /home/shail/stockshortlisting/cm_fno_growth_daily.py >> /tmp/cm_fno_growth_daily.log 2>&1
 16 20 * * 1-5 /usr/bin/python3 /home/shail/stockshortlisting/fiistats.py >> /tmp/fiistats.log 2>&1

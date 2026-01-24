@@ -31,7 +31,7 @@ hour_to_c_value = {
 
 # Set the comparevalue based on the current hour
 #comparevalue = hour_to_c_value.get(current_hour, "Default Value")
-comparevalue = hour_to_c_value.get(current_hour, 3)
+comparevalue = hour_to_c_value.get(current_hour, 2)
 #comparevalue = 2
 #indiceslist = ['allmarket_nonfno']
 indiceslist = ['allmarket_nonfno', 'fno']

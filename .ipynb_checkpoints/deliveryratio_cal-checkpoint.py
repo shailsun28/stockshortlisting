@@ -10,7 +10,7 @@ BASE_DIR_db = "/home/shail/db"
 starttime = datetime.now()
 print(f"The Task start at {starttime} Please wait .......")
 today = date.today()
-today = today - timedelta(1)
+#today = today - timedelta(1)
 # Define database paths
 #DB_PATH = "/Users/shail/Documents/Trading/market-turnover/db/fullbhavcopy.db"
 DB_PATH = os.path.join(BASE_DIR_db, "fullbhavcopy.db")

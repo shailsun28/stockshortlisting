@@ -58,7 +58,7 @@ def getIndexfile(date):
 
 
 current_date = datetime.now()
-#current_date = current_date - timedelta(1)
+current_date = current_date - timedelta(1)
 df = getIndexfile(current_date)
 #formatted_date = current_date.strftime('%d-%m-%Y')  # Format as 'dd-mm-yyyy'
 #print(formatted_date)

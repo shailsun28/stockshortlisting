@@ -84,8 +84,8 @@ try:
     # Save CM Today
     cm_today = cm_df[cm_df['date'] == today_str]
     if not cm_today.empty:
-        cm_cols = ['date', 'Trdstocks', 'NoTrades','Tval', 'Tvol', 'Avg']
-        cm_today['date'] = cm_today['date'].dt.strftime('%Y-%m-%d')
+        cm_cols = ['Date', 'Trdstocks', 'NoTrades','Tval', 'Tvol', 'Avg']
+        cm_today['Date'] = cm_today['Date'].dt.strftime('%Y-%m-%d')
         cm_today[cm_cols].to_sql('cm_growth', conn, if_exists='append', index=False)
         print("✓ CM row added.")
     
