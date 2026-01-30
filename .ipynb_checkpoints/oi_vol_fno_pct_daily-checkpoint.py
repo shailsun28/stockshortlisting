@@ -89,11 +89,11 @@ idx_op = fno[fno['product'] == 'Index Options'][['Date','noofcons','Trdvalrscrs'
 opidx_pct_oi = opidx_oi.merge(idx_op, on='Date', how='left')
 
 # --- Reorder columns ---
-volcol = ['Date', 'clienttype', 'fuidxlong','fuidxlong_pct', 'fuidxshort','fuidxshort_pct',
+volcol = ['Date', 'clienttype', 'fuidxlong', 'fuidxshort','fuidxlong_pct','fuidxshort_pct',
           'conavg_lac','Pbaselong_cr', 'Pbaseshort_cr', 'long_AvgbaseAmt_cr','short_AvgbaseAmt_cr',
           'noofcons', 'Trdvalrscrs']
-opcol = ['Date', 'clienttype', 'opidxcalllong', 'opcalllong_pct', 'opidxcallshort','opcallshort_pct',
-         'opidxputlong','opputlong_pct', 'opidxputshort', 'opputshort_pct', 'noofcons', 'Trdvalrscrs']
+opcol = ['Date', 'clienttype', 'opidxcalllong', 'opidxputshort','opidxputlong', 'opidxcallshort', 'opcalllong_pct',      'opputshort_pct','opputlong_pct', 'opcallshort_pct','noofcons', 'Trdvalrscrs']
+         
 
 fuidx_pct_vol = fuidx_pct_vol[volcol].drop_duplicates()
 opidx_pct_oi = opidx_pct_oi[opcol].drop_duplicates()
