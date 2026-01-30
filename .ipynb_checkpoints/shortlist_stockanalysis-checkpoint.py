@@ -15,6 +15,14 @@ from requests.packages.urllib3.util.retry import Retry
 BASE_DIR = "/home/shail/stockshortlisting"
 BASE_DIR_db = "/home/shail/db"
 
+with sqlite3.connect(os.path.join(BASE_DIR_db, "eq_fu_buysell_qty.db")) as conn:
+    conn.execute("CREATE INDEX IF NOT EXISTS idx_fno_date_stock ON fno(Date, Stock);")
+
+with sqlite3.connect(os.path.join(BASE_DIR_db, "fullbhavcopy.db")) as conn:
+    conn.execute("CREATE INDEX IF NOT EXISTS idx_nsestock_symbol_date ON nsestock_t(SYMBOL, Date);")
+# --- Page config for full-width layout ---
+st.set_page_config(layout="wide")
+@st.cache_data
 def buysell_fno_func(stock: str):
     """
     Process buy/sell FNO data for a single stock.
@@ -22,7 +30,8 @@ def buysell_fno_func(stock: str):
     db_path = os.path.join(BASE_DIR_db, "eq_fu_buysell_qty.db")
     todays_date = date.today()
     with sqlite3.connect(db_path) as tg_conn:
-        tg_query = f'SELECT * FROM fno WHERE Date = "{todays_date}" ORDER BY Time DESC'
+        #tg_query = f'SELECT * FROM fno WHERE Date = "{todays_date}" ORDER BY Time DESC'
+        tg_query = f""" SELECT * FROM fno WHERE Date = "{todays_date}" AND Stock = "{stock}" ORDER BY Time DESC """
         tgdf = pd.read_sql_query(tg_query, tg_conn)
 
     alldf = tgdf[tgdf['Stock'] == stock].sort_values(by=['Time'], ascending=False).reset_index(drop=True)
@@ -70,7 +79,8 @@ def buysell_fno_func(stock: str):
              ]
     alldf = alldf[newcol]
     return alldf
-
+    
+@st.cache_data
 def shortlist_func(stock: str):
     """
     Process bhavcopy + 52-week data for a single stock.
@@ -218,61 +228,61 @@ spec = importlib.util.spec_from_file_location("onetimedb_hrly_shortlist", shortl
 shortlist_module = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(shortlist_module)
 
-if hasattr(shortlist_module, "dlydf_out"):
-    dlydf_out = shortlist_module.dlydf_out
-    stock_list = dlydf_out["Stock"].tolist() if "Stock" in dlydf_out.columns else []
-else:
-    dlydf_out = pd.DataFrame()
-    stock_list = []
+# Initialize DataFrames
+fno_df = pd.DataFrame()
+nonfno_df = pd.DataFrame()
+
+# Extract both outputs if available
+if hasattr(shortlist_module, "fno_df"):
+    fno_df = shortlist_module.fno_df
+if hasattr(shortlist_module, "nonfno_df"):
+    nonfno_df = shortlist_module.nonfno_df
 
 
-dfs = [shortlist_func(s) for s in stock_list]
-shortlisted_df = pd.concat(dfs)
 
+# --- Sidebar selectors ---
 st.sidebar.header("Filter Options")
 
-# Dropdown for shortlisted stocks
-unique_stocks = shortlisted_df['Stock'].unique() if not shortlisted_df.empty else []
-selected_stock = st.sidebar.selectbox("Select a Stock:", unique_stocks, key="stock_selector")
+# Dropdown for FNO shortlisted stocks
+fno_stocks = fno_df['Stock'].unique() if not fno_df.empty else []
+selected_fno_stock = st.sidebar.selectbox("Select an FNO Stock:", fno_stocks, key="fno_selector")
 
 # Free text input for any stock
 manual_stock = st.sidebar.text_input("Enter any Stock Symbol:", "").strip()
 
-# Collect whichever stocks are chosen
-stocks_to_process = []
-if selected_stock:
-    stocks_to_process.append(selected_stock)
-if manual_stock:
-    stocks_to_process.append(manual_stock)
-    
-dlyhistory_df = shortlist_func(selected_stock)
-buysell_df = buysell_fno_func(selected_stock)
+tab1, tab2, tab3, tab4 = st.tabs([
+                                    "FNO DlyRatio",
+                                    "Hourly Shortlisted FNO",
+                                    "Fu & Eq BuySellData",
+                                    "Hourly Shortlisted Non-FNO"
+                                    ])
 
-for stock in stocks_to_process:
-    # Run your single-stock functions
-    shortlisted_df_single = shortlist_func(stock)
-    buysell_df_single = buysell_fno_func(stock)
+# Tabs 1–3: FNO stock analysis
+if selected_fno_stock or manual_stock:
+    # Use manual_stock if provided, otherwise fall back to selected_fno_stock
+    stock_to_analyze = manual_stock if manual_stock else selected_fno_stock
+    shortlisted_df_single = shortlist_func(stock_to_analyze)
+    buysell_df_single = buysell_fno_func(stock_to_analyze)
+    qtyjson, chgjson = fetch_nse_data(stock_to_analyze)
 
-    # Fetch NSE API JSON
-    qtyjson, chgjson = fetch_nse_data(stock)   # helper function we outlined earlier
-
-    # Derived metrics
-    DayLoNrP, DayHiNrP = None, None
-    if qtyjson:
-        meta = qtyjson['equityResponse'][0]['metaData']
-        ltp = qtyjson['equityResponse'][0]['tradeInfo']['lastPrice']
-        day_low = meta['dayLow']
-        day_high = meta['dayHigh']
-        DayLoNrP = np.round((ltp - day_low) * 100 / ltp, 2)
-        DayHiNrP = np.round((day_high - ltp) * 100 / ltp, 2)
-
-    # Tabs per stock
-    st.title(f"Stock Analysis Dashboard for {stock}")
-    tab1, tab2, tab3 = st.tabs([f"{stock} DlyRatio", f"Hourly_Shortlisted Stock", f"{stock} BuySellData"])
-
-    # Tab 1
+    # --- Tab 1: FNO Daily Ratio ---
     with tab1:
-        st.subheader(f"Price Info for {stock}")
+        #st.subheader(f"Price Info for {selected_fno_stock}")    
+        st.subheader(f"Price Info for {stock_to_analyze}")    
+        # Fetch NSE API JSON for the selected FNO stock
+        qtyjson, chgjson = fetch_nse_data(stock_to_analyze)    
+
+        # Derived metrics
+        DayLoNrP, DayHiNrP = None, None
+        if qtyjson:
+            meta = qtyjson['equityResponse'][0]['metaData']
+            ltp = qtyjson['equityResponse'][0]['tradeInfo']['lastPrice']
+            day_low = meta['dayLow']
+            day_high = meta['dayHigh']
+            DayLoNrP = np.round((ltp - day_low) * 100 / ltp, 2)
+            DayHiNrP = np.round((day_high - ltp) * 100 / ltp, 2)    
+
+        # Display metrics in rows of 5
         if qtyjson and chgjson:
             metrics = [
                 ("Change%", qtyjson['equityResponse'][0]['metaData']['pChange']),
@@ -287,19 +297,20 @@ for stock in stocks_to_process:
                 ("3MonChg%", chgjson[0]['three_month_chng_per']),
             ]
             for i in range(0, len(metrics), 5):
-                cols = st.columns([0.9]*5)
+                cols = st.columns([0.9] * 5)
                 for j, (label, value) in enumerate(metrics[i:i+5]):
-                    cols[j].metric(label, value, border=True)
+                    cols[j].metric(label, value, border=True)    
 
-        st.subheader(f"Delivery Ratio History for {stock}")
-        #st.dataframe(shortlisted_df_single)
+        st.subheader(f"Fu & Eq BuySell Order Graphs for {stock_to_analyze}")    
 
         # Charts from buysell_df_single
-        filtered_df = buysell_df_single.copy()
-        if not filtered_df.empty:
+        #buysell_df_single = buysell_fno_func(selected_fno_stock)
+        buysell_df_single = buysell_fno_func(stock_to_analyze)
+        if not buysell_df_single.empty:
+            filtered_df = buysell_df_single.copy()
             filtered_df['Time'] = pd.to_datetime(filtered_df['Time'], format="%H:%M:%S", errors="coerce")
-            filtered_df['Volchg_eq'] = round(filtered_df['Volchg_eq']/1000,2)
-            plot_df = filtered_df.reset_index(drop=True)
+            filtered_df['Volchg_eq'] = round(filtered_df['Volchg_eq'] / 1000, 2)
+            plot_df = filtered_df.reset_index(drop=True)    
 
             chart_specs = [
                 ("Valchg_eq", "blue", "Valchg_eq(cr)"),
@@ -314,23 +325,70 @@ for stock in stocks_to_process:
             ]
             for col, color, title in chart_specs:
                 if col in plot_df.columns:
-                    chart = alt.Chart(plot_df).mark_line(point=True).encode(
-                        x="Time:T", y=f"{col}:Q", color=alt.value(color)
-                    ).properties(width=1000, height=200, title=f"{title} for {stock}")
-                    st.altair_chart(chart, width="stretch")
-                    #st.altair_chart(chart, use_container_width=True)
+                    chart = (
+                        alt.Chart(plot_df)
+                        .mark_line(point=True)
+                        .encode(x="Time:T", y=f"{col}:Q", color=alt.value(color))
+                        .properties(width=1000, height=200, title=f"{title} for {selected_fno_stock}")
+                    )
+                    st.altair_chart(chart, use_container_width=True)
         else:
-            st.warning(f"No BuySell data found for {stock}")
-        st.dataframe(shortlisted_df_single)
+            st.warning(f"No BuySell data found for {selected_fno_stock}")    
 
+        #st.subheader(f"Delivery Ratio History for {selected_fno_stock}")
+        st.subheader(f"Delivery Ratio History for {stock_to_analyze}")
+        shortlisted_df_single
     # Tab 2
     with tab2:
-        st.subheader("Hourly Shortlisted (global dlydf_out)")
-        st.dataframe(dlydf_out)
+        st.subheader("Hourly Shortlisted FNO Stocks")
+        st.dataframe(fno_df)
 
-    # Tab 3
     with tab3:
-        st.subheader(f"Buy Sell Trade data for {stock}")
+        st.subheader(f"Buy Sell Trade data for {selected_fno_stock}")
         st.dataframe(buysell_df_single)
+        # charts rendering here...
 
+# Tab 4: Non-FNO shortlist only
+with tab4:
+    st.subheader("Hourly Shortlisted Non-FNO Stocks")
+    st.dataframe(nonfno_df)
+    # Add selector below the table
+    nonfno_stocks = nonfno_df['Stock'].unique() if not nonfno_df.empty else []
+    selected_nonfno_stock = st.selectbox("Select a Non-FNO Stock:", nonfno_stocks, key="nonfno_tab_selector")
+    st.subheader(f"Price Info for non-fno stock {selected_nonfno_stock}")    
 
+    # Fetch NSE API JSON for the selected FNO stock
+    qtyjson, chgjson = fetch_nse_data(selected_nonfno_stock)    
+
+    # Derived metrics
+    DayLoNrP, DayHiNrP = None, None
+    if qtyjson:
+        meta = qtyjson['equityResponse'][0]['metaData']
+        ltp = qtyjson['equityResponse'][0]['tradeInfo']['lastPrice']
+        day_low = meta['dayLow']
+        day_high = meta['dayHigh']
+        DayLoNrP = np.round((ltp - day_low) * 100 / ltp, 2)
+        DayHiNrP = np.round((day_high - ltp) * 100 / ltp, 2)    
+
+    # Display metrics in rows of 5
+    if qtyjson and chgjson:
+        metrics = [
+            ("Change%", qtyjson['equityResponse'][0]['metaData']['pChange']),
+            ("DayHiNr%", DayHiNrP),
+            ("DayHigh", qtyjson['equityResponse'][0]['metaData']['dayHigh']),
+            ("WeekChg%", chgjson[0]['one_week_chng_per']),
+            ("MonthChg%", chgjson[0]['one_month_chng_per']),
+            ("Ltp", qtyjson['equityResponse'][0]['tradeInfo']['lastPrice']),
+            ("DayLoNrP%", DayLoNrP),
+            ("DayLow", qtyjson['equityResponse'][0]['metaData']['dayLow']),
+            ("PrChg", qtyjson['equityResponse'][0]['metaData']['change']),
+            ("3MonChg%", chgjson[0]['three_month_chng_per']),
+        ]
+        for i in range(0, len(metrics), 5):
+            cols = st.columns([0.9] * 5)
+            for j, (label, value) in enumerate(metrics[i:i+5]):
+                cols[j].metric(label, value, border=True)    
+    if selected_nonfno_stock:
+        nonfno_dlyrto_df = shortlist_func(selected_nonfno_stock) 
+        st.subheader(f"Delivery Ratio History for {selected_nonfno_stock}")
+        nonfno_dlyrto_df

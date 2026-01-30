@@ -58,8 +58,10 @@ dlylist = []
 periods = [5, 10, 21, 66, 125, 252]
 ot_path = os.path.join(BASE_DIR_db, "onetimehourly.db")
 ot_conn = sqlite3.connect(ot_path)  # db connection to TA db  
+results = {}  # dictionary to hold DataFrames per index
+
 for indices in indiceslist:
-    print (f"Selecting stock from index {indices} with compare value {comparevalue} based on delvery ratio")
+    print(f"Selecting stock from index {indices} with compare value {comparevalue} based on delivery ratio")
     query = f'SELECT * FROM hrly_{indices}'
     df_from_db = pd.read_sql_query(query, ot_conn)
     date_format = '%d-%b-%Y %H:%M:%S'
@@ -67,48 +69,67 @@ for indices in indiceslist:
     df_from_db['Date'] = pd.to_datetime(df_from_db['Date'], format=date_format, errors='coerce')
     df_from_db['capTime'] = df_from_db['Date'].dt.strftime('%H:%M')
     inputfile = os.path.join(BASE_DIR, "NiftyStocks", indices)
-    hourlypath = os.path.join(BASE_DIR, "shortlist", "hourly", f"hourlyweb_{indices}-{datetime.now().strftime('%Y-%m-%d-%H-%M')}.csv")
-    hrshortlist = os.path.join(BASE_DIR, "shortlist", "hourly", f"{indices}_hrly_shortlisted_{datetime.now().strftime('%Y-%m-%d-%H')}.csv")
-    dlylist = [] 
-    with open(inputfile, "r") as f:
-        stocks = f.readlines()  
+    dlylist = []
 
-    stocks = [item.strip() for item in stocks]
-    #stocks = [line.replace('%26', '&') for line in stocks]
+    with open(inputfile, "r") as f:
+        stocks = [line.strip() for line in f]
+
     for firm in stocks:
-        try:    
+        try:
             dfn = tadf[tadf['Stock'] == firm]
             hrn = df_from_db[df_from_db['Stock'] == firm]
-            resdf = earndf[earndf['Stock']==firm]
+            resdf = earndf[earndf['Stock'] == firm]
             if dfn.shape[0] > 0:
-                fromtadf = dfn.reset_index(drop=True)
-                fromtadf.sort_values(by=['Date'], ascending=False, inplace=True)
+                fromtadf = dfn.reset_index(drop=True).sort_values(by=['Date'], ascending=False)
                 alldf = hrn.reset_index(drop=True)
                 dly_avg = fromtadf.loc[0, 'DlyAvg_10']
-                dlyratio = alldf.loc[0, 'cur_dly'] / dly_avg if dly_avg and dly_avg != 0 else 0
+                dlyratio = alldf.loc[0, 'cur_dly'] / dly_avg if dly_avg else 0
                 vol_avg_10 = fromtadf.loc[0, 'VolAvg_10']
-                traded_qty_rto = round((alldf.loc[0, 'Tvol'] * 100000) / vol_avg_10, 2) if vol_avg_10 and vol_avg_10 != 0 else 0
-                resultdate = resdf.iloc[0,1]
-                ResInDays =  resdf.iloc[0,1] - today
+                traded_qty_rto = round((alldf.loc[0, 'Tvol'] * 100000) / vol_avg_10, 2) if vol_avg_10 else 0
+                resultdate = resdf.iloc[0, 1]
+                ResInDays = resdf.iloc[0, 1] - today
                 if dlyratio >= comparevalue:
-                    alldf['pRange'] = alldf['High'] - alldf['Low']             
-                    dlylist.append((firm, round(dlyratio, 2), round(alldf.loc[0, 'PrChgP'],2) ,alldf.loc[0, 'PrChg'],traded_qty_rto, alldf.loc[0, 'High'], 
-                            alldf.loc[0, 'cur_dly'], alldf.loc[0, 'cur_trd_qty'],alldf.loc[0, 'Tvalue'], alldf.loc[0, 'Tvol'],
-                            alldf.loc[0, 'LTP'], alldf.loc[0, 'Low'], alldf.loc[0, 'VWAP'], alldf.loc[0, 'pRange'],fromtadf.loc[0, 'Val_CR'], fromtadf.loc[0, 'Vol'], fromtadf.loc[0, 'DlyAvg_10'], resultdate,ResInDays, alldf.loc[0, 'capTime'] ))
+                    alldf['pRange'] = alldf['High'] - alldf['Low']
+                    dlylist.append((
+                        firm, round(dlyratio, 2), round(alldf.loc[0, 'PrChgP'], 2), traded_qty_rto,
+                        alldf.loc[0, 'High'], alldf.loc[0, 'cur_dly'], alldf.loc[0, 'cur_trd_qty'],
+                        alldf.loc[0, 'Tvalue'], alldf.loc[0, 'Tvol'], alldf.loc[0, 'LTP'],
+                        alldf.loc[0, 'Low'], alldf.loc[0, 'VWAP'], alldf.loc[0, 'PrChg'],
+                        alldf.loc[0, 'pRange'], fromtadf.loc[0, 'Val_CR'], fromtadf.loc[0, 'Vol'],
+                        fromtadf.loc[0, 'DlyAvg_10'], resultdate, ResInDays, alldf.loc[0, 'capTime']
+                    ))
         except Exception as e:
             print(f"Error processing data for {firm}: {str(e)}")
-            pass    
+            pass
 
-    dlydf = pd.DataFrame(dlylist, columns=["Stock", "dly_RTO" ,"prchg%", "prchg", "qty_rto", "High","cur_dly", "cur_trd_qty", "Tval", "Tvol", "LTP", "Low", "VWAP", "pRange","Val_CR", "Vol","DlyAvg_10", "RsDt","RsDays","capTime" ])    
+    dlydf = pd.DataFrame(dlylist, columns=[
+        "Stock", "dly_RTO", "prchg%", "qty_rto", "High", "cur_dly", "cur_trd_qty",
+        "Tval", "Tvol", "LTP", "Low", "VWAP", "prchg", "pRange", "Val_CR", "Vol",
+        "DlyAvg_10", "RsDt", "RsDays", "capTime"
+    ])
     dlydf_out = dlydf.sort_values(by='dly_RTO', ascending=False)
-    print(dlydf_out.head(10))
-    print("\2\n")
+
+    # Store in dictionary with index name as key
+    results[indices] = dlydf_out
+
+    #print(dlydf_out.head(10))
+    print("\n")
+fno_df = results.get("fno", pd.DataFrame()) 
+nonfno_df = results.get("allmarket_nonfno", pd.DataFrame())
+# After loop you can access each DataFrame by its index name
+print("****************** Task Completed! *********************")
+for idx, df in results.items():
+    print(f"Total shortlisted stock for Index {idx}: {df.shape[0]} for compare value {comparevalue}")
+    print(df.shape)
+    print (f"Displaying top 10 order by dly_RTO")
+    print (df.head(10))
+
 ot_conn.close()
 ta_conn.close() 
 print("\2\n"+" ******************  Task Completed! ********************* ")
 endtime = datetime.now()
 print (f'Task completed at {endtime}')
-print (f"Total shortlisted stock for Index {indices} are {dlydf_out.shape[0]} for compare value {comparevalue} . Displaying top 10 order by dly_RTO")
+
 
 
 

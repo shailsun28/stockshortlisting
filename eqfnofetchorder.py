@@ -22,7 +22,8 @@ def fetch_stock_data(stock: str):
 
     now = datetime.now()
     current_year = now.year
-    current_month = now.month
+    #current_month = now.month
+    current_month = 2
     current_time = now.strftime('%H:%M:%S')
     current_date = now.strftime('%Y-%m-%d')
 
@@ -137,12 +138,14 @@ def process_file(filepath, filename, db_path):
     #df['%Prchg_fu'] = pd.to_numeric(df['%Prchg_fu'], errors='coerce').astype(float).round(2)
     # Write to SQLite
     df['Stock'] = df['Stock'].replace('%26', '&', regex=True)
+    df = df.drop_duplicates(subset=['Stock', 'Date', 'Time'])
     df.to_sql(filename, conn, if_exists='append', index=False)
     conn.close()
     return df
 
 if __name__ == "__main__":
-    print(f"* Task started at {datetime.now()} *****")
+    starttime = datetime.now()
+    print(f"* Task started at {starttime} *****")
     #base_dir = "/Users/shail/Documents/Trading/NiftyStocks/"
     #db_path = "/Users/shail/Documents/Trading/market-turnover/db/eq_fu_buysell_qty.db"
     db_path = os.path.join(BASE_DIR_db, "eq_fu_buysell_qty.db")
@@ -154,4 +157,14 @@ if __name__ == "__main__":
             process_file(filepath, filename, db_path)
         else:
             print(f"File not found: {filepath}")
-    print(f"***** Script completed successfully at {datetime.now()} *****")
+    print(f"***** Script completed successfully *****")
+    endtime = datetime.now()
+    elapsed = endtime - starttime
+
+# total seconds as float
+    total_seconds = elapsed.total_seconds()
+# minutes and seconds
+    minutes = int(total_seconds // 60)
+    seconds = int(total_seconds % 60)
+    milliseconds = int((total_seconds - int(total_seconds)) * 1000)
+    print(f"The time taken to complete the task is {minutes}:{seconds:02d}.{milliseconds:03d}")

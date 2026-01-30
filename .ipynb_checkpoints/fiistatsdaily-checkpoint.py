@@ -10,10 +10,11 @@ import io  # Required for in-memory processing
 BASE_DIR_db = "/home/shail/db"
 current_date = datetime.now()
 print("The script started at ", current_date)
-
-formatted_date = current_date.strftime('%d-%b-%Y')
-#formatted_date = '13-Jan-2025' 
-url = f'https://nsearchives.nseindia.com/content/fo/fii_stats_{formatted_date}.xls'
+url_date = current_date.strftime('%d-%b-%Y')   # for URL
+db_date = current_date.strftime('%Y-%m-%d')    # for DB storage
+#formatted_date = current_date.strftime('%d-%b-%Y')
+formatted_date = '27-Jan-2026' 
+url = f'https://nsearchives.nseindia.com/content/fo/fii_stats_{url_date}.xls'
 print("The url is ", url)
 
 def get_df_from_url(url):
@@ -71,7 +72,7 @@ def clean_fii_data(df):
     df.dropna(subset=['Buy_Amt_Cr'], inplace=True)
 
     # Add Date
-    df['Date'] = formatted_date
+    df['Date'] = db_date
     
     # Reorder
     reorder_col = ['Date', 'Product', 'Buy_Contracts', 'Buy_Amt_Cr', 'Sell_Contracts', 'Sell_Amt_Cr', 'OI_Contracts', 'OI_Amt_Cr']
@@ -88,7 +89,7 @@ if final_df is not None:
         
     db_path = os.path.join(BASE_DIR_db, "fnodailydata.db")
     conn = sqlite3.connect(db_path)
-    
+    #df['Date'] = formatted_date
     final_df.to_sql('fii', conn, if_exists='append', index=False)
     conn.close()
     print(f"Successfully processed and saved to DB. Rows: {len(final_df)}")

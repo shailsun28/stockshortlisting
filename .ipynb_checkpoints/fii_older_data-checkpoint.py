@@ -55,24 +55,26 @@ def clean_fii_data(df, date_str):
     return df[reorder_col]
 
 # --- Loop over last 9 months ---
-start_date = current_date - timedelta(days=270)  # ~9 months
+start_date = current_date - timedelta(days=290)  # ~9 months
 conn = sqlite3.connect(db_path)
 
 for day_offset in range((current_date - start_date).days + 1):
     download_date = start_date + timedelta(days=day_offset)
-    formatted_date = download_date.strftime('%d-%b-%Y')  # e.g. 16-Jan-2026
-    url = f'https://nsearchives.nseindia.com/content/fo/fii_stats_{formatted_date}.xls'
+    url_date = download_date.strftime('%d-%b-%Y')   # for URL
+    db_date = download_date.strftime('%Y-%m-%d')    # for DB storage
+
+    url = f'https://nsearchives.nseindia.com/content/fo/fii_stats_{url_date}.xls'
 
     try:
         raw_df = get_df_from_url(url)
-        final_df = clean_fii_data(raw_df, formatted_date)
+        final_df = clean_fii_data(raw_df, db_date)   # pass YYYY-MM-DD here
         if final_df is not None and not final_df.empty:
+            # ✅ no need for .strftime() on the Series
             final_df.to_sql('fii', conn, if_exists='append', index=False)
-            print(f"Saved FII data for {formatted_date}, rows: {len(final_df)}")
+            print(f"Saved FII data for {db_date}, rows: {len(final_df)}")
         else:
-            print(f"No data for {formatted_date}")
+            print(f"No data for {db_date}")
     except Exception as e:
-        print(f"Skipped {formatted_date} due to error: {e}")
-
+        print(f"Skipped {db_date} due to error: {e}")
 conn.close()
 print("The script Completed at ", datetime.now())

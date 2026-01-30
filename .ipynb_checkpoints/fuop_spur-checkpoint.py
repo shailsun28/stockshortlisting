@@ -9,12 +9,12 @@ from datetime import datetime, date
 BASE_DIR = "/home/shail/stockshortlisting"
 BASE_DIR_db = "/home/shail/db"
 
-now = datetime.now()
-print("\2\n"+ " ******************  Script run started  at ...   ", now)
+starttime = datetime.now()
+print("\2\n"+ " ******************  Script run started  at ...   ", starttime)
 
 dbpath = os.path.join(BASE_DIR_db, "fuopspur.db")
 conn = sqlite3.connect(dbpath)
-current_date = now.strftime('%Y-%m-%d')
+current_date = starttime.strftime('%Y-%m-%d')
 #api_url = "https://www.nseindia.com/api/equity-stockIndices?index=NIFTY 50"
 api_url = "https://www.nseindia.com/api/live-analysis-oi-spurts-underlyings"
 
@@ -41,7 +41,7 @@ with httpx.Client() as client:
 	    response2.raise_for_status()
 	    data = json.loads(response2.text)
 	    df = pd.json_normalize(data['data'])
-	    current_time = now.strftime('%H:%M')
+	    current_time = starttime.strftime('%H:%M')
 	    df['Time'] = current_time
 	    df['Date'] = current_date
 	    #print(df.shape)
@@ -52,4 +52,12 @@ conn.close()
 #df.to_sql('spur', conn, if_exists='append', index=False)
 #bank = df[nfcolumns]
 endtime = datetime.now()
-print("\2\n"+ " ******************  Completed Successfully  at ************* ", endtime)
+elapsed = endtime - starttime
+
+# total seconds as float
+total_seconds = elapsed.total_seconds()
+# minutes and seconds
+minutes = int(total_seconds // 60)
+seconds = int(total_seconds % 60)
+milliseconds = int((total_seconds - int(total_seconds)) * 1000)
+print(f"The time taken to complete the task is {minutes}:{seconds:02d}.{milliseconds:03d}")

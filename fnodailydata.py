@@ -5,21 +5,26 @@ from datetime import datetime, timedelta
 import sqlite3
 import os 
 import re
-
+#https://www.nseindia.com/api/daily-reports?key=FO
 print ("The Task start at  ", datetime.now())
 BASE_DIR_db = "/home/shail/db"
 current_date = datetime.now()
-#download_date = current_date - timedelta(2)
 download_date = current_date
+#download_date = current_date - timedelta(1)
+
 print (f' Getting daily reports for date {download_date}')
 db_path = os.path.join(BASE_DIR_db, "fnodailydata.db")
 
-oi_url = f"https://nsearchives.nseindia.com/content/nsccl/fao_participant_oi_{download_date.strftime('%d%m%Y')}.csv"
-vol_url = f"https://nsearchives.nseindia.com/content/nsccl/fao_participant_vol_{download_date.strftime('%d%m%Y')}.csv"
-zip_url = f"https://nsearchives.nseindia.com/archives/fo/mkt/fo{download_date.strftime('%d%m%Y')}.zip"
+url_date = download_date.strftime('%d%m%Y')   # for URL
+db_date = download_date.strftime('%Y-%m-%d')    # for DB storage
+
+oi_url = f"https://nsearchives.nseindia.com/content/nsccl/fao_participant_oi_{url_date}.csv"
+vol_url = f"https://nsearchives.nseindia.com/content/nsccl/fao_participant_vol_{url_date}.csv"
+zip_url = f"https://nsearchives.nseindia.com/archives/fo/mkt/fo{url_date}.zip"
 
 
-def clean_columns(df):
+#def clean_columns(df):
+def clean_columns(df, date_str):
     # Define replacements
     replacements = {
         "contract": "con",
@@ -37,6 +42,8 @@ def clean_columns(df):
     new_cols = []
     for col in df.columns:
         # Lowercase and strip spaces
+        #df['Date'] = date_str
+        #df = df.set_index('Date') 
         c = col.strip().lower()
         # Remove special characters
         c = re.sub(r"[ ,_.()]", "", c)
@@ -46,6 +53,10 @@ def clean_columns(df):
         new_cols.append(c)
 
     df.columns = new_cols
+    #df['Date'] = date_str
+    #df = df.set_index('Date') 
+    # Add Date column as the first column in the table.
+    df.insert(0, "Date", date_str) # ensures Date is the first column
     return df
 
 def csv_from_url(url):
@@ -67,7 +78,7 @@ def csv_from_url(url):
             # Read CSV directly from response content
             file_stream = io.BytesIO(response.content)
             df = pd.read_csv(file_stream,skiprows=1)
-            df['Date'] = download_date.strftime('%Y-%m-%d')
+            #df['Date'] = download_date.strftime('%Y-%m-%d')
             return df
         else:
             print(f"Failed to download. Status code: {response.status_code}")
@@ -103,8 +114,8 @@ def df_from_zip(url):
                 df = pd.read_csv(f, skiprows=1, on_bad_lines="skip")
                 df = df.dropna(how="all")
                 #df['Date'] = download_date
-                df['Date'] = download_date.strftime('%Y-%m-%d')
-                df = df.set_index('Date') 
+                #df['Date'] = download_date.strftime('%Y-%m-%d')
+                #df = df.set_index('Date') 
 
                 # Remove .csv extension for dictionary key
                 keyname = fname.replace(".csv", "")
@@ -118,15 +129,15 @@ vol_df = csv_from_url(vol_url)
 dfs_dict = df_from_zip(zip_url)
 
 if dfs_dict:
-    fo_df = dfs_dict[f"fo_{download_date.strftime('%d%m%Y')}"]
-    futidx_df = dfs_dict[f"futidx{download_date.strftime('%d%m%Y')}"]
-    futstk_df = dfs_dict[f"futstk{download_date.strftime('%d%m%Y')}"]
+    fo_df = dfs_dict[f"fo_{url_date}"]
+    futidx_df = dfs_dict[f"futidx{url_date}"]
+    futstk_df = dfs_dict[f"futstk{url_date}"]
 
-oi_df = clean_columns(oi_df)
-vol_df = clean_columns(vol_df)
-fo_df = clean_columns(fo_df)
-futidx_df = clean_columns(futidx_df)
-futstk_df = clean_columns(futstk_df)
+oi_df = clean_columns(oi_df, db_date)
+vol_df = clean_columns(vol_df, db_date)
+fo_df = clean_columns(fo_df, db_date)
+futidx_df = clean_columns(futidx_df, db_date)
+futstk_df = clean_columns(futstk_df, db_date)
 
 # Connect to SQLite
 conn = sqlite3.connect(db_path)
@@ -140,10 +151,15 @@ if vol_df is not None:
     vol_df.to_sql("participant_vol", conn, if_exists="append", index=False)
     print("Saved vol_df -> participant_vol")
 
-# Save each extracted CSV from the ZIP into its own table
+# Remove rows where product == 'Vol Futures'
+#fo_df = fo_df[fo_df['product'] != 'Vol Futures']
+# Drop rows where product contains 'Vol Futures' (case-insensitive, strip spaces) 
+fo_df = fo_df[~fo_df['product'].str.strip().str.lower().eq('vol futures')]
 
+# Save each extracted CSV from the ZIP into its own table
 fo_df.to_sql("fnototal", conn, if_exists="append", index=False)
 futidx_df.to_sql("fuidx", conn, if_exists="append", index=False)
+futstk_df = futstk_df.drop(columns=['sno'])
 futstk_df.to_sql("fustk", conn, if_exists="append", index=False)
 
 # Close connection
