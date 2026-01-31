@@ -190,7 +190,7 @@ def plot_adv_dec_last_n_days(df, label, fmt="%H:%M:%S", n=1):
 
 
 # Sidebar selectors slidebar
-num_days = st.sidebar.slider("Number of days to show", min_value=1, max_value=30, value=1)
+num_days = st.sidebar.slider("Number of days to show", min_value=1, max_value=90, value=1)
 
 # -----------------------------
 # Load Index Tables
