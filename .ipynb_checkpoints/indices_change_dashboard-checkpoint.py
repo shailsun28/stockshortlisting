@@ -84,26 +84,24 @@ def valuechange(df):
     df['Tval'] = (df['Tval'] / 1e7).round(3)   # crores
     df['Tvol'] = (df['Tvol'] / 1e5).round(3)   # lakhs
 
-    # Changes (same unit as scaled totals)
-    df['Valchg'] = df['Tval'].diff().round(3)
-    df['Volchg'] = df['Tvol'].diff().round(3)
+    # Changes (current row - next row, so last row is NaN)
+    df['Valchg'] = (df['Tval'] - df['Tval'].shift(-1)).round(3)
+    df['Volchg'] = (df['Tvol'] - df['Tvol'].shift(-1)).round(3)
 
-    # Percent changes
-    df['Valchg%'] = (df['Tval'].diff() * 100 / df['Tval'].shift()).round(3)
-    df['Volchg%'] = (df['Tvol'].diff() * 100 / df['Tvol'].shift()).round(3)
+    # Percent changes (relative to next row, so last row is NaN)
+    df['Valchg%'] = ((df['Tval'] - df['Tval'].shift(-1)) * 100 / df['Tval'].shift(-1)).round(3)
+    df['Volchg%'] = ((df['Tvol'] - df['Tvol'].shift(-1)) * 100 / df['Tvol'].shift(-1)).round(3)
 
     # Other derived metrics
     if 'Valchg' in df.columns and 'Volchg' in df.columns:
         df['Chgavg'] = (df['Valchg'] * 100 / df['Volchg']).round(3)
-        df['Tavgchg%'] = (df['Chgavg'].diff() * 100 / df['Chgavg'].shift()).round(3)
+        df['Tavgchg%'] = ((df['Chgavg'] - df['Chgavg'].shift(-1)) * 100 / df['Chgavg'].shift(-1)).round(3)
 
     df['Var%'] = (df['Valchg%'] - df['Volchg%']).round(3)
     df['rto%'] = (df['Valchg%'] / df['Volchg%']).round(3)
     df['Totavg'] = (df['Tval'] / df['Tvol']).round(3)
 
     # Leave NaNs as-is so charts skip them (avoids misleading zeros)
-    # If you want smoother continuity for totals only:
-    # df[['Tval','Tvol']] = df[['Tval','Tvol']].fillna(method="ffill")
 
     keep = [
         'symbol','Date','Time','pchg','Valchg','Volchg','Valchg%','Volchg%',
@@ -111,7 +109,6 @@ def valuechange(df):
         'Tvol','Tval','Chgavg','rto%','Totavg'
     ]
     return df[[c for c in keep if c in df.columns]]
-
     
 def load_sql(db_path, table, query):
     with sqlite3.connect(db_path) as conn:
@@ -123,7 +120,8 @@ def parse_time(df, fmt):
             df['Date'].astype(str) + ' ' + df['Time'].astype(str),
             format=f"%Y-%m-%d {fmt}", errors="coerce"
         )
-        df.sort_values(by='DateTime', inplace=True)
+        #df.sort_values(by='DateTime', inplace=True)
+        df.sort_values(by='DateTime', ascending=False, inplace=True)
         df.reset_index(drop=True, inplace=True)
     return df
 
@@ -204,7 +202,7 @@ dfs = {
             WHERE Date IN (
                 SELECT DISTINCT Date FROM '{tab}' ORDER BY Date DESC LIMIT {num_days}
             )
-            ORDER BY Date DESC, Time DESC
+            ORDER BY Date DESC
             """),
         "%H:%M:%S"
     )
@@ -244,7 +242,7 @@ results = {
                 WHERE Date IN (
                     SELECT DISTINCT Date FROM '{t}' ORDER BY Date DESC LIMIT {num_days}
                 )
-                ORDER BY Date DESC, Time DESC
+                ORDER BY Date DESC
                 """),
             "%H:%M"
         )
