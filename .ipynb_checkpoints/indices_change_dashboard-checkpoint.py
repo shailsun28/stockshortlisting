@@ -36,28 +36,33 @@ def diffprocess(df):
     df.fillna(0, inplace=True)
 
     if 'Tval' in df.columns:
-        df['Valchg'] = df['Tval'].diff().round(2)
-        df['Valchg%'] = (df['Tval'].diff()*100/df['Tval'].shift().replace(0,np.nan)).round(2)
+        # Current row - next row
+        df['Valchg'] = (df['Tval'] - df['Tval'].shift(-1)).round(2)
+        df['Valchg%'] = ((df['Tval'] - df['Tval'].shift(-1)) * 100 / df['Tval'].shift(-1).replace(0, np.nan)).round(2)
+
     if 'Tvol' in df.columns:
-        df['Volchg'] = df['Tvol'].diff().round(2)
-        df['Volchg%'] = (df['Tvol'].diff()*100/df['Tvol'].shift().replace(0,np.nan)).round(2)
+        df['Volchg'] = (df['Tvol'] - df['Tvol'].shift(-1)).round(2)
+        df['Volchg%'] = ((df['Tvol'] - df['Tvol'].shift(-1)) * 100 / df['Tvol'].shift(-1).replace(0, np.nan)).round(2)
+
     if {'Valchg','Volchg'}.issubset(df.columns):
-        df['Chgavg'] = (df['Valchg']*100/df['Volchg']).round(2)
-        df['Tavgchg%'] = (df['Chgavg'].diff()*100/df['Chgavg'].shift().replace(0,np.nan)).round(2)
+        df['Chgavg'] = (df['Valchg'] * 100 / df['Volchg']).round(2)
+        df['Tavgchg%'] = ((df['Chgavg'] - df['Chgavg'].shift(-1)) * 100 / df['Chgavg'].shift(-1).replace(0, np.nan)).round(2)
 
     if 'noOfOrders' in df.columns:
-        df['Orderchg_lac'] = (df['noOfOrders'].diff()/100000).round(3)
-        df['Orderchg%'] = (df['noOfOrders'].diff()*100/df['noOfOrders'].shift().replace(0,np.nan)).round(2)
+        df['Orderchg_lac'] = ((df['noOfOrders'] - df['noOfOrders'].shift(-1)) / 100000).round(3)
+        df['Orderchg%'] = ((df['noOfOrders'] - df['noOfOrders'].shift(-1)) * 100 / df['noOfOrders'].shift(-1).replace(0, np.nan)).round(2)
+
     if 'noOfTrades' in df.columns:
-        df['Trdnochg'] = df['noOfTrades'].diff().round(2)
-        df['Trdnochg%'] = (df['noOfTrades'].diff()*100/df['noOfTrades'].shift().replace(0,np.nan)).round(2)
+        df['Trdnochg'] = (df['noOfTrades'] - df['noOfTrades'].shift(-1)).round(2)
+        df['Trdnochg%'] = ((df['noOfTrades'] - df['noOfTrades'].shift(-1)) * 100 / df['noOfTrades'].shift(-1).replace(0, np.nan)).round(2)
 
     if {'Valchg%','Volchg%'}.issubset(df.columns):
-        df['Var%'] = (df['Valchg%']-df['Volchg%']).round(2)
-    if {'Tval','Tvol'}.issubset(df.columns):
-        df['Totavg'] = (df['Tval']*100/df['Tvol']).round(2)
+        df['Var%'] = (df['Valchg%'] - df['Volchg%']).round(2)
 
-    #df.fillna(0, inplace=True)
+    if {'Tval','Tvol'}.issubset(df.columns):
+        df['Totavg'] = (df['Tval'] * 100 / df['Tvol']).round(2)
+
+    # Forward fill for continuity (optional)
     df = df.fillna(method="ffill")
     return df
 
@@ -83,6 +88,8 @@ def valuechange(df):
     df['ffmc'] = (df.get('ffmc', 0) / 1e7).round(3)
     df['Tval'] = (df['Tval'] / 1e7).round(3)   # crores
     df['Tvol'] = (df['Tvol'] / 1e5).round(3)   # lakhs
+    #df['Tval'] = (df['Tval'] / 1e).round(3)   # crores
+    #df['Tvol'] = (df['Tvol'] / 1e5).round(3)   # lakhs
 
     # Changes (current row - next row, so last row is NaN)
     df['Valchg'] = (df['Tval'] - df['Tval'].shift(-1)).round(3)
