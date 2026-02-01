@@ -1,21 +1,27 @@
-#loaded from mycrontab text file
-*/1 9-15 * * [ "$(date +\%H:\%M)" \< "15:33" ] && /usr/bin/python3 /home/shail/stockshortlisting/allindices.py >> /tmp/allindices.log 2>&1
-*/2 9-15 * * [ "$(date +\%H:\%M)" \< "15:33" ] && /usr/bin/python3 /home/shail/stockshortlisting/idxfuturestradeinfo.py >> /tmp/idxfuturestradeinfo.log 2>&1
-1-59/2 9-15 * *  [ "$(date +\%H:\%M)" \< "15:33" ] && /usr/bin/python3 /home/shail/stockshortlisting/sectorwise_cal.py >> /tmp/sectorwise_cal.log 2>&1
-*/2 9-15 * * [ "$(date +\%H:\%M)" \< "15:33" ] && /usr/bin/python3 /home/shail/stockshortlisting/allturnover.py >> /tmp/allturnover.log 2>&1
-*/2 9-15 * *  [ "$(date +\%H:\%M)" \< "15:33" ] && /usr/bin/python3 /home/shail/stockshortlisting/eqfnofetchorder.py >> /tmp/eqfnofetchorder.log 2>&1
-*/5 9-15 * *  [ "$(date +\%H:\%M)" \< "15:33" ] && /usr/bin/python3 /home/shail/stockshortlisting/fuop_spur.py >> /tmp/fuop_spur.log 2>&1
+# Market hours jobs (already run all days)
+*/1 9-15 * * * [ "$(date +\%H:\%M)" \< "15:33" ] && /usr/bin/python3 /home/shail/stockshortlisting/allindices.py >> /tmp/allindices.log 2>&1
+*/2 9-15 * * * [ "$(date +\%H:\%M)" \< "15:33" ] && /usr/bin/python3 /home/shail/stockshortlisting/idxfuturestradeinfo.py >> /tmp/idxfuturestradeinfo.log 2>&1
+1-59/2 9-15 * * * [ "$(date +\%H:\%M)" \< "15:33" ] && /usr/bin/python3 /home/shail/stockshortlisting/sectorwise_cal.py >> /tmp/sectorwise_cal.log 2>&1
+*/2 9-15 * * * [ "$(date +\%H:\%M)" \< "15:33" ] && /usr/bin/python3 /home/shail/stockshortlisting/allturnover.py >> /tmp/allturnover.log 2>&1
+*/2 9-15 * * * [ "$(date +\%H:\%M)" \< "15:33" ] && /usr/bin/python3 /home/shail/stockshortlisting/eqfnofetchorder.py >> /tmp/eqfnofetchorder.log 2>&1
+*/5 9-15 * * * [ "$(date +\%H:\%M)" \< "15:33" ] && /usr/bin/python3 /home/shail/stockshortlisting/fuop_spur.py >> /tmp/fuop_spur.log 2>&1
+
+# Git auto push (already all days)
 */10 * * * * /home/shail/stockshortlisting/git-auto-push.sh >> /tmp/git-auto-push.log 2>&1
-11 10-15 * * /usr/bin/python3 /home/shail/stockshortlisting/fetchnshortlist_hrly.py >> /tmp/fetchnshortlist_hrly.log 2>&1
-0 20 * * /usr/bin/python3 /home/shail/stockshortlisting/dailymcap.py >> /tmp/dailymcap_cron.log 2>&1
-5 20 * * 1-5 /usr/bin/python3 /home/shail/stockshortlisting/get_earning_date.py >> /tmp/get_earning_date_cron.log 2>&1
-7 20 * * 1-5 /usr/bin/python3 /home/shail/stockshortlisting/52W_hl.py >> /tmp/52W_hl_cron.log 2>&1
-9 20 * * 1-5 /usr/bin/python3 /home/shail/stockshortlisting/getfullbhavfile.py >> /tmp/fullbhavcopy_cron.log 2>&1
-10 20 * * 1-5 /usr/bin/python3 /home/shail/stockshortlisting/deliveryratio_cal.py >> /tmp/deliveryratio_cal.log 2>&1
-13 20 * * 1-5 /usr/bin/python3 /home/shail/stockshortlisting/idx_daily_snap.py >> /tmp/idx_daily_snap.log 2>&1
-15 20 * * 1-5 /usr/bin/python3 /home/shail/stockshortlisting/cm_fno_growth_daily.py >> /tmp/cm_fno_growth_daily.log 2>&1
-16 20 * * 1-5 /usr/bin/python3 /home/shail/stockshortlisting/fiistats.py >> /tmp/fiistats.log 2>&1
-17 20 * * 1-5 /usr/bin/python3 /home/shail/stockshortlisting/daily_shortlist_w_db.py >> /tmp/daily_shortlist_cron.log 2>&1
-20 20 * * 1-5 /usr/bin/python3 /home/shail/stockshortlisting/fiistatsdaily.py>> /tmp/fiistatsdaily.log 2>&1
-21 20 * * 1-5 /usr/bin/python3 /home/shail/stockshortlisting/fnodailydata.py >> /tmp/fnodailydata.log 2>&1
-22 20 * * 1-5 /usr/bin/python3 /home/shail/stockshortlisting/oi_vol_fno_pct_daily.py >> /tmp/oi_vol_fno_pct_daily.log 2>&1
+
+# Hourly job
+11 10-15 * * * /usr/bin/python3 /home/shail/stockshortlisting/fetchnshortlist_hrly.py >> /tmp/fetchnshortlist_hrly.log 2>&1
+
+# Evening jobs — now run EVERY DAY (weekends included)
+0 20 * * * /usr/bin/python3 /home/shail/stockshortlisting/dailymcap.py >> /tmp/dailymcap_cron.log 2>&1
+5 20 * * * /usr/bin/python3 /home/shail/stockshortlisting/get_earning_date.py >> /tmp/get_earning_date_cron.log 2>&1
+7 20 * * * /usr/bin/python3 /home/shail/stockshortlisting/52W_hl.py >> /tmp/52W_hl_cron.log 2>&1
+9 20 * * * /usr/bin/python3 /home/shail/stockshortlisting/getfullbhavfile.py >> /tmp/fullbhavcopy_cron.log 2>&1
+10 20 * * * /usr/bin/python3 /home/shail/stockshortlisting/deliveryratio_cal.py >> /tmp/deliveryratio_cal.log 2>&1
+13 20 * * * /usr/bin/python3 /home/shail/stockshortlisting/idx_daily_snap.py >> /tmp/idx_daily_snap.log 2>&1
+15 20 * * * /usr/bin/python3 /home/shail/stockshortlisting/cm_fno_growth_daily.py >> /tmp/cm_fno_growth_daily.log 2>&1
+16 20 * * * /usr/bin/python3 /home/shail/stockshortlisting/fiistats.py >> /tmp/fiistats.log 2>&1
+17 20 * * * /usr/bin/python3 /home/shail/stockshortlisting/daily_shortlist_w_db.py >> /tmp/daily_shortlist_cron.log 2>&1
+20 20 * * * /usr/bin/python3 /home/shail/stockshortlisting/fiistatsdaily.py >> /tmp/fiistatsdaily.log 2>&1
+21 20 * * * /usr/bin/python3 /home/shail/stockshortlisting/fnodailydata.py >> /tmp/fnodailydata.log 2>&1
+22 20 * * * /usr/bin/python3 /home/shail/stockshortlisting/oi_vol_fno_pct_daily.py >> /tmp/oi_vol_fno_pct_daily.log 2>&1
