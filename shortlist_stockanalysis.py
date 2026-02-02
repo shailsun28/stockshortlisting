@@ -221,7 +221,16 @@ def fetch_nse_data(stock: str):
         st.error(f"Error fetching NSE data for {stock}: {e}")
         return None, None
 
-
+def parse_time(df, fmt):
+    if 'Time' in df.columns and 'Date' in df.columns:
+        df['DateTime'] = pd.to_datetime(
+            df['Date'].astype(str) + ' ' + df['Time'].astype(str),
+            format=f"%Y-%m-%d {fmt}", errors="coerce"
+        )
+        #df.sort_values(by='DateTime', inplace=True)
+        df.sort_values(by='DateTime', ascending=False, inplace=True)
+        df.reset_index(drop=True, inplace=True)
+    return df
 #shortlist_script_path = "/Users/shail/Documents/Trading/My-Code/onetimedb_hrly_shortlist.py"
 shortlist_script_path = os.path.join(BASE_DIR, "onetimedb_hrly_shortlist.py")
 spec = importlib.util.spec_from_file_location("onetimedb_hrly_shortlist", shortlist_script_path)
