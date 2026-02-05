@@ -41,10 +41,10 @@ selected_table = st.sidebar.selectbox("Choose a table:", table_names)
 # Sidebar date selector
 if "Date" in dfs[selected_table].columns:
     df = dfs[selected_table].copy()
-    df["Date"] = pd.to_datetime(df["Date"], errors="coerce").dt.date
+    df["Date"] = pd.to_datetime(df["Date"], errors="coerce")   # keep datetime64
 
-    min_date = df["Date"].min()
-    max_date = df["Date"].max()
+    min_date = df["Date"].min().date()
+    max_date = df["Date"].max().date()
 
     # Range selector
     date_range = st.sidebar.date_input(
@@ -57,7 +57,11 @@ if "Date" in dfs[selected_table].columns:
     # Apply filter
     if isinstance(date_range, list) and len(date_range) == 2:
         start_date, end_date = date_range
-        df = df[(df["Date"] >= start_date) & (df["Date"] <= end_date)]
+        # convert selected dates back to datetime for comparison
+        start_dt = pd.to_datetime(start_date)
+        end_dt = pd.to_datetime(end_date)
+        df = df[(df["Date"] >= start_dt) & (df["Date"] <= end_dt)]
+
 
 
 
@@ -102,6 +106,8 @@ if selected_table in dfs:
             filtered_df["Period"] = filtered_df["Date"]
             #filtered_df["Period"] = filtered_df["Date"]
 
+        ####
+        
         # Identify numeric columns
         numeric_cols = filtered_df.select_dtypes(include=["number"]).columns
 
@@ -156,7 +162,9 @@ if selected_table in dfs:
             st.altair_chart(chart, use_container_width=True)
         # Show filtered table
         st.write(f"### Table: {selected_table}")
-        filtered_df["Date"] = pd.to_datetime(filtered_df["Date"], errors="coerce").dt.date 
+        #filtered_df["Date"] = pd.to_datetime(filtered_df["Date"], errors="coerce").dt.date 
+         # At the very end, for display only: 
+        filtered_df["Date"] = filtered_df["Date"].dt.date
         filtered_df = filtered_df.sort_values("Date", ascending=False)
         st.dataframe(filtered_df, use_container_width=True)
 
