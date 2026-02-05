@@ -38,25 +38,27 @@ st.sidebar.header("Filters")
 # Select table
 selected_table = st.sidebar.selectbox("Choose a table:", table_names)
 
+# Sidebar date selector
 if "Date" in dfs[selected_table].columns:
-    min_date = pd.to_datetime(dfs[selected_table]["Date"], errors="coerce").min().date()
-    max_date = pd.to_datetime(dfs[selected_table]["Date"], errors="coerce").max().date()
-
-    # Single date selector
-    selected_date = st.sidebar.date_input("Select a date:", min_value=min_date, max_value=max_date, value=min_date)
-
-    # Or for a range selector:
-    date_range = st.sidebar.date_input("Select date range:", [min_date, max_date], min_value=min_date, max_value=max_date)
-
-    # Apply filter
     df = dfs[selected_table].copy()
     df["Date"] = pd.to_datetime(df["Date"], errors="coerce").dt.date
 
+    min_date = df["Date"].min()
+    max_date = df["Date"].max()
+
+    # Range selector
+    date_range = st.sidebar.date_input(
+        "Select date range:",
+        [min_date, max_date],
+        min_value=min_date,
+        max_value=max_date
+    )
+
+    # Apply filter
     if isinstance(date_range, list) and len(date_range) == 2:
         start_date, end_date = date_range
         df = df[(df["Date"] >= start_date) & (df["Date"] <= end_date)]
-    else:
-        df = df[df["Date"] == selected_date]
+
 
 
 
