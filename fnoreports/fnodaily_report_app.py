@@ -86,7 +86,7 @@ if selected_table in dfs:
         filtered_df = df
 
     # Format Date column
-    #if "Date" in filtered_df.columns:
+    if "Date" in filtered_df.columns:
         #filtered_df["Date"] = pd.to_datetime(filtered_df["Date"], errors="coerce")
         #filtered_df["Date"] = pd.to_datetime(filtered_df["Date"], errors="coerce").dt.date
         #filtered_df = filtered_df.sort_values("Date", ascending=True)
