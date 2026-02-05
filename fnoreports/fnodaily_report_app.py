@@ -67,7 +67,7 @@ if "Date" in dfs[selected_table].columns:
 granularity = st.sidebar.radio("Select granularity:", ["Daily", "Weekly", "Monthly"])
 
 if selected_table in dfs:
-    df = dfs[selected_table].copy()
+    #df = dfs[selected_table].copy()
     #st.write(f"### Table: {selected_table}")
 
     # Identify second column
