@@ -338,7 +338,7 @@ if selected_fno_stock or manual_stock:
                         alt.Chart(plot_df)
                         .mark_line(point=True)
                         .encode(x="Time:T", y=f"{col}:Q", color=alt.value(color))
-                        .properties(width=1000, height=200, title=f"{title} for {selected_fno_stock}")
+                        .properties(width=1000, height=200, title=f"{title} for {stock_to_analyze}")
                     )
                     st.altair_chart(chart, use_container_width=True)
         else:
