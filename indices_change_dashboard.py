@@ -107,13 +107,14 @@ def valuechange(df):
     df['Var%'] = (df['Valchg%'] - df['Volchg%']).round(3)
     df['rto%'] = (df['Valchg%'] / df['Volchg%']).round(3)
     df['Totavg'] = (df['Tval'] / df['Tvol']).round(3)
+    df['Prng'] = (df['High'] - df['Low']).round(2)
 
     # Leave NaNs as-is so charts skip them (avoids misleading zeros)
 
     keep = [
         'symbol','Date','Time','pchg','Valchg','Volchg','Valchg%','Volchg%',
         'Var%','High','Low','LTP','chg','Adv','Dec','Unchg',
-        'Tvol','Tval','Chgavg','rto%','Totavg'
+        'Tvol','Tval','Chgavg','rto%','Totavg','Prng'
     ]
     return df[[c for c in keep if c in df.columns]]
     
@@ -281,6 +282,7 @@ COMMON_CHART_SPECS = [
     ("pchg", "orange", "% Change"),   # will be skipped if not present
     ("Chgavg", "purple", "Change Avg"),
     ("Var%", "yellow", "Varation Val-Vol %"),
+    ("Prng", "black", "High Low diff (range)"),
 #    ("Dec", "red", "Decline"),
 ]
 
