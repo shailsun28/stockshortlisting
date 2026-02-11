@@ -282,7 +282,7 @@ COMMON_CHART_SPECS = [
     ("pchg", "orange", "% Change"),   # will be skipped if not present
     ("Chgavg", "purple", "Change Avg"),
     ("Var%", "yellow", "Varation Val-Vol %"),
-    ("Prng", "black", "High Low diff (range)"),
+    ("chg", "black", "Price Change"),
 #    ("Dec", "red", "Decline"),
 ]
 
