@@ -22,7 +22,6 @@
 10 20 * * 0-5 /usr/bin/python3 /home/shail/stockshortlisting/deliveryratio_cal.py >> /tmp/deliveryratio_cal.log 2>&1
 13 20 * * 0-5 /usr/bin/python3 /home/shail/stockshortlisting/idx_daily_snap.py >> /tmp/idx_daily_snap.log 2>&1
 15 20 * * 0-5 /usr/bin/python3 /home/shail/stockshortlisting/cm_fno_growth_daily.py >> /tmp/cm_fno_growth_daily.log 2>&1
-16 20 * * 0-5 /usr/bin/python3 /home/shail/stockshortlisting/fiistats.py >> /tmp/fiistats.log 2>&1
 17 20 * * 0-5 /usr/bin/python3 /home/shail/stockshortlisting/daily_shortlist_w_db.py >> /tmp/daily_shortlist_cron.log 2>&1
 20 20 * * 0-5 /usr/bin/python3 /home/shail/stockshortlisting/fiistatsdaily.py >> /tmp/fiistatsdaily.log 2>&1
 21 20 * * 0-5 /usr/bin/python3 /home/shail/stockshortlisting/fnodailydata.py >> /tmp/fnodailydata.log 2>&1

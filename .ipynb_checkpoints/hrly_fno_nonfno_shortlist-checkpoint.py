@@ -155,7 +155,7 @@ for indices in indiceslist:
                     alldf['pRange'] = alldf['High'] - alldf['Low']
                     dlylist.append((
                         firm, round(dlyratio, 2), round(alldf.loc[0, 'PrChgP'], 2), traded_qty_rto,
-                        alldf.loc[0, 'High'], alldf.loc[0, 'cur_dly'], alldf.loc[0, 'cur_trd_qty'],
+                        alldf.loc[0, 'High'], alldf.loc[0, 'cur_dly'],
                         alldf.loc[0, 'Tvalue'], alldf.loc[0, 'Tvol'], alldf.loc[0, 'LTP'],
                         alldf.loc[0, 'Low'], alldf.loc[0, 'VWAP'], alldf.loc[0, 'PrChg'],
                         dfn['Val_CR'].iloc[0],dfn['Vol'].iloc[0],dfn['Dly10'].iloc[0]
@@ -166,7 +166,7 @@ for indices in indiceslist:
             pass
 
     dlydf = pd.DataFrame(dlylist, columns=[
-        "Stock", "dly_RTO", "prchg%", "qty_rto", "High", "cur_dly", "cur_trd_qty",
+        "Stock", "dly_RTO", "prchg%", "qty_rto", "High", "cur_dly",
         "Tval", "Tvol", "LTP", "Low", "VWAP", "prchg", "Val1d", "Vol1d",
         "DlyAvg_10", "RsDt", "RsDays", "capTime", "Valchg10p", "Volchg10p", "Valchg21p", "Volchg21p", "Valchg51p", "Volchg51p"
     ])
