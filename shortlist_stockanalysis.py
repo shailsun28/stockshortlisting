@@ -232,8 +232,11 @@ def parse_time(df, fmt):
         df.reset_index(drop=True, inplace=True)
     return df
 #shortlist_script_path = "/Users/shail/Documents/Trading/My-Code/onetimedb_hrly_shortlist.py"
-shortlist_script_path = os.path.join(BASE_DIR, "onetimedb_hrly_shortlist.py")
-spec = importlib.util.spec_from_file_location("onetimedb_hrly_shortlist", shortlist_script_path)
+#shortlist_script_path = os.path.join(BASE_DIR, "onetimedb_hrly_shortlist.py")
+#hrly_fno_nonfno_shortlist.py
+shortlist_script_path = os.path.join(BASE_DIR, "hrly_fno_nonfno_shortlist.py")
+spec = importlib.util.spec_from_file_location("hrly_fno_nonfno_shortlist", shortlist_script_path)
+#spec = importlib.util.spec_from_file_location("onetimedb_hrly_shortlist", shortlist_script_path)
 shortlist_module = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(shortlist_module)
 
