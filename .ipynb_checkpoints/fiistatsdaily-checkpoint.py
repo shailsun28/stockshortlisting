@@ -70,6 +70,8 @@ try:
     raw_df = get_df_from_url(url)
     final_df = clean_fii_data(raw_df, db_date)
     if final_df is not None and not final_df.empty:
+        final_df['NetAmt_cr'] = final_df['Buy_Amt_Cr'] - final_df['Sell_Amt_Cr']
+        final_df['Netcon'] = final_df['Buy_Contracts'] - final_df['Sell_Contracts']
         final_df.to_sql('fii', conn, if_exists='append', index=False)
         print(f"Saved FII data for {db_date}, rows: {len(final_df)}")
     else:
