@@ -1,7 +1,7 @@
 import numpy as np
 import requests
 import pandas as pd
-from datetime import datetime
+from datetime import datetime, timedelta
 import sqlite3
 import os
 import io  # Required for in-memory processing
@@ -54,8 +54,8 @@ def clean_fii_data(df, date_str):
 # --- Single date execution ---
 
 target_date = datetime.now()
-print ("The script started at ", current_date)
-target_date = target_date - timedelta(4)
+print ("The script started at ", target_date)
+target_date = target_date - timedelta(3)
 
 url_date = target_date.strftime('%d-%b-%Y')   # for URL
 db_date = target_date.strftime('%Y-%m-%d')    # for DB storage
