@@ -75,7 +75,7 @@ vol_fnoidx_pct['fuidxnet'] = vol_fnoidx_pct['fuidxlng_pct'] - vol_fnoidx_pct['fu
 vol_fnoidx_pct['opidxnet'] = vol_fnoidx_pct['opidxlng_pct'] - vol_fnoidx_pct['opidxsht_pct']
 
 with sqlite3.connect(db_path) as conn:
-    fuidx_pct_vol.to_sql('fuidx_pct_vol', conn, if_exists='replace', index=False)
-    opidx_pct_oi.to_sql('opidx_pct_oi', conn, if_exists='replace', index=False)
+    oi_fnoidx_pct.to_sql('fnoidx_pct_oi', conn, if_exists='replace', index=False)
+    vol_fnoidx_pct.to_sql('fnoidx_pct_vol', conn, if_exists='replace', index=False)
     conn.commit()
 print("The Task Completed Successfully at ", datetime.now())
