@@ -15,6 +15,7 @@ with sqlite3.connect(db_path) as conn:
     for name in tables['name']:
         df = pd.read_sql_query(f'SELECT * FROM "{name}" ORDER BY Date DESC', conn)
         df = df.drop_duplicates()
+        df['Date'] = pd.to_datetime(df['Date'])
         dfs[name] = df
 
 # Unpack
@@ -23,6 +24,53 @@ fii, fno, fuidx, fustk, oi, vol = dfs['fii'], dfs['fnototal'], dfs['fuidx'], dfs
 # Column definitions
 fuidx_col = ['Date', 'clienttype', 'fuidxlong', 'fuidxshort']
 opidx_col = ['Date', 'clienttype', 'opidxcalllong', 'opidxputshort','opidxputlong', 'opidxcallshort']
+# Column Stock definitions
+fustock_col = ['Date', 'clienttype', 'fustocklong', 'fustockshort']
+opstock_col = ['Date', 'clienttype', 'opstockcalllong', 'opstockputshort','opstockputlong', 'opstockcallshort']
+
+def calc_stock_pct(df, fustock_col, opstock_col):
+    # --- Futures Index ---
+    fustock = df[fustock_col].copy()
+    fustock_pct = fustock[['Date','clienttype','fustocklong','fustockshort']]
+
+    # --- Options Index ---
+    opstock = df[opstock_col].copy()
+    opstock['TotOpLong'] = opstock['opstockcalllong'] + opstock['opstockputshort']
+    opstock['TotOpShort'] = opstock['opstockputlong'] + opstock['opstockcallshort']
+    opstock_pct = opstock[['Date','clienttype','TotOpLong','TotOpShort']]
+
+    # Merge futures + options
+    merged = pd.merge(fustock_pct, opstock_pct, on=['Date','clienttype'], how='inner')
+
+    # Extract TOTAL rows for each date
+    totals = merged[merged['clienttype'] == 'TOTAL'].rename(columns={
+        'fustocklong':'fustocklong_TOTAL',
+        'fustockshort':'fustockshort_TOTAL',
+        'TotOpLong':'TotOpLong_TOTAL',
+        'TotOpShort':'TotOpShort_TOTAL'
+    })[['Date','fustocklong_TOTAL','fustockshort_TOTAL','TotOpLong_TOTAL','TotOpShort_TOTAL']]
+
+    # Join TOTAL values back to all rows
+    merged = merged.merge(totals, on='Date', how='left')
+
+    # --- Percentages relative to TOTAL row ---
+    # Futures
+    merged['fustocklng_pct'] = (merged['fustocklong'] / merged['fustocklong_TOTAL'] * 100).round(2)
+    merged['fustocksht_pct'] = (merged['fustockshort'] / merged['fustockshort_TOTAL'] * 100).round(2)
+
+    # Options
+    merged['opstocklng_pct'] = (merged['TotOpLong'] / merged['TotOpLong_TOTAL'] * 100).round(2)
+    merged['opstocksht_pct'] = (merged['TotOpShort'] / merged['TotOpShort_TOTAL'] * 100).round(2)
+
+    # Final cleanup — sort descending by Date
+    final = merged[['Date','clienttype',
+                    'fustocklng_pct','fustocksht_pct',
+                    'opstocklng_pct','opstocksht_pct']] \
+            .sort_values(['Date','clienttype'], ascending=[False, True])
+
+    return final
+
+
 def calc_pct(df, fuidx_col, opidx_col):
     # --- Futures Index ---
     fuidx = df[fuidx_col].copy()
@@ -74,8 +122,19 @@ oi_fnoidx_pct['opidxnet'] = oi_fnoidx_pct['opidxlng_pct'] - oi_fnoidx_pct['opidx
 vol_fnoidx_pct['fuidxnet'] = vol_fnoidx_pct['fuidxlng_pct'] - vol_fnoidx_pct['fuidxsht_pct']
 vol_fnoidx_pct['opidxnet'] = vol_fnoidx_pct['opidxlng_pct'] - vol_fnoidx_pct['opidxsht_pct']
 
+# Apply to Stock oi and vol
+oi_fnostock_pct =  calc_stock_pct(oi, fustock_col, opstock_col)
+vol_fnostock_pct =  calc_stock_pct(vol, fustock_col, opstock_col)
+oi_fnostock_pct['fustocknet'] = oi_fnostock_pct['fustocklng_pct'] - oi_fnostock_pct['fustocksht_pct']
+oi_fnostock_pct['opstocknet'] = oi_fnostock_pct['opstocklng_pct'] - oi_fnostock_pct['opstocksht_pct']
+vol_fnostock_pct['fustocknet'] = vol_fnostock_pct['fustocklng_pct'] - vol_fnostock_pct['fustocksht_pct']
+vol_fnostock_pct['opstocknet'] = vol_fnostock_pct['opstocklng_pct'] - vol_fnostock_pct['opstocksht_pct']
+
+
 with sqlite3.connect(db_path) as conn:
     oi_fnoidx_pct.to_sql('fnoidx_pct_oi', conn, if_exists='replace', index=False)
     vol_fnoidx_pct.to_sql('fnoidx_pct_vol', conn, if_exists='replace', index=False)
+    oi_fnostock_pct.to_sql('fnostk_pct_oi', conn, if_exists='replace', index=False)
+    vol_fnostock_pct.to_sql('fnostk_pct_vol', conn, if_exists='replace', index=False)
     conn.commit()
 print("The Task Completed Successfully at ", datetime.now())
