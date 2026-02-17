@@ -74,6 +74,19 @@ oi_fnoidx_pct['opidxnet'] = oi_fnoidx_pct['opidxlng_pct'] - oi_fnoidx_pct['opidx
 vol_fnoidx_pct['fuidxnet'] = vol_fnoidx_pct['fuidxlng_pct'] - vol_fnoidx_pct['fuidxsht_pct']
 vol_fnoidx_pct['opidxnet'] = vol_fnoidx_pct['opidxlng_pct'] - vol_fnoidx_pct['opidxsht_pct']
 
+# Column definitions
+fustock_col = ['Date', 'clienttype', 'fustocklong', 'fustockshort']
+opstock_col = ['Date', 'clienttype', 'opstockcalllong', 'opstockputshort','opstockputlong', 'opstockcallshort']
+
+# Apply to both oi and vol
+oi_fnostock_pct = def calc_stock_pct(oi, fustock_col, opstock_col)
+vol_fnostock_pct = def calc_stock_pct(vol, fustock_col, opstock_col)
+oi_fnostock_pct['fustocknet'] = oi_fnostock_pct['fustocklng_pct'] - oi_fnostock_pct['fustocksht_pct']
+oi_fnostock_pct['opstocknet'] = oi_fnostock_pct['opstocklng_pct'] - oi_fnostock_pct['opstocksht_pct']
+vol_fnostock_pct['fustocknet'] = vol_fnostock_pct['fustocklng_pct'] - vol_fnostock_pct['fustocksht_pct']
+vol_fnostock_pct['opstocknet'] = vol_fnostock_pct['opstocklng_pct'] - vol_fnostock_pct['opstocksht_pct']
+
+
 with sqlite3.connect(db_path) as conn:
     oi_fnoidx_pct.to_sql('fnoidx_pct_oi', conn, if_exists='replace', index=False)
     vol_fnoidx_pct.to_sql('fnoidx_pct_vol', conn, if_exists='replace', index=False)
