@@ -114,7 +114,7 @@ def calc_pct(df, fuidx_col, opidx_col):
     return final
 
 
-# Apply to both oi and vol
+# Apply for IDX to both oi and vol
 oi_fnoidx_pct = calc_pct(oi, fuidx_col, opidx_col)
 vol_fnoidx_pct = calc_pct(vol, fuidx_col, opidx_col)
 oi_fnoidx_pct['fuidxnet'] = oi_fnoidx_pct['fuidxlng_pct'] - oi_fnoidx_pct['fuidxsht_pct']
@@ -122,13 +122,16 @@ oi_fnoidx_pct['opidxnet'] = oi_fnoidx_pct['opidxlng_pct'] - oi_fnoidx_pct['opidx
 vol_fnoidx_pct['fuidxnet'] = vol_fnoidx_pct['fuidxlng_pct'] - vol_fnoidx_pct['fuidxsht_pct']
 vol_fnoidx_pct['opidxnet'] = vol_fnoidx_pct['opidxlng_pct'] - vol_fnoidx_pct['opidxsht_pct']
 
-# Apply to Stock oi and vol
+# Apply for Stock oi and vol
 oi_fnostock_pct =  calc_stock_pct(oi, fustock_col, opstock_col)
 vol_fnostock_pct =  calc_stock_pct(vol, fustock_col, opstock_col)
 oi_fnostock_pct['fustocknet'] = oi_fnostock_pct['fustocklng_pct'] - oi_fnostock_pct['fustocksht_pct']
 oi_fnostock_pct['opstocknet'] = oi_fnostock_pct['opstocklng_pct'] - oi_fnostock_pct['opstocksht_pct']
 vol_fnostock_pct['fustocknet'] = vol_fnostock_pct['fustocklng_pct'] - vol_fnostock_pct['fustocksht_pct']
 vol_fnostock_pct['opstocknet'] = vol_fnostock_pct['opstocklng_pct'] - vol_fnostock_pct['opstocksht_pct']
+# Merge fuidx_vol with fno to bring in Index Futures values for the same Date
+
+print("The Task Completed Successfully at ", datetime.now())
 
 
 with sqlite3.connect(db_path) as conn:
