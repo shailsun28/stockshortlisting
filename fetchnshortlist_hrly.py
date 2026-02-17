@@ -8,7 +8,8 @@ BASE_DIR_db = "/home/shail/db/"
 
 # Run web_hourly_to_db.py
 web_hourly_script = f"{BASE_DIR}web_hourly_to_db.py"
-onetimedb_script = f"{BASE_DIR}onetimedb_hrly_shortlist.py"
+#onetimedb_script = f"{BASE_DIR}onetimedb_hrly_shortlist.py"
+onetimedb_script = f"{BASE_DIR}hrly_fno_nonfno_shortlist.py"
 
 try:
     # Run the first script
