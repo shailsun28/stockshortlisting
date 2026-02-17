@@ -103,24 +103,36 @@ if "Date" in filtered_df.columns:
     plot_df["Period"] = pd.to_datetime(plot_df["Period"], errors="coerce").dt.strftime("%Y-%m-%d")
     plot_df = plot_df.drop_duplicates(subset=["Period", second_col])
 
+###
+###
     for col in numeric_cols:
         st.write(f"#### {col}")
-        chart = (
-            alt.Chart(plot_df)
-            .mark_bar()
-            .encode(
-                x=alt.X("Period:O", title=granularity,
-                        scale=alt.Scale(paddingInner=0.2, paddingOuter=0.1),
-                        axis=alt.Axis(labelAngle=-45)),
-                y=alt.Y(f"{col}:Q", title=col),
-                color=alt.Color(second_col,
-                                legend=alt.Legend(title=second_col),
-                                scale=alt.Scale(scheme="category20")),
-                xOffset=second_col,
-                tooltip=["Period", second_col, col],
-            )
-            .properties(width=800, height=300)
-        )
+        base = alt.Chart(plot_df).encode(
+            x=alt.X("Period:O", title=granularity,
+                    scale=alt.Scale(paddingInner=0.2, paddingOuter=0.1),
+                    axis=alt.Axis(labelAngle=-45)),
+            y=alt.Y(f"{col}:Q", title=col),
+            color=alt.Color(second_col,
+                            legend=alt.Legend(title=second_col),
+                            scale=alt.Scale(scheme="category20")),
+            xOffset=second_col,
+            tooltip=["Period", second_col, col],
+        )   
+
+        bars = base.mark_bar()  
+
+        # Add text labels above bars
+        text = base.mark_text(
+            align="center",
+            baseline="bottom",
+            dy=-2,  # adjust vertical position
+            fontSize=12
+        ).encode(
+            text=alt.Text(f"{col}:Q", format=".2f")  # format to 2 decimals
+        )   
+
+        chart = (bars + text).properties(width=800, height=300) 
+
         st.altair_chart(chart, use_container_width=True)
 
     # --- Show filtered table ---
