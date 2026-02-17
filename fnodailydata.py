@@ -139,6 +139,10 @@ fo_df = clean_columns(fo_df, db_date)
 futidx_df = clean_columns(futidx_df, db_date)
 futstk_df = clean_columns(futstk_df, db_date)
 
+
+#### Calculationg Avg and Value of OI eod for fuidx.
+
+####
 # Connect to SQLite
 conn = sqlite3.connect(db_path)
 
