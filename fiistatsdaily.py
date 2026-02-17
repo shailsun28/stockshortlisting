@@ -55,7 +55,7 @@ def clean_fii_data(df, date_str):
 
 target_date = datetime.now()
 print ("The script started at ", target_date)
-target_date = target_date - timedelta(3)
+target_date = target_date - timedelta(1)
 
 url_date = target_date.strftime('%d-%b-%Y')   # for URL
 db_date = target_date.strftime('%Y-%m-%d')    # for DB storage
