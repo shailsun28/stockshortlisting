@@ -136,7 +136,7 @@ if dfs_dict:
 oi_df = clean_columns(oi_df, db_date)
 vol_df = clean_columns(vol_df, db_date)
 fo_df = clean_columns(fo_df, db_date)
-futidx = clean_columns(futidx_df, db_date)
+fuidx = clean_columns(futidx_df, db_date)
 futstk_df = clean_columns(futstk_df, db_date)
 
 
