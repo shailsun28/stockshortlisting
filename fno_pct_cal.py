@@ -129,9 +129,6 @@ oi_fnostock_pct['fustocknet'] = oi_fnostock_pct['fustocklng_pct'] - oi_fnostock_
 oi_fnostock_pct['opstocknet'] = oi_fnostock_pct['opstocklng_pct'] - oi_fnostock_pct['opstocksht_pct']
 vol_fnostock_pct['fustocknet'] = vol_fnostock_pct['fustocklng_pct'] - vol_fnostock_pct['fustocksht_pct']
 vol_fnostock_pct['opstocknet'] = vol_fnostock_pct['opstocklng_pct'] - vol_fnostock_pct['opstocksht_pct']
-# Merge fuidx_vol with fno to bring in Index Futures values for the same Date
-
-print("The Task Completed Successfully at ", datetime.now())
 
 
 with sqlite3.connect(db_path) as conn:
