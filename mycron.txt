@@ -22,3 +22,4 @@
 20 20 * * 1-5 /usr/bin/python3 /home/shail/stockshortlisting/fiistatsdaily.py >> /tmp/fiistatsdaily.log 2>&1
 21 20 * * 1-5 /usr/bin/python3 /home/shail/stockshortlisting/fnodailydata.py >> /tmp/fnodailydata.log 2>&1
 22 20 * * 1-5 /usr/bin/python3 /home/shail/stockshortlisting/oi_vol_fno_pct_daily.py >> /tmp/oi_vol_fno_pct_daily.log 2>&1
+23 20 * * 1-5 /usr/bin/python3 /home/shail/stockshortlisting/fno_pct_cal.py >> /tmp/fno_pct_cal.log 2>&1
