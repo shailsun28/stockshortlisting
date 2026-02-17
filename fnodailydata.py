@@ -136,12 +136,27 @@ if dfs_dict:
 oi_df = clean_columns(oi_df, db_date)
 vol_df = clean_columns(vol_df, db_date)
 fo_df = clean_columns(fo_df, db_date)
-futidx_df = clean_columns(futidx_df, db_date)
+futidx = clean_columns(futidx_df, db_date)
 futstk_df = clean_columns(futstk_df, db_date)
 
 
 #### Calculationg Avg and Value of OI eod for fuidx.
+# --- Build TOTAL rows for fuidx ---
+totals = fuidx.groupby("Date", as_index=False)[
+    ["noofconsTrd","TrdQty","totTrdvalrsincrs","OIqtyasatendoftradinghrs"]
+].sum()
+totals["symbol"] = "TOTAL"
 
+fuidx_with_total = pd.concat([fuidx, totals], ignore_index=True)
+fuidx_with_total.sort_values(["Date","symbol"], ascending=False, inplace=True)
+fuidx_with_total.reset_index(drop=True, inplace=True)
+fuidx_with_total.head(6)
+#df_with_totals = df_with_totals.sort_values(['Date','symbol']).reset_index(drop=True)
+fuidx_val = fuidx_with_total.copy()
+fuidx_val['ValPerQty'] = round(fuidx_val['totTrdvalrsincrs']*10000000 / fuidx_val['TrdQty'],3)
+fuidx_val['OI_eod_val_cr'] = round(fuidx_val['OIqtyasatendoftradinghrs']*fuidx_val['ValPerQty']/ 1e7, 3)
+reorder = ['Date', 'symbol', 'ValPerQty', 'noofconsTrd', 'TrdQty','OIqtyasatendoftradinghrs', 'totTrdvalrsincrs', 'OI_eod_val_cr']
+fuidx_val = fuidx_val[reorder]
 ####
 # Connect to SQLite
 conn = sqlite3.connect(db_path)
@@ -162,7 +177,8 @@ fo_df = fo_df[~fo_df['product'].str.strip().str.lower().eq('vol futures')]
 
 # Save each extracted CSV from the ZIP into its own table
 fo_df.to_sql("fnototal", conn, if_exists="append", index=False)
-futidx_df.to_sql("fuidx", conn, if_exists="append", index=False)
+#futidx_df.to_sql("fuidx", conn, if_exists="append", index=False)
+fuidx_val.to_sql("fuidx", conn, if_exists="append", index=False)
 futstk_df = futstk_df.drop(columns=['sno'])
 futstk_df.to_sql("fustk", conn, if_exists="append", index=False)
 
