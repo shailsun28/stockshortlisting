@@ -9,6 +9,7 @@ from tqdm import tqdm
 import os
 from requests.adapters import HTTPAdapter
 from requests.packages.urllib3.util.retry import Retry
+import numpy as np
 
 
 print ('Started the script at ', datetime.now())
@@ -58,23 +59,18 @@ def fetch_stock_data(stock: str):
         all_futstk_data = [item for item in fno.get('data', []) if item.get('instrumentType') == 'FUTIDX']
         for item in all_futstk_data:
             expiry_date_str = item.get('expiryDate')
-            print (expiry_date_str)
             expiry_date = datetime.strptime(expiry_date_str, '%d-%b-%Y')
-            print(expiry_date)
             if expiry_date.year == current_year and expiry_date.month == current_month:
                 current_month_identifier = item['identifier']
-                print (current_month_identifier)
                 fustk_encoded = current_month_identifier.replace('&', '%26')
 
                 fubuysell_url = (
                     f'https://www.nseindia.com/api/NextApi/apiClient/GetQuoteApi?'
                     f'functionName=getTradeInfoDerivative&symbol={encoded_stock}&identifier={fustk_encoded}'
                 )
-                print (fubuysell_url)
                 fuorder_resp = session.get(fubuysell_url, headers=headers)
                 fuorder_resp.raise_for_status()
                 fustkjson = fuorder_resp.json()
-                print ("json output", len(fustkjson))
         return [
                     stock, current_date, current_time,
                     fustkjson.get('derivateResponse', [{}])[0].get('metaData', {}).get('last', None),
@@ -125,6 +121,7 @@ def process_file(filepath, filename, db_path):
     #df['%Prchg_fu'] = pd.to_numeric(df['%Prchg_fu'], errors='coerce').astype(float).round(2)
     # Write to SQLite
     df['Stock'] = df['Stock'].replace('%26', '&', regex=True)
+    df['%Prchg_fu'] = np.round(df['%Prchg_fu'].astype(float), 2)
     df.to_sql(filename, conn, if_exists='append', index=False)
     conn.close()
     #return df
