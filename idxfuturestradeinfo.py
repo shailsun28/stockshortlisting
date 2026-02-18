@@ -122,7 +122,8 @@ def process_file(filepath, filename, db_path):
     # Write to SQLite
     df['Stock'] = df['Stock'].replace('%26', '&', regex=True)
     df['%Prchg_fu'] = np.round(df['%Prchg_fu'].astype(float), 2)
-    df.to_sql(filename, conn, if_exists='append', index=False)
+    #df.to_sql(filename, conn, if_exists='append', index=False)
+    df.to_sql(filename, conn, if_exists='replace', index=False)
     conn.close()
     #return df
 
