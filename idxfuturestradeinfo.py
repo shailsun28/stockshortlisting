@@ -55,7 +55,7 @@ def fetch_stock_data(stock: str):
         response2 = session.get(fno_url, headers=headers)
         response2.raise_for_status()
         fno = response2.json()
-        all_futstk_data = [item for item in fno.get('data', []) if item.get('instrumentType') == 'FUTSTK']
+        all_futstk_data = [item for item in fno.get('data', []) if item.get('instrumentType') == 'FUTIDX']
         for item in all_futstk_data:
             expiry_date_str = item.get('expiryDate')
             print (expiry_date_str)
@@ -75,7 +75,7 @@ def fetch_stock_data(stock: str):
                 fuorder_resp.raise_for_status()
                 fustkjson = fuorder_resp.json()
                 print ("json output", len(fustkjson))
-                returns [
+        return [
                     stock, current_date, current_time,
                     fustkjson.get('derivateResponse', [{}])[0].get('metaData', {}).get('last', None),
                     fustkjson.get('derivateResponse', [{}])[0].get('metaData', {}).get('change', None),
