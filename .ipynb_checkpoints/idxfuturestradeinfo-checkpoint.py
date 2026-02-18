@@ -30,7 +30,6 @@ def fetch_stock_data(stock: str):
     encoded_stock = stock.replace('&', '%26')
     main_url = 'https://www.nseindia.com'
     fno_url = f'https://www.nseindia.com/api/NextApi/apiClient/GetQuoteApi?functionName=getSymbolDerivativesData&symbol={encoded_stock}'
-    print (fno_url)
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) '
                       'Chrome/91.0.4472.124 Safari/537.36',
@@ -59,8 +58,9 @@ def fetch_stock_data(stock: str):
         all_futstk_data = [item for item in fno.get('data', []) if item.get('instrumentType') == 'FUTSTK']
         for item in all_futstk_data:
             expiry_date_str = item.get('expiryDate')
+            print (expiry_date_str)
             expiry_date = datetime.strptime(expiry_date_str, '%d-%b-%Y')
-
+            print(expiry_date)
             if expiry_date.year == current_year and expiry_date.month == current_month:
                 current_month_identifier = item['identifier']
                 print (current_month_identifier)
@@ -74,7 +74,7 @@ def fetch_stock_data(stock: str):
                 fuorder_resp = session.get(fubuysell_url, headers=headers)
                 fuorder_resp.raise_for_status()
                 fustkjson = fuorder_resp.json()
-
+                print ("json output", len(fustkjson))
                 returns [
                     stock, current_date, current_time,
                     fustkjson.get('derivateResponse', [{}])[0].get('metaData', {}).get('last', None),
