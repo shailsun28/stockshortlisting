@@ -30,7 +30,7 @@ def fetch_stock_data(stock: str):
     encoded_stock = stock.replace('&', '%26')
     main_url = 'https://www.nseindia.com'
     fno_url = f'https://www.nseindia.com/api/NextApi/apiClient/GetQuoteApi?functionName=getSymbolDerivativesData&symbol={encoded_stock}'
-
+    print (fno_url)
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) '
                       'Chrome/91.0.4472.124 Safari/537.36',
@@ -63,13 +63,14 @@ def fetch_stock_data(stock: str):
 
             if expiry_date.year == current_year and expiry_date.month == current_month:
                 current_month_identifier = item['identifier']
+                print (current_month_identifier)
                 fustk_encoded = current_month_identifier.replace('&', '%26')
 
                 fubuysell_url = (
                     f'https://www.nseindia.com/api/NextApi/apiClient/GetQuoteApi?'
                     f'functionName=getTradeInfoDerivative&symbol={encoded_stock}&identifier={fustk_encoded}'
                 )
-
+                print (fubuysell_url)
                 fuorder_resp = session.get(fubuysell_url, headers=headers)
                 fuorder_resp.raise_for_status()
                 fustkjson = fuorder_resp.json()
@@ -100,6 +101,7 @@ def process_file(filepath, filename, db_path):
     with open(filepath, 'r') as file:
         #stocks = [line.strip().replace('&','%26') for line in file.readlines()]
         stocks = [line.strip() for line in file.readlines()]
+        print ("The stocks are ",stocks)
 
     # Fetch data using multi-threading
     with ThreadPoolExecutor(max_workers=10) as executor:
