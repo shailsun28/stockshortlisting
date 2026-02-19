@@ -63,9 +63,9 @@ def dlyrto_cal_func(stock: str):
     hl_df.rename(columns=lambda c: c.replace("Avg_", ""), inplace=True)
     hl_df.rename(columns=specific_map, inplace=True)
     selcol = ['Stock',  'Date', 'HiPr', 'LoPr', 'LTP',
-       'AvgPr', 'Val_CR', 'Vol', 'DlyQty', 'Dly10',
+       'AvgPr', 'Val_CR', 'Vol', 'DlyQty', 'Vol1', 'Val1','Vol5', 'Val5','Dly10',
        'DlyPct', 'Vol10', 'Val10', 'Vol21', 'Val21', 
-       'Vol51', 'Val51','Vol_lac']
+       'Vol_lac']
        
     hl_df = hl_df[selcol]
     conn.close()
@@ -141,12 +141,15 @@ for indices in indiceslist:
 
                 dlyratio = alldf.loc[0, 'cur_dly'] / dly10_val if dly10_val else 0
                 traded_qty_rto = round((alldf.loc[0, 'Tvolqty']) / vol10_val, 2) if vol10_val else 0
+                Valchg1p = round((hrn.loc[0,'Tvalue'] - dfn.loc[0, 'Val1'])*100 / dfn.loc[0, 'Val1'], 2)
+                Valchg5p = round((hrn.loc[0,'Tvalue'] - dfn.loc[0, 'Val5'])*100 / dfn.loc[0, 'Val5'], 2)
                 Valchg10p = round((hrn.loc[0,'Tvalue'] - dfn.loc[0, 'Val10'])*100 / dfn.loc[0, 'Val10'], 2)
                 Valchg21p = round((hrn.loc[0,'Tvalue'] - dfn.loc[0, 'Val21'])*100 / dfn.loc[0, 'Val21'], 2)
-                Valchg51p = round((hrn.loc[0,'Tvalue'] - dfn.loc[0, 'Val51'])*100 / dfn.loc[0, 'Val51'], 2)
+                Volchg1p = round((hrn.loc[0,'Tvolqty'] - dfn.loc[0, 'Vol1'])*100 / dfn.loc[0, 'Vol1'], 2)
+                Volchg5p = round((hrn.loc[0,'Tvolqty'] - dfn.loc[0, 'Vol5'])*100 / dfn.loc[0, 'Vol5'], 2)
                 Volchg10p = round((hrn.loc[0,'Tvolqty'] - dfn.loc[0, 'Vol10'])*100 / dfn.loc[0, 'Vol10'], 2)
                 Volchg21p = round((hrn.loc[0,'Tvolqty'] - dfn.loc[0, 'Vol21'])*100 / dfn.loc[0, 'Vol21'], 2)
-                Volchg51p = round((hrn.loc[0,'Tvolqty'] - dfn.loc[0, 'Vol51'])*100 / dfn.loc[0, 'Vol51'], 2)
+                
                 #hl_df['ValChg%_10'] = round((hl_df['Val_CR'] - hl_df[f'ValAvg_{period}']) * 100 / hl_df[f'ValAvg_{period}'], 2)
                 
                 resultdate = resdf.iloc[0, 1]
@@ -159,7 +162,7 @@ for indices in indiceslist:
                         alldf.loc[0, 'Tvalue'], alldf.loc[0, 'Tvol'], alldf.loc[0, 'LTP'],
                         alldf.loc[0, 'Low'], alldf.loc[0, 'VWAP'], alldf.loc[0, 'PrChg'],
                         dfn['Val_CR'].iloc[0],dfn['Vol'].iloc[0],dfn['Dly10'].iloc[0]
-                        , resultdate, ResInDays, alldf.loc[0, 'capTime'],Valchg10p ,Volchg10p, Valchg21p, Volchg21p, Valchg51p, Volchg51p
+                        , resultdate, ResInDays, alldf.loc[0, 'capTime'] , Valchg1p, Volchg1p, Valchg5p, Volchg5p,Valchg10p ,Volchg10p, Valchg21p, Volchg21p
                     ))
         except Exception as e:
             print(f"Error processing data for {firm}: {str(e)}")
@@ -168,7 +171,7 @@ for indices in indiceslist:
     dlydf = pd.DataFrame(dlylist, columns=[
         "Stock", "dly_RTO", "prchg%", "qty_rto", "High", "cur_dly",
         "Tval", "Tvol", "LTP", "Low", "VWAP", "prchg", "Val1d", "Vol1d",
-        "DlyAvg_10", "RsDt", "RsDays", "capTime", "Valchg10p", "Volchg10p", "Valchg21p", "Volchg21p", "Valchg51p", "Volchg51p"
+        "DlyAvg_10", "RsDt", "RsDays", "capTime", "Valchg1p", "Volchg1p", "Valchg5p", "Volchg5p", "Valchg10p", "Volchg10p", "Valchg21p", "Volchg21p"
     ])
     dlydf_out = dlydf.sort_values(by='dly_RTO', ascending=False)
 
