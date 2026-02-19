@@ -49,7 +49,7 @@ def dlyrto_cal_func(stock: str):
     #hl_df['DlyRto_10'] = round(hl_df['DlyQty'] / hl_df['DlyAvg_10'], 1)
 
     # Rolling averages
-    periods = [10, 21, 51]
+    periods = [1, 5, 10, 21]
     for period in periods:
         hl_df[f'VolAvg_{period}'] = round(hl_df['Vol'].rolling(window=period, min_periods=period).mean().shift(-period), 1)
         hl_df[f'ValAvg_{period}'] = round(hl_df['Val_CR'].rolling(window=period, min_periods=period).mean().shift(-period), 1)
