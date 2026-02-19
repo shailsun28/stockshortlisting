@@ -11,7 +11,7 @@ from requests.adapters import HTTPAdapter
 from requests.packages.urllib3.util.retry import Retry
 import numpy as np
 
-
+starttime = datetime.now()
 print ('Started the script at ', datetime.now())
 BASE_DIR = "/home/shail/stockshortlisting"
 BASE_DIR_db = "/home/shail/db"
@@ -139,4 +139,13 @@ if __name__ == "__main__":
             process_file(filepath, filename, db_path)
         else:
             print(f"File not found: {filepath}")
-    print(f"***** Script completed successfully at {datetime.now()} *****")
+
+    endtime = datetime.now()
+    elapsed = endtime - starttime
+    # total seconds as float
+    total_seconds = elapsed.total_seconds()
+    # minutes and seconds
+    minutes = int(total_seconds // 60)
+    seconds = int(total_seconds % 60)
+    milliseconds = int((total_seconds - int(total_seconds)) * 1000)
+    print(f"The time taken to complete the task is {minutes}:{seconds:02d}.{milliseconds:03d}")
