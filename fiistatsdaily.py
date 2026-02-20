@@ -48,7 +48,8 @@ def clean_fii_data(df, date_str):
         df[col] = pd.to_numeric(df[col], errors='coerce')
     df.dropna(subset=['Buy_Amt_Cr'], inplace=True)
     df['Date'] = date_str
-    reorder_col = ['Date', 'Product', 'Buy_Contracts', 'Buy_Amt_Cr', 'Sell_Contracts', 'Sell_Amt_Cr', 'OI_Contracts', 'OI_Amt_Cr']
+    #reorder_col = ['Date', 'Product', 'Buy_Contracts', 'Buy_Amt_Cr', 'Sell_Contracts', 'Sell_Amt_Cr', 'OI_Contracts', 'OI_Amt_Cr']
+    reorder_col = ['Date', 'Product', 'Buy_Amt_Cr', 'Sell_Amt_Cr', 'Buy_Contracts', 'Sell_Contracts', 'OI_Contracts', 'OI_Amt_Cr']
     return df[reorder_col]
 
 # --- Single date execution ---
