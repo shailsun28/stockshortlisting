@@ -1,142 +1,116 @@
-import streamlit as st
+import os
 import sqlite3
 import pandas as pd
-import os
+import streamlit as st
 import altair as alt
+import numpy as np
+from datetime import date
 
-# --- Page config for full-width layout ---
-st.set_page_config(layout="wide")
-
+# -----------------------------
+# Config
+# -----------------------------
 BASE_DIR_db = "/home/shail/db"
-db_path = os.path.join(BASE_DIR_db, "fnodailydata.db")
+spurdb = os.path.join(BASE_DIR_db, "fuopspur.db")
+TODAY = date.today()
 
-# Connect to SQLite
-conn = sqlite3.connect(db_path)
-tables = pd.read_sql("SELECT name FROM sqlite_master WHERE type='table';", conn)
-table_names = tables['name'].tolist()
+banknifty = [
+    "HDFCBANK", "ICICIBANK", "SBIN", "KOTAKBANK", "AXISBANK",
+    "FEDERALBNK", "CANBK", "BANKBARODA", "UNIONBANK", "PNB",
+    "IDFCFIRSTB", "AUBANK", "INDUSINDBK", "YESBANK"
+]
 
-dfs = {}
-for name in table_names:
-    try:
-        query = f'SELECT * FROM "{name}"'
-        df = pd.read_sql_query(query, conn)
-        dfs[name] = df
-    except Exception as e:
-        st.warning(f"Skipped table {name} due to error: {e}")
-conn.close()
+reqcol = [
+    "symbol","Date","Time","latestOI","volume",
+    "futValue","optValue","total","premValue","underlyingValue"
+]
 
-# --- Streamlit UI ---
-st.title("SQLite Table Viewer and Bar Graphs")
+changecol = [
+    "latestOI","volume","futValue","optValue",
+    "total","premValue","underlyingValue"
+]
 
-st.sidebar.header("Filters")
-selected_table = st.sidebar.selectbox("Choose a table:", table_names)
+# -----------------------------
+# Utility Functions
+# -----------------------------
+def safe_numeric(df, cols):
+    for col in cols:
+        if col in df.columns:
+            df[col] = pd.to_numeric(df[col], errors="coerce")
+    return df
 
-df = dfs[selected_table].copy()
+def add_changes(df, cols):
+    df = safe_numeric(df.copy(), cols)
+    for col in cols:
+        df[f"{col}_chg"] = df[col].diff(-1).round(2)
+        df[f"{col}_chg%"] = (df[col].diff(-1) * 100 / df[col].shift(-1).replace(0, np.nan)).round(2)
+    df.fillna(0, inplace=True)
+    return df
 
-# --- Days slider filter ---
-if "Date" in df.columns:
-    df["Date"] = pd.to_datetime(df["Date"], errors="coerce")
-    df = df.sort_values("Date", ascending=True)
+def parse_time_old(df):
+    if "Time" in df.columns:
+        #df["Time"] = pd.to_datetime(df["Time"], format="%H:%M:%S", errors="coerce")
+        df["Time"] = pd.to_datetime(df["Time"], format="%H:%M", errors="coerce")
+        df.sort_values(by="Time", inplace=True)
+        df.reset_index(drop=True, inplace=True)
+    return df
+    
+def parse_datetime(df):
+    df = df.copy()
+    # Parse Date and Time separately
+    df["Date"] = pd.to_datetime(df["Date"], format="%Y-%m-%d", errors="coerce")
+    df["Time"] = pd.to_datetime(df["Time"], format="%H:%M", errors="coerce").dt.time
 
-    # Slider for number of days
-    max_days = len(df["Date"].unique())
-    num_days = st.sidebar.slider(
-        "Show last N days:",
-        min_value=1,
-        max_value=max_days,
-        value=min(30, max_days)  # default 30 days or less if fewer available
-    )
+    # Combine into one datetime column
+    df["DateTime"] = pd.to_datetime(df["Date"].astype(str) + " " + df["Time"].astype(str),
+                                    errors="coerce")
 
-    # Filter to last N days
-    latest_date = df["Date"].max()
-    cutoff_date = latest_date - pd.Timedelta(days=num_days-1)
-    df = df[df["Date"] >= cutoff_date]
+    # Sort by DateTime descending
+    df.sort_values(by="DateTime", ascending=False, inplace=True)
+    df.reset_index(drop=True, inplace=True)
+    return df
 
-# --- Granularity selector ---
-granularity = st.sidebar.radio("Select granularity:", ["Daily", "Weekly", "Monthly"])
 
-# --- Second column filter ---
-if len(df.columns) >= 2:
-    second_col = df.columns[1]
-    unique_vals = df[second_col].dropna().unique().tolist()
-    selected_vals = st.sidebar.multiselect(
-        f"Select {second_col} value(s):", unique_vals, default=unique_vals
-    )
-    if selected_vals:
-        filtered_df = df[df[second_col].isin(selected_vals)]
-    else:
-        filtered_df = df
-else:
-    st.warning("This table does not have a second column.")
-    filtered_df = df
+def plot_charts(df, label, cols):
+    for col in cols:
+        if col in df.columns:
+            chart = (
+                alt.Chart(df)
+                .mark_line(point=True)
+                .encode(x="Time:T", y=f"{col}:Q", color=alt.value("blue"))
+                .properties(width=500, height=200, title=f"{label} - {col}")
+            )
+            st.altair_chart(chart, use_container_width=True)
 
-# --- Apply granularity ---
-if "Date" in filtered_df.columns:
-    if granularity == "Weekly":
-        filtered_df["Period"] = filtered_df["Date"].dt.to_period("W").apply(lambda r: r.start_time)
-    elif granularity == "Monthly":
-        filtered_df["Period"] = filtered_df["Date"].dt.to_period("M").apply(lambda r: r.start_time)
-    else:  # Daily
-        filtered_df["Period"] = filtered_df["Date"]
+# -----------------------------
+# Load Data
+# -----------------------------
+placeholders = ",".join(["?"] * len(banknifty))
+query_spur = f"""
+    SELECT {",".join(reqcol)}
+    FROM spur
+    WHERE symbol IN ({placeholders})
+    ORDER BY Date DESC, Time DESC
+"""
 
-    # Identify numeric columns
-    numeric_cols = filtered_df.select_dtypes(include=["number"]).columns
+with sqlite3.connect(spurdb) as conn:
+    spurdf = pd.read_sql_query(query_spur, conn, params=banknifty)
 
-    # Separate percentage vs non-percentage
-    pct_cols = [c for c in numeric_cols if c.endswith("_pct")]
-    non_pct_cols = [c for c in numeric_cols if c not in pct_cols]
+# -----------------------------
+# Streamlit UI
+# -----------------------------
+st.set_page_config(page_title="BankNifty Dashboard", layout="wide")
+st.title("📊 BankNifty Change Dashboard")
 
-    # Build aggregation dictionary
-    agg_dict = {col: "sum" for col in non_pct_cols}
-    agg_dict.update({col: "mean" for col in pct_cols})  # average for percentages
+selected_symbol = st.sidebar.selectbox("Select BankNifty Symbol:", banknifty)
 
-    # Aggregate numeric columns by Period + selector
-    group_cols = ["Period", second_col]
-    agg_df = filtered_df.groupby(group_cols).agg(agg_dict).reset_index()
+# Filter for selected symbol
+sym_df = spurdf[spurdf["symbol"] == selected_symbol].copy()
+sym_df = add_changes(sym_df, changecol)
+sym_df = parse_time(sym_df)
 
-    # Show filtered table info
-    st.write(f"Rows: {len(filtered_df)}, Columns: {len(filtered_df.columns)}")
+st.subheader(f"{selected_symbol} DataFrame")
+st.dataframe(sym_df.head(50))
 
-    # --- Grouped Bar Graphs ---
-    st.subheader(f"{selected_table} Bar Graphs ({granularity})")
-    plot_df = agg_df.copy()
-    plot_df["Period"] = pd.to_datetime(plot_df["Period"], errors="coerce").dt.strftime("%Y-%m-%d")
-    plot_df = plot_df.drop_duplicates(subset=["Period", second_col])
-
-###
-###
-    for col in numeric_cols:
-        st.write(f"#### {col}")
-        base = alt.Chart(plot_df).encode(
-            x=alt.X("Period:O", title=granularity,
-                    scale=alt.Scale(paddingInner=0.2, paddingOuter=0.1),
-                    axis=alt.Axis(labelAngle=-45)),
-            y=alt.Y(f"{col}:Q", title=col),
-            color=alt.Color(second_col,
-                            legend=alt.Legend(title=second_col),
-                            scale=alt.Scale(scheme="category20")),
-            xOffset=second_col,
-            tooltip=["Period", second_col, col],
-        )   
-
-        bars = base.mark_bar()  
-
-        # Add text labels above bars
-        text = base.mark_text(
-            align="center",
-            baseline="bottom",
-            dy=-2,  # adjust vertical position
-            fontSize=12
-        ).encode(
-            text=alt.Text(f"{col}:Q", format=".2f")  # format to 2 decimals
-        )   
-
-        chart = (bars + text).properties(width=800, height=300) 
-
-        st.altair_chart(chart, use_container_width=True)
-
-    # --- Show filtered table ---
-    st.write(f"### Table: {selected_table}")
-    filtered_df["Date"] = filtered_df["Date"].dt.date
-    filtered_df = filtered_df.sort_values("Date", ascending=False)
-    st.dataframe(filtered_df, use_container_width=True)
+# Plot charts for each numeric column and its change
+for col in changecol:
+    plot_charts(sym_df, selected_symbol, [col, f"{col}_chg", f"{col}_chg%"])
