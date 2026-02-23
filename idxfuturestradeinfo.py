@@ -25,7 +25,7 @@ def fetch_stock_data(stock: str):
     now = datetime.now()
     current_year = now.year
     current_month = now.month
-    current_time = now.strftime('%H:%M:%S')
+    current_time = now.strftime('%H:%M')
     current_date = now.strftime('%Y-%m-%d')
 
     encoded_stock = stock.replace('&', '%26')
