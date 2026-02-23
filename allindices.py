@@ -9,7 +9,8 @@ import os
 BASE_DIR = "/home/shail/stockshortlisting"
 BASE_DIR_db = "/home/shail/db"
 
-
+starttime = datetime.now()
+print("\2\n"+ " ******************  Script run started  at ...   ", starttime)
 #def clean_table_name(name):
     # Replaces spaces and special characters with underscores for SQL compatibility
 #    return re.sub(r'\W+', '_', name).strip('_')
@@ -20,7 +21,7 @@ def clean_table_name(name):
     no_nifty = re.sub(r'^NIFTY_', '', cleaned, flags=re.IGNORECASE)
     # Ensure any residual leading/trailing underscores are removed
     return no_nifty.strip('_')
-print('Task start at ... ', datetime.now())
+
 #dx_path = "/Users/shail/Documents/Trading/market-turnover/db/allindices.db"
 idx_path = os.path.join(BASE_DIR_db, "allindices.db")
 conn = sqlite3.connect(idx_path)
@@ -87,4 +88,12 @@ with httpx.Client(follow_redirects=True) as client:
         print(f"Connection error: {e}")
 
 conn.close()
-print('Completed Successfully', datetime.now())
+endtime = datetime.now()
+elapsed = endtime - starttime
+# total seconds as float
+total_seconds = elapsed.total_seconds()
+# minutes and seconds
+minutes = int(total_seconds // 60)
+seconds = int(total_seconds % 60)
+milliseconds = int((total_seconds - int(total_seconds)) * 1000)
+print(f"The time taken to complete the task is {minutes}:{seconds:02d}.{milliseconds:03d}")
