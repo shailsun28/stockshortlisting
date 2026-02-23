@@ -61,7 +61,7 @@ def parse_datetime(df):
     df.reset_index(drop=True, inplace=True)
     return df
 
-def plot_charts(df, label, cols):
+def plot_charts_old(df, label, cols):
     for col in cols:
         if col in df.columns:
             chart = (
@@ -71,6 +71,28 @@ def plot_charts(df, label, cols):
                 .properties(width=500, height=200, title=f"{label} - {col}")
             )
             st.altair_chart(chart, use_container_width=True)
+
+def plot_charts(df, label, cols):
+    if "DateTime" not in df.columns or df["DateTime"].isna().all():
+        return
+
+    for col in cols:
+        if col in df.columns:
+            chart = (
+                alt.Chart(df)
+                .mark_line(point=True)
+                .encode(
+                    x="DateTime:T",
+                    y=f"{col}:Q",
+                    color=alt.value("blue")
+                )
+                .properties(width=500, height=200, title=f"{label} - {col}")
+                #.facet(row="Date")   # separate panel for each Date
+                .facet(column="Date")
+
+            )
+            st.altair_chart(chart, use_container_width=True)
+
 
 # -----------------------------
 # Load Data
