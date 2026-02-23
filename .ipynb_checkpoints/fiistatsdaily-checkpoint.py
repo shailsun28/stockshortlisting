@@ -48,13 +48,13 @@ def clean_fii_data(df, date_str):
         df[col] = pd.to_numeric(df[col], errors='coerce')
     df.dropna(subset=['Buy_Amt_Cr'], inplace=True)
     df['Date'] = date_str
-    return df[reorder_col]
+    return df
 
 # --- Single date execution ---
 
 target_date = datetime.now()
 print ("The script started at ", target_date)
-#target_date = target_date - timedelta(1)
+target_date = target_date - timedelta(1)
 
 url_date = target_date.strftime('%d-%b-%Y')   # for URL
 db_date = target_date.strftime('%Y-%m-%d')    # for DB storage
