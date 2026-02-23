@@ -4,7 +4,7 @@ import pandas as pd
 import streamlit as st
 import altair as alt
 import numpy as np
-from datetime import date
+from datetime import date, timedelta
 
 # -----------------------------
 # Config
@@ -46,14 +46,6 @@ def add_changes(df, cols):
     df.fillna(0, inplace=True)
     return df
 
-def parse_time_old(df):
-    if "Time" in df.columns:
-        #df["Time"] = pd.to_datetime(df["Time"], format="%H:%M:%S", errors="coerce")
-        df["Time"] = pd.to_datetime(df["Time"], format="%H:%M", errors="coerce")
-        df.sort_values(by="Time", inplace=True)
-        df.reset_index(drop=True, inplace=True)
-    return df
-    
 def parse_datetime(df):
     df = df.copy()
     # Parse Date and Time separately
@@ -69,14 +61,13 @@ def parse_datetime(df):
     df.reset_index(drop=True, inplace=True)
     return df
 
-
 def plot_charts(df, label, cols):
     for col in cols:
         if col in df.columns:
             chart = (
                 alt.Chart(df)
                 .mark_line(point=True)
-                .encode(x="Time:T", y=f"{col}:Q", color=alt.value("blue"))
+                .encode(x="DateTime:T", y=f"{col}:Q", color=alt.value("blue"))
                 .properties(width=500, height=200, title=f"{label} - {col}")
             )
             st.altair_chart(chart, use_container_width=True)
@@ -101,15 +92,21 @@ with sqlite3.connect(spurdb) as conn:
 st.set_page_config(page_title="BankNifty Dashboard", layout="wide")
 st.title("📊 BankNifty Change Dashboard")
 
+# Sidebar selectors
 selected_symbol = st.sidebar.selectbox("Select BankNifty Symbol:", banknifty)
+days_back = st.sidebar.slider("Number of days to display:", min_value=1, max_value=60, value=7)
 
 # Filter for selected symbol
 sym_df = spurdf[spurdf["symbol"] == selected_symbol].copy()
 sym_df = add_changes(sym_df, changecol)
-sym_df = parse_time(sym_df)
+sym_df = parse_datetime(sym_df)
 
-st.subheader(f"{selected_symbol} DataFrame")
-st.dataframe(sym_df.head(50))
+# Apply date filter
+start_date = TODAY - timedelta(days=days_back)
+sym_df = sym_df[sym_df["Date"] >= pd.to_datetime(start_date)]
+
+st.subheader(f"{selected_symbol} DataFrame (Last {days_back} days)")
+st.dataframe(sym_df)
 
 # Plot charts for each numeric column and its change
 for col in changecol:
