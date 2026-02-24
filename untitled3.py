@@ -13,9 +13,9 @@ BASE_DIR_db = "/home/shail/db"
 starttime = datetime.now()
 print("\2\n"+ " ******************  Script run started  at ...   ", starttime)
 
-db_path = os.path.join(BASE_DIR_db, 'idxfutures.db')
+db_path = os.path.join(BASE_DIR_db, 'fnolivedata.db')
+conn = sqlite3.connect(db_path)
 
-df.to_sql(filename, conn, if_exists='append', index=False)
 current_date = starttime.strftime('%Y-%m-%d')
 main_url = 'https://www.nseindia.com'
 #fno_url = f'https://www.nseindia.com/api/NextApi/apiClient/GetQuoteApi?functionName=getSymbolDerivativesData&symbol={encoded_stock}'
@@ -70,6 +70,6 @@ reqcol = ['underlying', 'Date', 'Fetchtime','instrumentType', 'contract',
        'totalTurnover', 'value', 'premiumTurnOver', 'underlyingValue',
        'openInterest', 'noOfTrades', 'Time']
 df = df[reqcol]
-
+df.to_sql(niftfulive, conn, if_exists='append', index=False)
 print(f"The time taken to complete the task is {minutes}:{seconds:02d}.{milliseconds:03d}")
 df.head()

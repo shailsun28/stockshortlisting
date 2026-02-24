@@ -17,8 +17,7 @@ conn = sqlite3.connect(db_path)
 
 current_date = starttime.strftime('%Y-%m-%d')
 main_url = 'https://www.nseindia.com'
-#nbfu_url = "https://www.nseindia.com/api/liveEquity-derivatives?index=nifty_bank_fut"
-niftyfu_url = "https://www.nseindia.com/api/liveEquity-derivatives?index=nse50_fut"
+nbfu_url = "https://www.nseindia.com/api/liveEquity-derivatives?index=nifty_bank_fut"
 
 headers = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 '
@@ -42,7 +41,7 @@ session.mount("http://", adapter)
 try:
     session.get(main_url, headers=headers)
     time.sleep(1)
-    response = session.get(niftyfu_url, headers=headers)
+    response = session.get(nbfu_url, headers=headers)
     response.raise_for_status()
     fno = response.json()
 
@@ -68,7 +67,7 @@ reqcol = ['underlying', 'Date', 'Fetchtime','instrumentType', 'contract',
 df = df[[c for c in reqcol if c in df.columns]]
 
 # Save to SQL table
-table_name = "niftyfu_live"
+table_name = "nbfu_live"
 df.to_sql(table_name, conn, if_exists='append', index=False)
 
 endtime = datetime.now()
