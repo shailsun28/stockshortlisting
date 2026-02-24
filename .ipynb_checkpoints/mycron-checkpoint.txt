@@ -4,7 +4,8 @@
 */2 9-15 * * 1-5 [ "$(date +\%H:\%M)" \< "15:33" ] && /usr/bin/python3 /home/shail/stockshortlisting/allturnover.py >> /tmp/allturnover.log 2>&1
 */2 9-15 * * 1-5 [ "$(date +\%H:\%M)" \< "15:33" ] && /usr/bin/python3 /home/shail/stockshortlisting/eqfnofetchorder.py >> /tmp/eqfnofetchorder.log 2>&1
 */2 9-15 * * 1-5 [ "$(date +\%H:\%M)" \< "15:33" ] && /usr/bin/python3 /home/shail/stockshortlisting/fuop_spur.py >> /tmp/fuop_spur.log 2>&1
-
+*/2 9-15 * * 1-5 [ "$(date +\%H:\%M)" \< "15:33" ] && /usr/bin/python3 /home/shail/stockshortlisting/niftyfu_livedata.py >> /tmp/niftyfu_livedata.log 2>&1
+*/2 9-15 * * 1-5 [ "$(date +\%H:\%M)" \< "15:33" ] && /usr/bin/python3 /home/shail/stockshortlisting/bnfu_livedata.py >> /tmp/bnfu_livedata.log 2>&1
 */10 * * * 1-5 /home/shail/stockshortlisting/git-auto-push.sh >> /tmp/git-auto-push.log 2>&1
 
 11 10-15 * * 1-5 /usr/bin/python3 /home/shail/stockshortlisting/fetchnshortlist_hrly.py >> /tmp/fetchnshortlist_hrly.log 2>&1
