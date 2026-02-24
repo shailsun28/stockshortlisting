@@ -76,8 +76,8 @@ total_seconds = elapsed.total_seconds()
 minutes = int(total_seconds // 60)
 seconds = int(total_seconds % 60)
 milliseconds = int((total_seconds - int(total_seconds)) * 1000)
-
+conn.close()
 print(f"The time taken to complete the task is {minutes}:{seconds:02d}.{milliseconds:03d}")
 print(df.head())
 
-conn.close()
+

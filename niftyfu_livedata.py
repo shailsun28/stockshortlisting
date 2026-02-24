@@ -70,7 +70,7 @@ df = df[[c for c in reqcol if c in df.columns]]
 # Save to SQL table
 table_name = "niftyfu_live"
 df.to_sql(table_name, conn, if_exists='append', index=False)
-
+conn.close()
 endtime = datetime.now()
 elapsed = endtime - starttime
 total_seconds = elapsed.total_seconds()
@@ -81,4 +81,4 @@ milliseconds = int((total_seconds - int(total_seconds)) * 1000)
 print(f"The time taken to complete the task is {minutes}:{seconds:02d}.{milliseconds:03d}")
 print(df.head())
 
-conn.close()
+
