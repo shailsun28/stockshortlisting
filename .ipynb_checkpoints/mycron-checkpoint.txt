@@ -1,5 +1,6 @@
-# Market hours jobs (Mon–Fri only)
+# Market hours jobs (Mon–Fri only)  
 */1 9-15 * * 1-5 [ "$(date +\%H:\%M)" \< "15:33" ] && /usr/bin/python3 /home/shail/stockshortlisting/allindices.py >> /tmp/allindices.log 2>&1
+*/1 9-15 * * 1-5 [ "$(date +\%H:\%M)" \< "15:33" ] && /usr/bin/python3 /home/shail/stockshortlisting/nb_funeq_permin.py >> /tmp/nb_funeq_permin.log 2>&1
 */2 9-15 * * 1-5 [ "$(date +\%H:\%M)" \< "15:33" ] && /usr/bin/python3 /home/shail/stockshortlisting/idxfuturestradeinfo.py >> /tmp/idxfuturestradeinfo.log 2>&1
 */2 9-15 * * 1-5 [ "$(date +\%H:\%M)" \< "15:33" ] && /usr/bin/python3 /home/shail/stockshortlisting/allturnover.py >> /tmp/allturnover.log 2>&1
 */2 9-15 * * 1-5 [ "$(date +\%H:\%M)" \< "15:33" ] && /usr/bin/python3 /home/shail/stockshortlisting/eqfnofetchorder.py >> /tmp/eqfnofetchorder.log 2>&1
