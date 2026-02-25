@@ -241,7 +241,7 @@ manual_stock = st.sidebar.text_input("Enter any Stock Symbol:", "").strip()
 
 # NEW: column selector for Tab 3
 available_cols = fno_df.columns.tolist()
-selected_column = st.sidebar.selectbox("Select column for All Stocks Graph:", available_cols)
+#selected_column = st.sidebar.selectbox("Select column for All Stocks Graph:", available_cols)
 
 tab1, tab2, tab3 = st.tabs(["FNO DlyRatio", "Fu & Eq BuySellData", "All Stocks Graph"])
 
@@ -265,11 +265,11 @@ if selected_fno_stock or manual_stock:
             plot_df = filtered_df.reset_index(drop=True)
 
             chart_specs = [
+                ("%Prchg_eq", "blue", "%Prchg_eq"),
                 ("Valchg_eq", "blue", "Valchg_eq(cr)"),
                 ("Volchg_eq", "green", "Volchg_eq(K)"),
-                ("%Prchg_fu", "orange", "%Prchg_fu"),
-                ("%Prchg_eq", "blue", "%Prchg_eq"),
                 ("PrChg_eq", "orange", "PriceChg_eq"),
+                ("%Prchg_fu", "orange", "%Prchg_fu"),
                 ("bsd%_eq", "blue", "BuySellDiff_eq"),
                 ("bsd%_fu", "orange", "BuySellDiff_fu"),
                 ("tot%_eq", "blue", "TotBuySell_eq"),
