@@ -229,25 +229,34 @@ def parse_time(df, fmt):
         df.reset_index(drop=True, inplace=True)
     return df
 
+###
 # --- Sidebar selectors ---
 st.sidebar.header("Filter Options")
 
 with sqlite3.connect(os.path.join(BASE_DIR_db, "niftybank.db")) as conn:
-    fno_df = pd.read_sql_query("SELECT * FROM niftybank ORDER BY Date DESC", conn)
+    fno_df = pd.read_sql_query("SELECT DISTINCT Stock FROM niftybank ORDER BY Stock", conn)
 
 fno_stocks = fno_df['Stock'].unique() if not fno_df.empty else []
-selected_fno_stock = st.sidebar.selectbox("Select an FNO Stock:", fno_stocks, key="fno_selector")
-manual_stock = st.sidebar.text_input("Enter any Stock Symbol:", "").strip()
 
-# NEW: column selector for Tab 3
-available_cols = fno_df.columns.tolist()
-#selected_column = st.sidebar.selectbox("Select column for All Stocks Graph:", available_cols)
+# Multi-select instead of single select + manual input
+selected_stocks = st.sidebar.multiselect(
+    "Select one or more FNO Stocks:",
+    fno_stocks,
+    default=fno_stocks[:1]  # default to first stock
+)
 
-tab1, tab2, tab3 = st.tabs(["FNO DlyRatio", "Fu & Eq BuySellData", "All Stocks Graph"])
+tab1, tab2, tab3 = st.tabs(["FNO DlyRatio", "Fu & Eq BuySellData", "All Stocks Graphs"])
 
+###
 
-if selected_fno_stock or manual_stock:
-    stock_to_analyze = manual_stock if manual_stock else selected_fno_stock
+#if selected_fno_stock or manual_stock:
+#    stock_to_analyze = manual_stock if manual_stock else selected_fno_stock
+#    buysell_df_single = buysell_fno_func(stock_to_analyze)
+#    shortlisted_df_single = shortlist_func(stock_to_analyze)
+#    qtyjson, chgjson = fetch_nse_data(stock_to_analyze)
+if selected_stocks:
+    # Work with the first selected stock for Tab1/Tab2
+    stock_to_analyze = selected_stocks[0]
     buysell_df_single = buysell_fno_func(stock_to_analyze)
     shortlisted_df_single = shortlist_func(stock_to_analyze)
     qtyjson, chgjson = fetch_nse_data(stock_to_analyze)
