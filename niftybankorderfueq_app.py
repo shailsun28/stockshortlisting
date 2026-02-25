@@ -232,7 +232,6 @@ def parse_time(df, fmt):
 # --- Sidebar selectors ---
 st.sidebar.header("Filter Options")
 
-# Load available stocks from niftybank table
 with sqlite3.connect(os.path.join(BASE_DIR_db, "niftybank.db")) as conn:
     fno_df = pd.read_sql_query("SELECT * FROM niftybank ORDER BY Date DESC", conn)
 
@@ -240,7 +239,12 @@ fno_stocks = fno_df['Stock'].unique() if not fno_df.empty else []
 selected_fno_stock = st.sidebar.selectbox("Select an FNO Stock:", fno_stocks, key="fno_selector")
 manual_stock = st.sidebar.text_input("Enter any Stock Symbol:", "").strip()
 
-tab1, tab2 = st.tabs(["FNO DlyRatio", "Fu & Eq BuySellData"])
+# NEW: column selector for Tab 3
+available_cols = fno_df.columns.tolist()
+selected_column = st.sidebar.selectbox("Select column for All Stocks Graph:", available_cols)
+
+tab1, tab2, tab3 = st.tabs(["FNO DlyRatio", "Fu & Eq BuySellData", "All Stocks Graph"])
+
 
 if selected_fno_stock or manual_stock:
     stock_to_analyze = manual_stock if manual_stock else selected_fno_stock
@@ -321,3 +325,39 @@ if selected_fno_stock or manual_stock:
         #st.subheader(f"Buy Sell Trade data for {selected_fno_stock}")
         st.subheader(f"Buy Sell Trade data for {stock_to_analyze}")
         st.dataframe(buysell_df_single)
+    # --- Tab 3 ---
+    with tab3:
+        st.subheader("All Stocks Graphs for Selected Metrics")
+
+        chart_specs = [
+            ("Valchg_eq", "blue", "Valchg_eq(cr)"),
+            ("Volchg_eq", "green", "Volchg_eq(K)"),
+            ("%Prchg_fu", "orange", "%Prchg_fu"),
+            ("%Prchg_eq", "blue", "%Prchg_eq"),
+            ("PrChg_eq", "orange", "PriceChg_eq"),
+            ("bsd%_eq", "blue", "BuySellDiff_eq"),
+            ("bsd%_fu", "orange", "BuySellDiff_fu"),
+            ("tot%_eq", "blue", "TotBuySell_eq"),
+            ("tot%_fu", "orange", "TotBuySell_fu"),
+        ]
+
+        # Loop through all stocks
+        for stock in fno_stocks:
+            st.markdown(f"### {stock}")
+            df_all = buysell_fno_func(stock)
+            if not df_all.empty:
+                df_all['Time'] = pd.to_datetime(df_all['Time'], format="%H:%M", errors="coerce")
+                df_all['Volchg_eq'] = round(df_all['Volchg_eq'] / 1000, 2)
+                plot_df = df_all.reset_index(drop=True)
+
+                for col, color, title in chart_specs:
+                    if col in plot_df.columns:
+                        chart = (
+                            alt.Chart(plot_df)
+                            .mark_line(point=True)
+                            .encode(x="Time:T", y=f"{col}:Q", color=alt.value(color))
+                            .properties(width=1000, height=200, title=f"{title} for {stock}")
+                        )
+                        st.altair_chart(chart, use_container_width=True)
+            else:
+                st.warning(f"No BuySell data found for {stock}")
