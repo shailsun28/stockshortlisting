@@ -356,7 +356,8 @@ if selected_fno_stock or manual_stock:
         st.dataframe(fno_df)
 
     with tab3:
-        st.subheader(f"Buy Sell Trade data for {selected_fno_stock}")
+        #st.subheader(f"Buy Sell Trade data for {selected_fno_stock}")
+        st.subheader(f"Buy Sell Trade data for {stock_to_analyze}")
         st.dataframe(buysell_df_single)
         # charts rendering here...
 
