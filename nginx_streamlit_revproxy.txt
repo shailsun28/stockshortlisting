@@ -5,6 +5,8 @@ For each app, create a unit file in /etc/systemd/system/
 sudo nano /etc/systemd/system/st_shortlist_app.service
 sudo nano /etc/systemd/system/st_fnoreport_app.service
 sudo nano /etc/systemd/system/st_indiceschg_app.service
+sudo nano /etc/systemd/system/st_bankniftyfuteq_app.service
+
 
 Example content (adjust script, port, and baseUrlPath per app):
 [Unit]
