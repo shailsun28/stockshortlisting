@@ -73,7 +73,7 @@ def buysell_fno_func(stock: str):
               'High_eq', 'PrChg_eq', 'Ltp_eq', 'Vwap_eq', 'Ltp_fu','PrChg_fu',
               'Tsell_fu', 'Tbuy_fu','fuOI',
               'ValChg%_eq', 'Valchg_eq', 'VolChg%_eq', 'Volchg_eq', 'var%_eq',
-              'ValChg%_fu', 'Valchg_fu', 'VolChg%_fu', 'Volchg_fu', 'VolChg%_fu','var%_fu',
+              'ValChg%_fu', 'Valchg_fu', 'VolChg%_fu', 'Volchg_fu','var%_fu',
               'avg_eq', 'oichg_fu']
     alldf = alldf[newcol]
     return alldf
@@ -333,18 +333,20 @@ if selected_fno_stock or manual_stock:
         st.subheader("All Stocks Graphs")
 
         # Define allowed chart columns
-        chart_specs = [
-            ("Valchg_eq", "blue", "Valchg_eq(cr)"),
-            ("Volchg_eq", "green", "Volchg_eq(K)"),
-            ("%Prchg_fu", "orange", "%Prchg_fu"),
-            ("%Prchg_eq", "blue", "%Prchg_eq"),
-            ("PrChg_eq", "orange", "PriceChg_eq"),
-            ("bsd%_eq", "blue", "BuySellDiff_eq"),
-            ("bsd%_fu", "orange", "BuySellDiff_fu"),
-            ("tot%_eq", "blue", "TotBuySell_eq"),
-            ("tot%_fu", "orange", "TotBuySell_fu"),
-        ]
 
+        chart_specs = [
+                ("%Prchg_eq", "blue", "%Prchg_eq"),
+                ("Valchg_eq", "blue", "Valchg_eq(cr)"),
+                ("Volchg_eq", "green", "Volchg_eq(K)"),
+                ("PrChg_eq", "orange", "PriceChg_eq"),
+                ("%Prchg_fu", "orange", "%Prchg_fu"),
+                ("Valchg_fu", "blue", "Valchg_fu(cr)"),
+                ("Volchg_fu", "green", "Volchg_fu(K)"),
+                ("bsd%_eq", "blue", "BuySellDiff_eq"),
+                ("bsd%_fu", "orange", "BuySellDiff_fu"),
+                ("tot%_eq", "blue", "TotBuySell_eq"),
+                ("tot%_fu", "orange", "TotBuySell_fu"),
+        ]
         # Sidebar selector for which column to plot
         col_options = [c[0] for c in chart_specs]
         selected_col = st.selectbox("Select metric to plot:", col_options)
