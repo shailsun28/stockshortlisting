@@ -329,10 +329,11 @@ if selected_fno_stock or manual_stock:
         st.subheader(f"Buy Sell Trade data for {stock_to_analyze}")
         st.dataframe(buysell_df_single)
     # --- Tab 3 ---
+
 with tab3:
     st.subheader("All Stocks Graphs (Grouped Metrics)")
 
-    # Define grouped chart specs: each entry is a tuple (columns, colors, title)
+    # Define grouped chart specs: each entry is (columns, colors, title)
     chart_groups = [
         (["%Prchg_eq", "%Prchg_fu"], ["blue", "orange"], "% Price Change"),
         (["Valchg_eq", "Valchg_fu"], ["blue", "orange"], "Value Change (cr)"),
@@ -342,43 +343,35 @@ with tab3:
         (["PrChg_eq", "PrChg_fu"], ["orange", "blue"], "Price Change"),
     ]
 
-    # Sidebar selector for which group to plot
+    # Sidebar multiselect for groups
     group_options = [g[2] for g in chart_groups]
-    selected_group = st.selectbox("Select metric group to plot:", group_options)
-
-    # Find the chosen group
-    for cols, colors, title in chart_groups:
-        if title == selected_group:
-            selected_cols, selected_colors, selected_title = cols, colors, title
-            break
+    selected_groups = st.multiselect("Select metric groups to plot:", group_options, default=[group_options[0]])
 
     # Loop through all stocks
     for stock in fno_stocks:
         st.markdown(f"### {stock}")
         df_all = buysell_fno_func(stock)
         if not df_all.empty:
-            # Parse Time correctly
+            # Parse Time correctly (adjust format if DB stores HH:MM:SS)
             df_all['Time'] = pd.to_datetime(df_all['Time'], format="%H:%M", errors="coerce")
             df_all['Volchg_eq'] = round(df_all['Volchg_eq'] / 1000, 2)
-
             plot_df = df_all.reset_index(drop=True)
 
-            # Build layered chart with both columns
-            layers = []
-            for col, color in zip(selected_cols, selected_colors):
-                if col in plot_df.columns:
-                    layers.append(
-                        alt.Chart(plot_df)
-                        .mark_line(point=True)
-                        .encode(x="Time:T", y=f"{col}:Q", color=alt.value(color))
-                    )
-
-            if layers:
-                chart = alt.layer(*layers).properties(
-                    width=1000, height=200, title=f"{selected_title} for {stock}"
-                )
-                st.altair_chart(chart, use_container_width=True)
-            else:
-                st.warning(f"Selected columns not found for {stock}")
+            # Loop through each selected group
+            for cols, colors, title in chart_groups:
+                if title in selected_groups:
+                    layers = []
+                    for col, color in zip(cols, colors):
+                        if col in plot_df.columns:
+                            layers.append(
+                                alt.Chart(plot_df)
+                                .mark_line(point=True)
+                                .encode(x="Time:T", y=f"{col}:Q", color=alt.value(color))
+                            )
+                    if layers:
+                        chart = alt.layer(*layers).properties(
+                            width=1000, height=200, title=f"{title} for {stock}"
+                        )
+                        st.altair_chart(chart, use_container_width=True)
         else:
             st.warning(f"No BuySell data found for {stock}")
