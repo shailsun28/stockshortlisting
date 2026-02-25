@@ -254,6 +254,38 @@ if selected_fno_stock or manual_stock:
 
     # --- Tab 1 ---
     with tab1:
+
+        #st.subheader(f"Fu & Eq BuySell Order Graphs for {stock_to_analyze}")    
+        st.subheader(f"Fu & Eq BuySell Order Graphs for {stock_to_analyze}")
+        if not buysell_df_single.empty:
+            filtered_df = buysell_df_single.copy()
+            #filtered_df['Time'] = pd.to_datetime(filtered_df['Time'], format="%H:%M:%S", errors="coerce")
+            filtered_df['Time'] = pd.to_datetime(filtered_df['Time'], format="%H:%M", errors="coerce")
+            filtered_df['Volchg_eq'] = round(filtered_df['Volchg_eq'] / 1000, 2)
+            plot_df = filtered_df.reset_index(drop=True)
+
+            chart_specs = [
+                ("Valchg_eq", "blue", "Valchg_eq(cr)"),
+                ("Volchg_eq", "green", "Volchg_eq(K)"),
+                ("%Prchg_fu", "orange", "%Prchg_fu"),
+                ("%Prchg_eq", "blue", "%Prchg_eq"),
+                ("PrChg_eq", "orange", "PriceChg_eq"),
+                ("bsd%_eq", "blue", "BuySellDiff_eq"),
+                ("bsd%_fu", "orange", "BuySellDiff_fu"),
+                ("tot%_eq", "blue", "TotBuySell_eq"),
+                ("tot%_fu", "orange", "TotBuySell_fu"),
+            ]
+            for col, color, title in chart_specs:
+                if col in plot_df.columns:
+                    chart = (
+                        alt.Chart(plot_df)
+                        .mark_line(point=True)
+                        .encode(x="Time:T", y=f"{col}:Q", color=alt.value(color))
+                        .properties(width=1000, height=200, title=f"{title} for {stock_to_analyze}")
+                    )
+                    st.altair_chart(chart, use_container_width=True)
+        else:
+            st.warning(f"No BuySell data found for {stock_to_analyze}")
         st.subheader(f"Price Info for {stock_to_analyze}")    
         # Fetch NSE API JSON for the selected FNO stock
         qtyjson, chgjson = fetch_nse_data(stock_to_analyze)    
@@ -287,37 +319,6 @@ if selected_fno_stock or manual_stock:
                 for j, (label, value) in enumerate(metrics[i:i+5]):
                     cols[j].metric(label, value, border=True)    
 
-        #st.subheader(f"Fu & Eq BuySell Order Graphs for {stock_to_analyze}")    
-        st.subheader(f"Fu & Eq BuySell Order Graphs for {stock_to_analyze}")
-        if not buysell_df_single.empty:
-            filtered_df = buysell_df_single.copy()
-            #filtered_df['Time'] = pd.to_datetime(filtered_df['Time'], format="%H:%M:%S", errors="coerce")
-            filtered_df['Time'] = pd.to_datetime(filtered_df['Time'], format="%H:%M", errors="coerce")
-            filtered_df['Volchg_eq'] = round(filtered_df['Volchg_eq'] / 1000, 2)
-            plot_df = filtered_df.reset_index(drop=True)
-
-            chart_specs = [
-                ("Valchg_eq", "blue", "Valchg_eq(cr)"),
-                ("Volchg_eq", "green", "Volchg_eq(K)"),
-                ("%Prchg_fu", "orange", "%Prchg_fu"),
-                ("%Prchg_eq", "blue", "%Prchg_eq"),
-                ("PrChg_eq", "orange", "PriceChg_eq"),
-                ("bsd%_eq", "blue", "BuySellDiff_eq"),
-                ("bsd%_fu", "orange", "BuySellDiff_fu"),
-                ("tot%_eq", "blue", "TotBuySell_eq"),
-                ("tot%_fu", "orange", "TotBuySell_fu"),
-            ]
-            for col, color, title in chart_specs:
-                if col in plot_df.columns:
-                    chart = (
-                        alt.Chart(plot_df)
-                        .mark_line(point=True)
-                        .encode(x="Time:T", y=f"{col}:Q", color=alt.value(color))
-                        .properties(width=1000, height=200, title=f"{title} for {stock_to_analyze}")
-                    )
-                    st.altair_chart(chart, use_container_width=True)
-        else:
-            st.warning(f"No BuySell data found for {stock_to_analyze}")
         st.subheader(f"Delivery Ratio History for {stock_to_analyze}")
         shortlisted_df_single
     # ---
@@ -327,8 +328,9 @@ if selected_fno_stock or manual_stock:
         st.dataframe(buysell_df_single)
     # --- Tab 3 ---
     with tab3:
-        st.subheader("All Stocks Graphs for Selected Metrics")
+        st.subheader("All Stocks Graphs")
 
+        # Define allowed chart columns
         chart_specs = [
             ("Valchg_eq", "blue", "Valchg_eq(cr)"),
             ("Volchg_eq", "green", "Volchg_eq(K)"),
@@ -341,23 +343,31 @@ if selected_fno_stock or manual_stock:
             ("tot%_fu", "orange", "TotBuySell_fu"),
         ]
 
+        # Sidebar selector for which column to plot
+        col_options = [c[0] for c in chart_specs]
+        selected_col = st.selectbox("Select metric to plot:", col_options)
+
+        # Get color and title for the selected column
+        spec_map = {c[0]: (c[1], c[2]) for c in chart_specs}
+        color, title = spec_map[selected_col]
+
         # Loop through all stocks
         for stock in fno_stocks:
             st.markdown(f"### {stock}")
             df_all = buysell_fno_func(stock)
-            if not df_all.empty:
+            if not df_all.empty and selected_col in df_all.columns:
                 df_all['Time'] = pd.to_datetime(df_all['Time'], format="%H:%M", errors="coerce")
-                df_all['Volchg_eq'] = round(df_all['Volchg_eq'] / 1000, 2)
+                if selected_col == "Volchg_eq":
+                    df_all['Volchg_eq'] = round(df_all['Volchg_eq'] / 1000, 2)
                 plot_df = df_all.reset_index(drop=True)
 
-                for col, color, title in chart_specs:
-                    if col in plot_df.columns:
-                        chart = (
-                            alt.Chart(plot_df)
-                            .mark_line(point=True)
-                            .encode(x="Time:T", y=f"{col}:Q", color=alt.value(color))
-                            .properties(width=1000, height=200, title=f"{title} for {stock}")
-                        )
-                        st.altair_chart(chart, use_container_width=True)
+                chart = (
+                    alt.Chart(plot_df)
+                    .mark_line(point=True)
+                    .encode(x="Time:T", y=f"{selected_col}:Q", color=alt.value(color))
+                    .properties(width=1000, height=200, title=f"{title} for {stock}")
+                )
+                st.altair_chart(chart, use_container_width=True)
             else:
-                st.warning(f"No BuySell data found for {stock}")
+                st.warning(f"No data found for {stock}")
+                
