@@ -82,7 +82,7 @@ st.sidebar.header("Filter Options")
 
 # Load available stocks from niftybank table
 with sqlite3.connect(os.path.join(BASE_DIR_db, "niftybank.db")) as conn:
-    fno_df = pd.read_sql_query("SELECT DISTINCT Stock FROM niftybank", conn)
+    fno_df = pd.read_sql_query("SELECT * FROM niftybank ORDER BY Date DESC", conn)
 
 fno_stocks = fno_df['Stock'].unique() if not fno_df.empty else []
 selected_fno_stock = st.sidebar.selectbox("Select an FNO Stock:", fno_stocks, key="fno_selector")
