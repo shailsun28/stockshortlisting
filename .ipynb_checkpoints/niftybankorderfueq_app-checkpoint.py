@@ -244,6 +244,7 @@ selected_stocks = st.sidebar.multiselect(
     fno_stocks,
     default=fno_stocks[:1]  # default to first stock
 )
+#selected_stocks = st.sidebar.selectbox("Select a Bank Nifty Stock:", fno_stocks, key="fno_selector")
 
 tab1, tab2, tab3 = st.tabs(["FNO DlyRatio", "Fu & Eq BuySellData", "All Stocks Graphs"])
 
@@ -339,61 +340,60 @@ if selected_stocks:
         st.dataframe(buysell_df_single)
     # --- Tab 3 ---
 
-with tab3:
-    st.subheader("All Stocks Graphs (Grouped Metrics)")
+    with tab3:
+        st.subheader("All Stocks Graphs (Grouped Metrics)")
 
-    chart_groups = [
-        (["%Prchg_eq", "%Prchg_fu"], ["blue", "orange"], "% Price Change"),
-        (["Valchg_eq", "Valchg_fu"], ["blue", "orange"], "Value Change (cr)"),
-        (["Volchg_eq", "Volchg_fu"], ["green", "orange"], "Volume Change"),
-        (["bsd%_eq", "bsd%_fu"], ["blue", "orange"], "Buy-Sell Diff"),
-        (["tot%_eq", "tot%_fu"], ["blue", "orange"], "Total Buy-Sell %"),
-        (["PrChg_eq", "PrChg_fu"], ["orange", "blue"], "Price Change"),
-    ]
+        chart_groups = [
+            (["%Prchg_eq", "%Prchg_fu"], ["blue", "orange"], "% Price Change"),
+            (["Valchg_eq", "Valchg_fu"], ["blue", "orange"], "Value Change (cr)"),
+            (["Volchg_eq", "Volchg_fu"], ["green", "orange"], "Volume Change"),
+            (["bsd%_eq", "bsd%_fu"], ["blue", "orange"], "Buy-Sell Diff"),
+            (["tot%_eq", "tot%_fu"], ["blue", "orange"], "Total Buy-Sell %"),
+            (["PrChg_eq", "PrChg_fu"], ["orange", "blue"], "Price Change"),
+        ]
 
-    group_options = [g[2] for g in chart_groups]
-    selected_groups = st.multiselect(
-        "Select metric groups to plot:",
-        group_options,
-        default=[group_options[0]]
-    )
+        group_options = [g[2] for g in chart_groups]
+        selected_groups = st.multiselect(
+            "Select metric groups to plot:",
+            group_options,
+            default=[group_options[0]]
+        )
 
-    for stock in fno_stocks:
-        st.markdown(f"### {stock}")
-        df_all = buysell_fno_func(stock)
-        if not df_all.empty:
-            # Combine Date + Time into full DateTime
-            df_all['DateTime'] = pd.to_datetime(
-                df_all['Date'].astype(str) + " " + df_all['Time'].astype(str),
-                errors="coerce"
-            )
-            # Extract just the time string for tooltip
-            df_all['TimeOnly'] = pd.to_datetime(df_all['Time'], errors="coerce").dt.strftime("%H:%M")
+        # Loop through all selected stocks
+        for stock in selected_stocks:
+            st.markdown(f"### {stock}")
+            df_all = buysell_fno_func(stock)
+            if not df_all.empty:
+                df_all['DateTime'] = pd.to_datetime(
+                    df_all['Date'].astype(str) + " " + df_all['Time'].astype(str),
+                    errors="coerce"
+                )
+                df_all['TimeOnly'] = pd.to_datetime(df_all['Time'], errors="coerce").dt.strftime("%H:%M")
 
-            if "Volchg_eq" in df_all.columns:
-                df_all['Volchg_eq'] = round(df_all['Volchg_eq'] / 1000, 2)
+                if "Volchg_eq" in df_all.columns:
+                    df_all['Volchg_eq'] = round(df_all['Volchg_eq'] / 1000, 2)
 
-            plot_df = df_all.reset_index(drop=True)
+                plot_df = df_all.reset_index(drop=True)
 
-            for cols, colors, title in chart_groups:
-                if title in selected_groups:
-                    layers = []
-                    for col, color in zip(cols, colors):
-                        if col in plot_df.columns:
-                            layers.append(
-                                alt.Chart(plot_df)
-                                .mark_line(point=True)
-                                .encode(
-                                    x=alt.X("DateTime:T", title="DateTime"),
-                                    y=f"{col}:Q",
-                                    color=alt.value(color),
-                                    tooltip=["Stock", "Time", col]  # show only time + value
+                for cols, colors, title in chart_groups:
+                    if title in selected_groups:
+                        layers = []
+                        for col, color in zip(cols, colors):
+                            if col in plot_df.columns:
+                                layers.append(
+                                    alt.Chart(plot_df)
+                                    .mark_line(point=True)
+                                    .encode(
+                                        x=alt.X("DateTime:T", title="DateTime"),
+                                        y=f"{col}:Q",
+                                        color=alt.value(color),
+                                        tooltip=["Stock", "TimeOnly", col]
+                                    )
                                 )
+                        if layers:
+                            chart = alt.layer(*layers).properties(
+                                width=1000, height=200, title=f"{title} for {stock}"
                             )
-                    if layers:
-                        chart = alt.layer(*layers).properties(
-                            width=1000, height=200, title=f"{title} for {stock}"
-                        )
-                        st.altair_chart(chart, use_container_width=True)
-        else:
-            st.warning(f"No BuySell data found for {stock}")
+                            st.altair_chart(chart, use_container_width=True)
+            else:
+                st.warning(f"No BuySell data found for {stock}")
