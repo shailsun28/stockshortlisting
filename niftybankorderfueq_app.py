@@ -333,7 +333,6 @@ if selected_fno_stock or manual_stock:
 with tab3:
     st.subheader("All Stocks Graphs (Grouped Metrics)")
 
-    # Define grouped chart specs: each entry is (columns, colors, title)
     chart_groups = [
         (["%Prchg_eq", "%Prchg_fu"], ["blue", "orange"], "% Price Change"),
         (["Valchg_eq", "Valchg_fu"], ["blue", "orange"], "Value Change (cr)"),
@@ -343,21 +342,30 @@ with tab3:
         (["PrChg_eq", "PrChg_fu"], ["orange", "blue"], "Price Change"),
     ]
 
-    # Sidebar multiselect for groups
     group_options = [g[2] for g in chart_groups]
-    selected_groups = st.multiselect("Select metric groups to plot:", group_options, default=[group_options[0]])
+    selected_groups = st.multiselect(
+        "Select metric groups to plot:",
+        group_options,
+        default=[group_options[0]]
+    )
 
-    # Loop through all stocks
     for stock in fno_stocks:
         st.markdown(f"### {stock}")
         df_all = buysell_fno_func(stock)
         if not df_all.empty:
-            # Parse Time correctly (adjust format if DB stores HH:MM:SS)
-            df_all['Time'] = pd.to_datetime(df_all['Time'], format="%H:%M", errors="coerce")
-            df_all['Volchg_eq'] = round(df_all['Volchg_eq'] / 1000, 2)
+            # Combine Date + Time into full DateTime
+            df_all['DateTime'] = pd.to_datetime(
+                df_all['Date'].astype(str) + " " + df_all['Time'].astype(str),
+                errors="coerce"
+            )
+            # Extract just the time string for tooltip
+            df_all['TimeOnly'] = pd.to_datetime(df_all['Time'], errors="coerce").dt.strftime("%H:%M")
+
+            if "Volchg_eq" in df_all.columns:
+                df_all['Volchg_eq'] = round(df_all['Volchg_eq'] / 1000, 2)
+
             plot_df = df_all.reset_index(drop=True)
 
-            # Loop through each selected group
             for cols, colors, title in chart_groups:
                 if title in selected_groups:
                     layers = []
@@ -366,7 +374,12 @@ with tab3:
                             layers.append(
                                 alt.Chart(plot_df)
                                 .mark_line(point=True)
-                                .encode(x="Time:T", y=f"{col}:Q", color=alt.value(color))
+                                .encode(
+                                    x=alt.X("DateTime:T", title="DateTime"),
+                                    y=f"{col}:Q",
+                                    color=alt.value(color),
+                                    tooltip=["Stock", "Time", col]  # show only time + value
+                                )
                             )
                     if layers:
                         chart = alt.layer(*layers).properties(
