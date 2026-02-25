@@ -329,49 +329,56 @@ if selected_fno_stock or manual_stock:
         st.subheader(f"Buy Sell Trade data for {stock_to_analyze}")
         st.dataframe(buysell_df_single)
     # --- Tab 3 ---
-    with tab3:
-        st.subheader("All Stocks Graphs")
+with tab3:
+    st.subheader("All Stocks Graphs (Grouped Metrics)")
 
-        # Define allowed chart columns
+    # Define grouped chart specs: each entry is a tuple (columns, colors, title)
+    chart_groups = [
+        (["%Prchg_eq", "%Prchg_fu"], ["blue", "orange"], "% Price Change"),
+        (["Valchg_eq", "Valchg_fu"], ["blue", "orange"], "Value Change (cr)"),
+        (["Volchg_eq", "Volchg_fu"], ["green", "orange"], "Volume Change"),
+        (["bsd%_eq", "bsd%_fu"], ["blue", "orange"], "Buy-Sell Diff"),
+        (["tot%_eq", "tot%_fu"], ["blue", "orange"], "Total Buy-Sell %"),
+        (["PrChg_eq", "PrChg_fu"], ["orange", "blue"], "Price Change"),
+    ]
 
-        chart_specs = [
-                ("%Prchg_eq", "blue", "%Prchg_eq"),
-                ("Valchg_eq", "blue", "Valchg_eq(cr)"),
-                ("Volchg_eq", "green", "Volchg_eq(K)"),
-                ("PrChg_eq", "orange", "PriceChg_eq"),
-                ("%Prchg_fu", "orange", "%Prchg_fu"),
-                ("Valchg_fu", "blue", "Valchg_fu(cr)"),
-                ("Volchg_fu", "green", "Volchg_fu(K)"),
-                ("bsd%_eq", "blue", "BuySellDiff_eq"),
-                ("bsd%_fu", "orange", "BuySellDiff_fu"),
-                ("tot%_eq", "blue", "TotBuySell_eq"),
-                ("tot%_fu", "orange", "TotBuySell_fu"),
-        ]
-        # Sidebar selector for which column to plot
-        col_options = [c[0] for c in chart_specs]
-        selected_col = st.selectbox("Select metric to plot:", col_options)
+    # Sidebar selector for which group to plot
+    group_options = [g[2] for g in chart_groups]
+    selected_group = st.selectbox("Select metric group to plot:", group_options)
 
-        # Get color and title for the selected column
-        spec_map = {c[0]: (c[1], c[2]) for c in chart_specs}
-        color, title = spec_map[selected_col]
+    # Find the chosen group
+    for cols, colors, title in chart_groups:
+        if title == selected_group:
+            selected_cols, selected_colors, selected_title = cols, colors, title
+            break
 
-        # Loop through all stocks
-        for stock in fno_stocks:
-            st.markdown(f"### {stock}")
-            df_all = buysell_fno_func(stock)
-            if not df_all.empty and selected_col in df_all.columns:
-                df_all['Time'] = pd.to_datetime(df_all['Time'], format="%H:%M", errors="coerce")
-                if selected_col == "Volchg_eq":
-                    df_all['Volchg_eq'] = round(df_all['Volchg_eq'] / 1000, 2)
-                plot_df = df_all.reset_index(drop=True)
+    # Loop through all stocks
+    for stock in fno_stocks:
+        st.markdown(f"### {stock}")
+        df_all = buysell_fno_func(stock)
+        if not df_all.empty:
+            # Parse Time correctly
+            df_all['Time'] = pd.to_datetime(df_all['Time'], format="%H:%M", errors="coerce")
+            df_all['Volchg_eq'] = round(df_all['Volchg_eq'] / 1000, 2)
 
-                chart = (
-                    alt.Chart(plot_df)
-                    .mark_line(point=True)
-                    .encode(x="Time:T", y=f"{selected_col}:Q", color=alt.value(color))
-                    .properties(width=1000, height=200, title=f"{title} for {stock}")
+            plot_df = df_all.reset_index(drop=True)
+
+            # Build layered chart with both columns
+            layers = []
+            for col, color in zip(selected_cols, selected_colors):
+                if col in plot_df.columns:
+                    layers.append(
+                        alt.Chart(plot_df)
+                        .mark_line(point=True)
+                        .encode(x="Time:T", y=f"{col}:Q", color=alt.value(color))
+                    )
+
+            if layers:
+                chart = alt.layer(*layers).properties(
+                    width=1000, height=200, title=f"{selected_title} for {stock}"
                 )
                 st.altair_chart(chart, use_container_width=True)
             else:
-                st.warning(f"No data found for {stock}")
-                
+                st.warning(f"Selected columns not found for {stock}")
+        else:
+            st.warning(f"No BuySell data found for {stock}")
