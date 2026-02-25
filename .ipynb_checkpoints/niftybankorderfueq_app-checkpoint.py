@@ -259,7 +259,8 @@ if selected_stock:
         st.subheader(f"Fu & Eq BuySell Order Graphs for {stock_to_analyze}")
         if not buysell_df_single.empty:
             filtered_df = buysell_df_single.copy()
-            filtered_df['Time'] = pd.to_datetime(filtered_df['Time'], format="%H:%M", errors="coerce")
+            #filtered_df['Time'] = pd.to_datetime(filtered_df['Time'], format="%H:%M", errors="coerce")
+            filtered_df['Time'] = filtered_df['Time'].astype(str)  # keep as "HH:MM"
             filtered_df['Volchg_eq'] = round(filtered_df['Volchg_eq'] / 1000, 2)
             plot_df = filtered_df.reset_index(drop=True)
 
@@ -282,7 +283,12 @@ if selected_stock:
                     chart = (
                         alt.Chart(plot_df)
                         .mark_line(point=True)
-                        .encode(x="Time:T", y=f"{col}:Q", color=alt.value(color))
+                        #.encode(x="Time:T", y=f"{col}:Q", color=alt.value(color))
+                        .encode(
+                                x=alt.X("Time:N", title="Time"),   # treat as nominal
+                                y=f"{col}:Q",
+                                color=alt.value(color)
+                                )
                         .properties(width=1000, height=200, title=f"{title} for {stock_to_analyze}")
                     )
                     st.altair_chart(chart, use_container_width=True)
