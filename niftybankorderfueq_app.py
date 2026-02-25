@@ -99,7 +99,8 @@ if selected_fno_stock or manual_stock:
         st.subheader(f"Fu & Eq BuySell Order Graphs for {stock_to_analyze}")
         if not buysell_df_single.empty:
             filtered_df = buysell_df_single.copy()
-            filtered_df['Time'] = pd.to_datetime(filtered_df['Time'], format="%H:%M:%S", errors="coerce")
+            #filtered_df['Time'] = pd.to_datetime(filtered_df['Time'], format="%H:%M:%S", errors="coerce")
+            filtered_df['Time'] = pd.to_datetime(filtered_df['Time'], format="%H:%M", errors="coerce")
             filtered_df['Volchg_eq'] = round(filtered_df['Volchg_eq'] / 1000, 2)
             plot_df = filtered_df.reset_index(drop=True)
 
@@ -127,3 +128,7 @@ if selected_fno_stock or manual_stock:
             st.warning(f"No BuySell data found for {stock_to_analyze}")
 
     # ---
+    with tab2:
+        #st.subheader(f"Buy Sell Trade data for {selected_fno_stock}")
+        st.subheader(f"Buy Sell Trade data for {stock_to_analyze}")
+        st.dataframe(buysell_df_single)
