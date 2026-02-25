@@ -265,7 +265,7 @@ if selected_stock:
 
             chart_specs = [
                 ("%Prchg_eq", "blue", "%Prchg_eq"),
-                ("Ltp_eq", "blue", "ltp"),
+                #("Ltp_eq", "blue", "ltp"),
                 ("Valchg_eq", "blue", "Valchg_eq(cr)"),
                 ("Volchg_eq", "green", "Volchg_eq(K)"),
                 ("PrChg_eq", "orange", "PriceChg_eq"),
@@ -355,7 +355,7 @@ if selected_stock:
 
         # Loop through all stocks (or change to [selected_stock] if you only want one)
         for stock in fno_stocks:
-            st.markdown(f"### {stock}")
+            st.markdown(f"##### {stock}")
             df_all = buysell_fno_func(stock)
             if not df_all.empty:
                 # Combine Date + Time into full DateTime
@@ -384,12 +384,12 @@ if selected_stock:
                                         x=alt.X("DateTime:T", title="DateTime"),
                                         y=f"{col}:Q",
                                         color=alt.value(color),
-                                        tooltip=["Stock", "TimeOnly", col]  # show stock, time, value
+                                        tooltip=["Stock", "Time", col]  # show stock, time, value
                                     )
                                 )
                         if layers:
                             chart = alt.layer(*layers).properties(
-                                width=1000, height=200, title=f"{title} for {stock}"
+                                width=800, height=250, title=f"{title} for {stock}"
                             )
                             st.altair_chart(chart, use_container_width=True)
             else:
