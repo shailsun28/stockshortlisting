@@ -146,8 +146,13 @@ def process_file(filepath, filename, db_path):
 if __name__ == "__main__":
     starttime = datetime.now()
     print(f"* Task started at {starttime} *****")
-    #base_dir = "/Users/shail/Documents/Trading/NiftyStocks/"
-    #db_path = "/Users/shail/Documents/Trading/market-turnover/db/eq_fu_buysell_qty.db"
+
+
+
+
+
+    
+    
     db_path = os.path.join(BASE_DIR_db, "eq_fu_buysell_qty.db")
     #files_to_process = ["fno"]
     files_to_process = ["fnowobn"]
