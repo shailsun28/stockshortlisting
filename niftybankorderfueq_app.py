@@ -24,15 +24,14 @@ def buysell_fno_func(stock: str):
     db_path = os.path.join(BASE_DIR_db, "niftybank.db")
     todays_date = date.today()
     with sqlite3.connect(db_path) as tg_conn:
-        tg_query = f"""
-            SELECT * FROM niftybank
-            WHERE Date = "{todays_date}" AND Stock = "{stock}"
-            ORDER BY Time DESC
-        """
+        tg_query = f"SELECT * FROM niftybank WHERE Stock = '{stock}' ORDER BY Date DESC, Time DESC"
         tgdf = pd.read_sql_query(tg_query, tg_conn)
 
-    alldf = tgdf[tgdf['Stock'] == stock].sort_values(by=['Time'], ascending=False).reset_index(drop=True)
-    
+    # Normalize Date
+    tgdf['Date'] = pd.to_datetime(tgdf['Date'], errors='coerce').dt.date
+    todays_date = date.today()
+    alldf = tgdf[tgdf['Date'] == todays_date].sort_values(by=['Time'], ascending=False).reset_index(drop=True)
+
     if alldf.empty:
         return pd.DataFrame()
 
