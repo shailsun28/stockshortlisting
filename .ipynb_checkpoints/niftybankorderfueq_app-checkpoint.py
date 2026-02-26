@@ -267,7 +267,7 @@ if selected_stock:
             )   
 
             # Filter out rows before 09:17
-            filtered_df = filtered_df[filtered_df['DateTime'].dt.time >= pd.to_datetime("09:17").time()]    
+            #filtered_df = filtered_df[filtered_df['DateTime'].dt.time >= pd.to_datetime("09:17").time()]    
 
             # Keep Time as string for nominal x-axis
             filtered_df['Time'] = filtered_df['DateTime'].dt.strftime("%H:%M")
@@ -379,7 +379,7 @@ if selected_stock:
                     df_all['Date'].astype(str) + " " + df_all['Time'].astype(str),
                     errors="coerce"
                 )
-                df_all = df_all[df_all['DateTime'].dt.time >= pd.to_datetime("09:17").time()]
+                #df_all = df_all[df_all['DateTime'].dt.time >= pd.to_datetime("09:17").time()]
                 # Extract just the time string for tooltip
                 df_all['TimeOnly'] = pd.to_datetime(df_all['Time'], errors="coerce").dt.strftime("%H:%M")   
 
