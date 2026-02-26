@@ -32,6 +32,7 @@ def buysell_fno_func(stock: str):
         tgdf = pd.read_sql_query(tg_query, tg_conn)
 
     alldf = tgdf[tgdf['Stock'] == stock].sort_values(by=['Time'], ascending=False).reset_index(drop=True)
+    
     if alldf.empty:
         return pd.DataFrame()
 
