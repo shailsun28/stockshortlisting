@@ -258,15 +258,25 @@ if selected_stock:
     with tab1:
         st.subheader(f"Fu & Eq BuySell Order Graphs for {stock_to_analyze}")
         if not buysell_df_single.empty:
-            filtered_df = buysell_df_single.copy()
-            #filtered_df['Time'] = pd.to_datetime(filtered_df['Time'], format="%H:%M", errors="coerce")
-            filtered_df['Time'] = filtered_df['Time'].astype(str)  # keep as "HH:MM"
-            filtered_df['Volchg_eq'] = round(filtered_df['Volchg_eq'] / 1000, 2)
-            plot_df = filtered_df.reset_index(drop=True)
+            filtered_df = buysell_df_single.copy()  
+
+            # Combine Date + Time into full DateTime
+            filtered_df['DateTime'] = pd.to_datetime(
+                filtered_df['Date'].astype(str) + " " + filtered_df['Time'].astype(str),
+                errors="coerce"
+            )   
+
+            # Filter out rows before 09:17
+            filtered_df = filtered_df[filtered_df['DateTime'].dt.time >= pd.to_datetime("09:17").time()]    
+
+            # Keep Time as string for nominal x-axis
+            filtered_df['Time'] = filtered_df['DateTime'].dt.strftime("%H:%M")
+            filtered_df['Volchg_eq'] = round(filtered_df['Volchg_eq'] / 1000, 2)    
+
+            plot_df = filtered_df.reset_index(drop=True)    
 
             chart_specs = [
                 ("%Prchg_eq", "blue", "%Prchg_eq"),
-                #("Ltp_eq", "blue", "ltp"),
                 ("Valchg_eq", "blue", "Valchg_eq(cr)"),
                 ("Volchg_eq", "green", "Volchg_eq(K)"),
                 ("PrChg_eq", "orange", "PriceChg_eq"),
@@ -277,23 +287,24 @@ if selected_stock:
                 ("bsd%_fu", "orange", "BuySellDiff_fu"),
                 ("tot%_eq", "blue", "TotBuySell_eq"),
                 ("tot%_fu", "orange", "TotBuySell_fu"),
-            ]
+            ]   
+
             for col, color, title in chart_specs:
                 if col in plot_df.columns:
                     chart = (
                         alt.Chart(plot_df)
                         .mark_line(point=True)
-                        #.encode(x="Time:T", y=f"{col}:Q", color=alt.value(color))
                         .encode(
-                                x=alt.X("Time:N", title="Time"),   # treat as nominal
-                                y=f"{col}:Q",
-                                color=alt.value(color)
-                                )
+                            x=alt.X("Time:N", title="Time"),   # nominal axis
+                            y=f"{col}:Q",
+                            color=alt.value(color)
+                        )
                         .properties(width=1000, height=200, title=f"{title} for {stock_to_analyze}")
                     )
                     st.altair_chart(chart, use_container_width=True)
         else:
             st.warning(f"No BuySell data found for {stock_to_analyze}")
+
 
         # Fetch NSE API JSON for the selected FNO stock
         st.subheader(f"Current Price Info for {stock_to_analyze}")   
@@ -368,6 +379,7 @@ if selected_stock:
                     df_all['Date'].astype(str) + " " + df_all['Time'].astype(str),
                     errors="coerce"
                 )
+                df_all = df_all[df_all['DateTime'].dt.time >= pd.to_datetime("09:17").time()]
                 # Extract just the time string for tooltip
                 df_all['TimeOnly'] = pd.to_datetime(df_all['Time'], errors="coerce").dt.strftime("%H:%M")   
 
