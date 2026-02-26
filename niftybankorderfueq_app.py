@@ -337,9 +337,8 @@ if selected_stock:
         st.dataframe(buysell_df_single)
 
 # --- Tab 3 ---
-
     with tab3:
-        st.subheader("All Bank Nifty Stocks")    
+        st.subheader("All Bank Nifty Stocks (Grouped Metrics with Independent Scaling)")    
 
         # Define grouped chart specs: each entry is (columns, colors, title)
         chart_groups = [
@@ -349,7 +348,7 @@ if selected_stock:
             (["bsd%_eq", "bsd%_fu"], ["blue", "orange"], "Buy-Sell Diff"),
             (["tot%_eq", "tot%_fu"], ["blue", "orange"], "Total Buy-Sell %"),
             (["PrChg_eq", "PrChg_fu"], ["orange", "blue"], "Price Change"),
-        ]    
+        ]   
 
         # Sidebar multiselect for groups
         group_options = [g[2] for g in chart_groups]
@@ -357,7 +356,7 @@ if selected_stock:
             "Select metric groups to plot:",
             group_options,
             default=[group_options[0]]
-        )    
+        )   
 
         # Loop through all stocks (or change to [selected_stock] if you only want one)
         for stock in fno_stocks:
@@ -370,12 +369,12 @@ if selected_stock:
                     errors="coerce"
                 )
                 # Extract just the time string for tooltip
-                df_all['TimeOnly'] = pd.to_datetime(df_all['Time'], errors="coerce").dt.strftime("%H:%M")    
+                df_all['TimeOnly'] = pd.to_datetime(df_all['Time'], errors="coerce").dt.strftime("%H:%M")   
 
                 if "Volchg_eq" in df_all.columns:
-                    df_all['Volchg_eq'] = round(df_all['Volchg_eq'] / 1000, 2)    
+                    df_all['Volchg_eq'] = round(df_all['Volchg_eq'] / 1000, 2)  
 
-                plot_df = df_all.reset_index(drop=True)    
+                plot_df = df_all.reset_index(drop=True) 
 
                 # Loop through each selected group
                 for cols, colors, title in chart_groups:
@@ -388,16 +387,15 @@ if selected_stock:
                                     .mark_line(point=True)
                                     .encode(
                                         x=alt.X("DateTime:T", title="DateTime"),
-                                        y=f"{col}:Q",
+                                        y=alt.Y(f"{col}:Q", scale=alt.Scale(zero=False)),  # independent scaling
                                         color=alt.value(color),
-                                        tooltip=["Stock", "Time", col]  # show stock, time, value
+                                        tooltip=["Stock", "TimeOnly", col]
                                     )
                                 )
                         if layers:
-                            chart = alt.layer(*layers).properties(
+                            chart = alt.layer(*layers).resolve_scale(y='independent').properties(
                                 width=800, height=250, title=f"{title} for {stock}"
                             )
                             st.altair_chart(chart, use_container_width=True)
             else:
                 st.warning(f"No BuySell data found for {stock}")
-###
