@@ -17,7 +17,7 @@ BASE_DIR = "/home/shail/stockshortlisting"
 # --- Page config ---
 st.set_page_config(layout="wide")
 st_autorefresh = st_autorefresh(interval=60000, limit=None, key="refresh")
-@st.cache_data
+
 def buysell_fno_func(stock: str):
     """
     Process buy/sell FNO data for a single stock from niftybank.db/niftybank table.
