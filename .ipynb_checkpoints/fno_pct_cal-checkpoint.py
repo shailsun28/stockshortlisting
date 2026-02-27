@@ -15,7 +15,8 @@ with sqlite3.connect(db_path) as conn:
     for name in tables['name']:
         df = pd.read_sql_query(f'SELECT * FROM "{name}" ORDER BY Date DESC', conn)
         df = df.drop_duplicates()
-        df['Date'] = pd.to_datetime(df['Date'])
+        #df['Date'] = pd.to_datetime(df['Date'])
+        df['Date'] = pd.to_datetime(df['Date'], format='mixed')
         dfs[name] = df
 
 # Unpack
