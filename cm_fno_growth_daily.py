@@ -4,6 +4,7 @@ import requests
 import sqlite3
 from pandas import json_normalize
 from datetime import datetime
+from datetime import datetime, timedelta
 
 BASE_DIR = "/home/shail/stockshortlisting"
 BASE_DIR_db = "/home/shail/db"
