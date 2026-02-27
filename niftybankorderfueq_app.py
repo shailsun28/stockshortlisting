@@ -31,7 +31,6 @@ def buysell_fno_func(stock: str):
 
     # Normalize Date
     tgdf['Date'] = pd.to_datetime(tgdf['Date'], errors='coerce').dt.date
-    todays_date = date.today()
     alldf = tgdf[tgdf['Date'] == todays_date].sort_values(by=['Time'], ascending=False).reset_index(drop=True)
 
     if alldf.empty:
