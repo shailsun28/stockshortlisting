@@ -9,13 +9,14 @@ import requests
 from datetime import date
 from requests.adapters import HTTPAdapter
 from requests.packages.urllib3.util.retry import Retry
+from streamlit_autorefresh import st_autorefresh
 
 BASE_DIR_db = "/home/shail/db"
 BASE_DIR = "/home/shail/stockshortlisting"
 
 # --- Page config ---
 st.set_page_config(layout="wide")
-
+st_autorefresh = st_autorefresh(interval=60000, limit=None, key="refresh")
 @st.cache_data
 def buysell_fno_func(stock: str):
     """
@@ -25,7 +26,7 @@ def buysell_fno_func(stock: str):
     todays_date = date.today()
     with sqlite3.connect(db_path) as tg_conn:
         tg_query = f"SELECT * FROM niftybank WHERE Stock = '{stock}' ORDER BY Date DESC, Time DESC"
-        tg_query = f"SELECT * FROM niftybank WHERE Stock = '{stock}' ORDER BY Date DESC, Time DESC LIMIT 200"
+        #tg_query = f"SELECT * FROM niftybank WHERE Stock = '{stock}' ORDER BY Date DESC, Time DESC LIMIT 200"
         tgdf = pd.read_sql_query(tg_query, tg_conn)
 
     # Normalize Date
@@ -109,6 +110,7 @@ def shortlist_func(stock: str):
 
     df1.rename(columns=rename_map, inplace=True)
 
+    #query = f"SELECT * FROM nsestock_t WHERE SYMBOL = '{stock}' ORDER BY Date DESC "
     query = f"SELECT * FROM nsestock_t WHERE SYMBOL = '{stock}' ORDER BY Date DESC LIMIT 360"
     hl_df = pd.read_sql_query(query, conn)
 
@@ -236,7 +238,8 @@ def parse_time(df, fmt):
 st.sidebar.header("Filter Options")
 
 with sqlite3.connect(os.path.join(BASE_DIR_db, "niftybank.db")) as conn:
-    fno_df = pd.read_sql_query("SELECT DISTINCT Stock FROM niftybank ORDER BY Stock", conn)
+    #fno_df = pd.read_sql_query("SELECT DISTINCT Stock FROM niftybank ORDER BY Stock", conn)
+    fno_df = pd.read_sql_query("SELECT DISTINCT Stock FROM niftybank", conn)
 
 fno_stocks = fno_df['Stock'].unique() if not fno_df.empty else []
 
