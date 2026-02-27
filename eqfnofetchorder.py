@@ -155,7 +155,7 @@ if __name__ == "__main__":
     
     db_path = os.path.join(BASE_DIR_db, "eq_fu_buysell_qty.db")
     #files_to_process = ["fno"]
-    files_to_process = ["fnowobn"]
+    files_to_process = ["fno"]
 
     for filename in files_to_process:
         filepath = os.path.join(BASE_DIR,"NiftyStocks",filename)
