@@ -25,6 +25,7 @@ def buysell_fno_func(stock: str):
     todays_date = date.today()
     with sqlite3.connect(db_path) as tg_conn:
         tg_query = f"SELECT * FROM niftybank WHERE Stock = '{stock}' ORDER BY Date DESC, Time DESC"
+        tg_query = f"SELECT * FROM niftybank WHERE Stock = '{stock}' ORDER BY Date DESC, Time DESC LIMIT 200"
         tgdf = pd.read_sql_query(tg_query, tg_conn)
 
     # Normalize Date
