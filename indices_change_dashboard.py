@@ -290,10 +290,12 @@ COMMON_CHART_SPECS = [
 # Index Section
 # -----------------------------
 st.subheader(f"{selected_index} Val(cr) & Vol(lac) change data for {num_days} days (every min) ")
+dfidx = index_dataframes[selected_index].copy()
+dfidx = dfidx[dfidx['Time'] >= "09:35:00"]
 for col, color, title in COMMON_CHART_SPECS:
     #st.markdown(f"### {selected_index} - {title}")
     plot_column_last_n_days(
-        index_dataframes[selected_index].copy(),
+        dfidx,
         column=col,
         label=selected_index,
         color=color,
@@ -301,8 +303,7 @@ for col, color, title in COMMON_CHART_SPECS:
         n=num_days
     )
 # Adv/Dec combined
-dfidx = index_dataframes[selected_index].copy()
-dfidx = dfidx[dfidx['Time'] >= "09:35:00"]
+
 plot_adv_dec_last_n_days(dfidx, selected_index, fmt="%H:%M:%S", n=num_days)
 #plot_adv_dec_last_n_days(index_dataframes[selected_index].copy(), selected_index, fmt="%H:%M:%S", n=num_days)
 # Ensure default is Bank
