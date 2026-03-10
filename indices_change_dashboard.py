@@ -301,7 +301,10 @@ for col, color, title in COMMON_CHART_SPECS:
         n=num_days
     )
 # Adv/Dec combined
-plot_adv_dec_last_n_days(index_dataframes[selected_index].copy(), selected_index, fmt="%H:%M:%S", n=num_days)
+dfidx = index_dataframes[selected_index].copy()
+dfidx = dfidx[dfidx['Time'] >= "09:35:00"]
+plot_adv_dec_last_n_days(dfidx, selected_index, fmt="%H:%M:%S", n=num_days)
+#plot_adv_dec_last_n_days(index_dataframes[selected_index].copy(), selected_index, fmt="%H:%M:%S", n=num_days)
 # Ensure default is Bank
 
 
