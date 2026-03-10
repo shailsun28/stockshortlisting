@@ -291,7 +291,7 @@ COMMON_CHART_SPECS = [
 # -----------------------------
 st.subheader(f"{selected_index} Val(cr) & Vol(lac) change data for {num_days} days (every min) ")
 dfidx = index_dataframes[selected_index].copy()
-dfidx = dfidx[dfidx['Time'] >= "09:35:00"]
+#dfidx = dfidx[dfidx['Time'] >= "09:35:00"]
 for col, color, title in COMMON_CHART_SPECS:
     #st.markdown(f"### {selected_index} - {title}")
     plot_column_last_n_days(
