@@ -18,7 +18,7 @@ table_names = tables['name'].tolist()
 dfs = {}
 for name in table_names:
     try:
-        query = f'SELECT * FROM "{name}"'
+        query = f'SELECT * FROM "{name}" ORDER BY Date DESC'
         df = pd.read_sql_query(query, conn)
         dfs[name] = df
     except Exception as e:
