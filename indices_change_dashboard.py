@@ -319,6 +319,7 @@ for col, color, title in COMMON_CHART_SPECS:
         fmt="%H:%M",
         n=num_days
     )
+turnover_dataframes = turnover_dataframes[turnover_dataframes['Time'].dt.time >= pd.to_datetime("09:35").time()]  
 plot_adv_dec_last_n_days(turnover_dataframes[selected_turnover].copy(), selected_turnover, fmt="%H:%M", n=num_days)
 
 # -----------------------------
