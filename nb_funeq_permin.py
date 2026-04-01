@@ -23,7 +23,7 @@ def fetch_stock_data(stock: str):
     now = datetime.now()
     current_year = now.year
     #current_month = now.month
-    current_month = 3
+    current_month = 4
     current_time = now.strftime('%H:%M:%S')
     current_time = now.strftime('%H:%M')
     current_date = now.strftime('%Y-%m-%d')
