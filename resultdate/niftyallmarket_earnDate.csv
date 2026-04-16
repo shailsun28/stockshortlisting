@@ -46,7 +46,7 @@ ALLCARGO,14-May-2026,2026-05-14 00:00:00,Financial Results,26-Mar-2026
 ALOKINDS,16-Apr-2026,2026-04-16 00:00:00,Financial Results,09-Apr-2026
 AMBER,09-Feb-2026,2026-02-09 00:00:00,Financial Results,03-Feb-2026
 AMBUJACEM,04-May-2026,2026-05-04 00:00:00,Financial Results/Dividend,14-Apr-2026
-ANANDRATHI,09-Apr-2026,2026-04-09 00:00:00,Financial Results/Dividend,30-Mar-2026
+ANANDRATHI,09-Apr-2026,2026-04-09 00:00:00,Bonus,06-Apr-2026
 ANANTRAJ,11-May-2026,2026-05-11 00:00:00,Financial Results/Dividend,09-Apr-2026
 ANGELONE,16-Apr-2026,2026-04-16 00:00:00,Financial Results,27-Mar-2026
 ANUP,03-Feb-2026,2026-02-03 00:00:00,Financial Results,27-Jan-2026
@@ -79,7 +79,7 @@ AVALON,04-Feb-2026,2026-02-04 00:00:00,Financial Results,27-Jan-2026
 AVANTIFEED,11-Feb-2026,2026-02-11 00:00:00,Financial Results/Other business matters,27-Jan-2026
 AWFIS,02-Feb-2026,2026-02-02 00:00:00,Financial Results,27-Jan-2026
 AWL,03-Feb-2026,2026-02-03 00:00:00,Financial Results,28-Jan-2026
-AXISBANK,26-Jan-2026,2026-01-26 00:00:00,Financial Results,08-Jan-2026
+AXISBANK,25-Apr-2026,2026-04-25 00:00:00,Financial Results/Dividend/Fund Raising,16-Apr-2026
 AZAD,13-Feb-2026,2026-02-13 00:00:00,Financial Results/Other business matters,06-Feb-2026
 BAJAJ-AUTO,06-May-2026,2026-05-06 00:00:00,Financial Results/Dividend,13-Apr-2026
 BAJAJELEC,09-Feb-2026,2026-02-09 00:00:00,Financial Results,27-Jan-2026
@@ -144,7 +144,7 @@ CENTURYPLY,04-Feb-2026,2026-02-04 00:00:00,Financial Results/Other business matt
 CERA,04-Feb-2026,2026-02-04 00:00:00,Financial Results,22-Jan-2026
 CESC,06-Feb-2026,2026-02-06 00:00:00,Financial Results,30-Jan-2026
 CGCL,10-Mar-2026,2026-03-10 00:00:00,Fund Raising,05-Mar-2026
-CGPOWER,27-Jan-2026,2026-01-27 00:00:00,Financial Results,08-Jan-2026
+CGPOWER,27-Jan-2026,2026-01-27 00:00:00,Dividend,19-Jan-2026
 CHALET,02-Feb-2026,2026-02-02 00:00:00,Financial Results,27-Jan-2026
 CHAMBLFERT,10-Feb-2026,2026-02-10 00:00:00,Financial Results,29-Jan-2026
 CHENNPETRO,24-Apr-2026,2026-04-24 00:00:00,Financial Results/Dividend,13-Apr-2026
@@ -174,13 +174,13 @@ CUMMINSIND,27-May-2026,2026-05-27 00:00:00,Financial Results/Dividend,09-Apr-202
 CYIENT,23-Apr-2026,2026-04-23 00:00:00,Financial Results/Dividend/Buyback,14-Apr-2026
 CYIENTDLM,21-Apr-2026,2026-04-21 00:00:00,Financial Results,07-Apr-2026
 DABUR,07-May-2026,2026-05-07 00:00:00,Financial Results/Dividend,23-Mar-2026
-DALBHARAT,21-Jan-2026,2026-01-21 00:00:00,Financial Results/Other business matters,13-Jan-2026
+DALBHARAT,28-Apr-2026,2026-04-28 00:00:00,Financial Results/Dividend/Other business matters,16-Apr-2026
 DATAMATICS,28-Jan-2026,2026-01-28 00:00:00,Financial Results,19-Jan-2026
 DATAPATTNS,05-Feb-2026,2026-02-05 00:00:00,Financial Results,29-Jan-2026
 DBL,10-Feb-2026,2026-02-10 00:00:00,Financial Results/Other business matters,02-Feb-2026
 DBREALTY,11-Feb-2026,2026-02-11 00:00:00,Financial Results,06-Feb-2026
 DCAL,18-Mar-2026,2026-03-18 00:00:00,Fund Raising,14-Mar-2026
-DCBBANK,23-Jan-2026,2026-01-23 00:00:00,Financial Results,14-Jan-2026
+DCBBANK,24-Apr-2026,2026-04-24 00:00:00,Financial Results/Dividend/Fund Raising,16-Apr-2026
 DCMSHRIRAM,20-Jan-2026,2026-01-20 00:00:00,Financial Results/Dividend,12-Jan-2026
 DEEPAKFERT,29-Jan-2026,2026-01-29 00:00:00,Financial Results,19-Jan-2026
 DEEPAKNTR,12-Feb-2026,2026-02-12 00:00:00,Financial Results,30-Jan-2026
@@ -266,7 +266,7 @@ GODREJPROP,05-Feb-2026,2026-02-05 00:00:00,Financial Results,13-Jan-2026
 GOKEX,31-Jan-2026,2026-01-31 00:00:00,Financial Results,28-Jan-2026
 GPIL,06-Feb-2026,2026-02-06 00:00:00,Financial Results/Other business matters,22-Jan-2026
 GPPL,10-Feb-2026,2026-02-10 00:00:00,Financial Results/Other business matters,02-Feb-2026
-GRANULES,23-Jan-2026,2026-01-23 00:00:00,Financial Results,08-Jan-2026
+GRANULES,29-Apr-2026,2026-04-29 00:00:00,Financial Results/Dividend,16-Apr-2026
 GRAPHITE,09-Feb-2026,2026-02-09 00:00:00,Financial Results,02-Feb-2026
 GRASIM,10-Feb-2026,2026-02-10 00:00:00,Financial Results,30-Jan-2026
 GRAVITA,21-Jan-2026,2026-01-21 00:00:00,Financial Results,13-Jan-2026
@@ -294,7 +294,7 @@ HEG,29-Apr-2026,2026-04-29 00:00:00,Financial Results/Dividend,03-Apr-2026
 HEMIPROP,28-Jan-2026,2026-01-28 00:00:00,Financial Results,13-Jan-2026
 HERITGFOOD,28-Jan-2026,2026-01-28 00:00:00,Financial Results,16-Jan-2026
 HEROMOTOCO,05-Feb-2026,2026-02-05 00:00:00,Dividend,28-Jan-2026
-HEXT,04-Feb-2026,2026-02-04 00:00:00,Financial Results,14-Jan-2026
+HEXT,06-May-2026,2026-05-06 00:00:00,Financial Results,15-Apr-2026
 HFCL,25-Mar-2026,2026-03-25 00:00:00,Fund Raising,20-Mar-2026
 HGINFRA,12-Feb-2026,2026-02-12 00:00:00,Financial Results,07-Feb-2026
 HIKAL,11-Feb-2026,2026-02-11 00:00:00,Financial Results/Dividend,04-Feb-2026
@@ -306,7 +306,7 @@ HINDZINC,23-Jan-2026,2026-01-23 00:00:00,Fund Raising,20-Jan-2026
 HOMEFIRST,22-Jan-2026,2026-01-22 00:00:00,Financial Results/Other business matters,16-Jan-2026
 HONASA,12-Feb-2026,2026-02-12 00:00:00,Financial Results,29-Jan-2026
 HONAUT,02-Feb-2026,2026-02-02 00:00:00,Financial Results,07-Jan-2026
-HSCL,16-Jan-2026,2026-01-16 00:00:00,Financial Results,08-Jan-2026
+HSCL,23-Apr-2026,2026-04-23 00:00:00,Financial Results/Dividend,16-Apr-2026
 HUDCO,23-Mar-2026,2026-03-23 00:00:00,Dividend/Fund Raising,16-Mar-2026
 HYUNDAI,02-Feb-2026,2026-02-02 00:00:00,Financial Results,27-Jan-2026
 ICICIBANK,18-Apr-2026,2026-04-18 00:00:00,Financial Results/Dividend/Other business matters,18-Mar-2026
@@ -318,7 +318,7 @@ IDEA,27-Jan-2026,2026-01-27 00:00:00,Financial Results,21-Jan-2026
 IDFCFIRSTB,25-Apr-2026,2026-04-25 00:00:00,Financial Results,27-Mar-2026
 IEX,29-Jan-2026,2026-01-29 00:00:00,Financial Results/Dividend,21-Jan-2026
 IFBIND,24-Jan-2026,2026-01-24 00:00:00,Financial Results,16-Jan-2026
-IFCI,29-Jan-2026,2026-01-29 00:00:00,Financial Results,08-Jan-2026
+IFCI,28-Apr-2026,2026-04-28 00:00:00,Financial Results,16-Apr-2026
 IGIL,11-Feb-2026,2026-02-11 00:00:00,Dividend,06-Feb-2026
 IGL,12-Feb-2026,2026-02-12 00:00:00,Financial Results/Dividend,09-Feb-2026
 IIFL,24-Feb-2026,2026-02-24 00:00:00,Fund Raising,19-Feb-2026
@@ -409,7 +409,7 @@ KPITTECH,29-Jan-2026,2026-01-29 00:00:00,Financial Results,14-Jan-2026
 KPRMILL,09-Feb-2026,2026-02-09 00:00:00,Financial Results/Dividend,29-Jan-2026
 KRBL,14-Feb-2026,2026-02-14 00:00:00,Financial Results/Other business matters,06-Feb-2026
 KRN,13-Mar-2026,2026-03-13 00:00:00,Fund Raising/Other business matters,09-Mar-2026
-KSB,25-Feb-2026,2026-02-25 00:00:00,Financial Results/Dividend,11-Feb-2026
+KSB,30-Apr-2026,2026-04-30 00:00:00,Financial Results,16-Apr-2026
 KSCL,09-Feb-2026,2026-02-09 00:00:00,Financial Results,28-Jan-2026
 KSL,03-Feb-2026,2026-02-03 00:00:00,Financial Results,27-Jan-2026
 KTKBANK,10-Feb-2026,2026-02-10 00:00:00,Financial Results,02-Feb-2026
@@ -436,7 +436,7 @@ LUXIND,14-Feb-2026,2026-02-14 00:00:00,Financial Results,15-Jan-2026
 LXCHEM,29-Jan-2026,2026-01-29 00:00:00,Financial Results/Other business matters,20-Jan-2026
 M&M,,,,
 M&MFIN,,,,
-MAHABANK,13-Jan-2026,2026-01-13 00:00:00,Financial Results/Dividend,07-Jan-2026
+MAHABANK,20-Apr-2026,2026-04-20 00:00:00,Financial Results/Dividend/Fund Raising,15-Apr-2026
 MAHLIFE,28-Apr-2026,2026-04-28 00:00:00,Financial Results/Dividend,27-Mar-2026
 MAHSCOOTER,22-Apr-2026,2026-04-22 00:00:00,Financial Results/Dividend,06-Apr-2026
 MAHSEAMLES,28-Jan-2026,2026-01-28 00:00:00,Financial Results,15-Jan-2026
@@ -456,7 +456,7 @@ MAZDOCK,05-Feb-2026,2026-02-05 00:00:00,Financial Results/Dividend,02-Feb-2026
 MCX,,,,
 MEDANTA,04-Feb-2026,2026-02-04 00:00:00,Financial Results,24-Jan-2026
 MEDPLUS,29-May-2026,2026-05-29 00:00:00,Financial Results,28-Mar-2026
-METROPOLIS,04-Feb-2026,2026-02-04 00:00:00,Bonus,30-Jan-2026
+METROPOLIS,04-Feb-2026,2026-02-04 00:00:00,Financial Results,30-Jan-2026
 MFSL,12-May-2026,2026-05-12 00:00:00,Financial Results,26-Mar-2026
 MGL,07-Feb-2026,2026-02-07 00:00:00,Financial Results/Dividend,29-Jan-2026
 MIDHANI,13-Mar-2026,2026-03-13 00:00:00,Dividend,05-Mar-2026
@@ -558,7 +558,7 @@ PTCIL,14-Feb-2026,2026-02-14 00:00:00,Financial Results,05-Feb-2026
 PURVA,12-Feb-2026,2026-02-12 00:00:00,Financial Results,06-Feb-2026
 PVRINOX,05-Feb-2026,2026-02-05 00:00:00,Financial Results/Other business matters,29-Jan-2026
 QUESS,28-Jan-2026,2026-01-28 00:00:00,Financial Results/Dividend,20-Jan-2026
-RADICO,22-Jan-2026,2026-01-22 00:00:00,Financial Results,12-Jan-2026
+RADICO,06-May-2026,2026-05-06 00:00:00,Financial Results/Dividend,16-Apr-2026
 RAILTEL,09-Mar-2026,2026-03-09 00:00:00,Dividend,02-Mar-2026
 RAIN,08-May-2026,2026-05-08 00:00:00,Financial Results,30-Mar-2026
 RAINBOW,28-Jan-2026,2026-01-28 00:00:00,Financial Results,21-Jan-2026
@@ -654,7 +654,7 @@ SURYAROSNI,11-Feb-2026,2026-02-11 00:00:00,Financial Results,03-Feb-2026
 SUZLON,05-Feb-2026,2026-02-05 00:00:00,Financial Results,28-Jan-2026
 SWANCORP,06-Feb-2026,2026-02-06 00:00:00,Financial Results,27-Jan-2026
 SWIGGY,29-Jan-2026,2026-01-29 00:00:00,Financial Results,19-Jan-2026
-SWSOLAR,15-Jan-2026,2026-01-15 00:00:00,Financial Results,08-Jan-2026
+SWSOLAR,23-Apr-2026,2026-04-23 00:00:00,Financial Results/Other business matters,16-Apr-2026
 SYMPHONY,28-Jan-2026,2026-01-28 00:00:00,Financial Results/Dividend,19-Jan-2026
 SYNGENE,29-Apr-2026,2026-04-29 00:00:00,Financial Results/Dividend,15-Apr-2026
 SYRMA,29-Jan-2026,2026-01-29 00:00:00,Financial Results,22-Jan-2026
@@ -673,14 +673,14 @@ TBOTEK,11-Feb-2026,2026-02-11 00:00:00,Financial Results,04-Feb-2026
 TCS,09-Apr-2026,2026-04-09 00:00:00,Financial Results/Dividend,23-Mar-2026
 TDPOWERSYS,29-Jan-2026,2026-01-29 00:00:00,Financial Results,20-Jan-2026
 TEAMLEASE,04-Feb-2026,2026-02-04 00:00:00,Financial Results,22-Jan-2026
-TECHM,22-Apr-2026,2026-04-22 00:00:00,Financial Results/Other business matters,31-Mar-2026
+TECHM,22-Apr-2026,2026-04-22 00:00:00,Dividend,16-Apr-2026
 TECHNOE,10-Feb-2026,2026-02-10 00:00:00,Financial Results,02-Feb-2026
 TEGA,12-Feb-2026,2026-02-12 00:00:00,Financial Results,04-Feb-2026
 TEJASNET,15-Apr-2026,2026-04-15 00:00:00,Financial Results,09-Apr-2026
 TEXRAIL,31-Mar-2026,2026-03-31 00:00:00,Fund Raising,26-Mar-2026
 THANGAMAYL,21-Jan-2026,2026-01-21 00:00:00,Financial Results,09-Jan-2026
 THELEELA,16-Jan-2026,2026-01-16 00:00:00,Financial Results/Other business matters,12-Jan-2026
-THERMAX,02-Feb-2026,2026-02-02 00:00:00,Financial Results,06-Jan-2026
+THERMAX,07-May-2026,2026-05-07 00:00:00,Financial Results/Dividend,16-Apr-2026
 THOMASCOOK,20-Mar-2026,2026-03-20 00:00:00,Other business matters,17-Mar-2026
 THYROCARE,28-Jan-2026,2026-01-28 00:00:00,Financial Results,20-Jan-2026
 TI,13-Feb-2026,2026-02-13 00:00:00,Financial Results,09-Feb-2026
@@ -699,7 +699,7 @@ TRIDENT,09-Feb-2026,2026-02-09 00:00:00,Financial Results,28-Jan-2026
 TRITURBINE,03-Feb-2026,2026-02-03 00:00:00,Financial Results/Dividend,24-Jan-2026
 TRIVENI,30-Jan-2026,2026-01-30 00:00:00,Financial Results/Dividend,23-Jan-2026
 TSFINV,03-Feb-2026,2026-02-03 00:00:00,Financial Results/Dividend,28-Jan-2026
-TTML,20-Jan-2026,2026-01-20 00:00:00,Financial Results,13-Jan-2026
+TTML,23-Apr-2026,2026-04-23 00:00:00,Financial Results,16-Apr-2026
 TVSMOTOR,24-Mar-2026,2026-03-24 00:00:00,Dividend,18-Mar-2026
 TVSSCS,10-Feb-2026,2026-02-10 00:00:00,Financial Results,05-Feb-2026
 UBL,05-May-2026,2026-05-05 00:00:00,Financial Results/Dividend,06-Apr-2026
